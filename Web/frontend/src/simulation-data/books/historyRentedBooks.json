@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Un cuento perfecto",
+    "author": {
+      "name": "Elísabet Benavent"
+    },
+    "img": "../assets/img/book-cover/un-cuento-perfecto.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "infantil",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "El camino del artista",
+    "author": {
+      "name": "Julia Cameron"
+    },
+    "img": "../assets/img/book-cover/el-camino-del-artista.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "arte gastronomia",
+    "releaseDate":  "23/12/2020",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Violeta",
+    "author": {
+      "name": "Isabel Allende"
+    },
+    "img": "../assets/img/book-cover/violeta.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "juvenil",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Pensar a la Japonesa",
+    "author": {
+      "name": "Le Yen Mai"
+    },
+    "img": "../assets/img/book-cover/pensar-a-la-japonesa.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "negocio gastronomia",
+    "releaseDate": "",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Heartstopper",
+    "author": {
+      "name": "Alice Oseman"
+    },
+    "img": "../assets/img/book-cover/heartstopper.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "juvenil",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Sanar la herida",
+    "author": {
+      "name": "Claudia Luchetti"
+    },
+    "img": "../assets/img/book-cover/sanar-la-herida.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "juvenil",
+    "releaseDate": "",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  }
+]

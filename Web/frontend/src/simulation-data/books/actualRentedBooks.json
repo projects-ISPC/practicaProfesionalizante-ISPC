@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Buscando a Dorothy",
+    "author": {
+      "name": "Elizabeth Letts"
+    },
+    "img": "../assets/img/book-cover/buscando-a-dorothy.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "infantil",
+    "releaseDate": "",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Sigue mi voz",
+    "author": {
+      "name": "Ariana Godoy"
+    },
+    "img": "../assets/img/book-cover/sigue-mi-voz.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "negocio",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "La teoría de lo perfecto",
+    "author": {
+      "name": "Sophie Gonzalez"
+    },
+    "img": "../assets/img/book-cover/la-teoria-de-lo-perfecto.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "negocio juvenil",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  }
+]

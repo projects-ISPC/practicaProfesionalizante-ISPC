@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/20cfbc7c59.js" crossorigin="anonymous"></script>
+    <title>Biblioteca Franklin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+
+  <nav class="menu">
+    <div class="menu__logo">
+      <a href="./index.html" class="fw-400">
+        <img src="../assets/img/Logo biblioteca franklin.png" alt="Logo biblioteca franklin" /></a>
+    </div>
+    <ul class="menu__lista">
+      <li class="menu__item fw-400">
+        <a href="./books-catalog.html">Libros</a>
+      </li>
+      <li class="menu__item fw-400"><a href="./contact.html">Contacto</a></li>
+    </ul>
+
+    <form action="#">
+      <input type="search" class="search-data fw-400" placeholder="Busca tu libro" required />
+      <button type="submit" role="button" title="buscar" class="bi bi-search"></button>
+    </form>
+
+    <ul class="menu__auth">
+      <li id="menu___item__login" class="fw-400">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Ingresar/</a>
+      </li>
+
+      <li id="menu___item__perfil" class="fw-400 d-none">
+        <a href="./profile.html" id="menu___item__perfil_a">Ver Perfil/</a>
+      </li>
+
+      <li id="menu___item__logout" class="fw-400 d-none">
+        <a href="#" id="menu___item__logout_a" onclick="logout()">Salir</a>
+
+      </li>
+      <li id="menu___item__register" class="fw-400">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Registrar</a>
+      </li>
+    </ul>
+  </nav>
+
+    <section class="sectionProfile">
+        <div class="container container-bgk overflow-hidden ">
+            <div class="row align-items-sm-center">
+                <div class="col-4" >
+                    <div class="imageProfile">
+                        <img src="../assets/img/perfil.png" alt="Foto de perfil" style="width: 90%;">
+                    </div>
+                </div>
+                <div class="col-4">
+                        <h3 class="profileName">Julieta Morel</h3> <br>
+                        <p ><img src="../assets/img/Vector.png" alt=""> San Telmo, Caba </p>
+                        <p> <b>DNI: </b> 26789876</p>
+                        <p> <b>E-mail: </b>julietamorel@correo.com</p>
+                        <p><b>Teléfono: </b> 1127654312</p>
+                </div>
+                <div class="col-4"> <br> <br> <br> <br>
+                        <p><b>Suscripción: </b> activa</p><p><b>Vencimiento: </b>02/10/2023</p><p><b>Estudiante: </b>SI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mt-5 pt-5" id="rent-history-menu">
+      <ul class="nav justify-content-start catalog-menu">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#rent-history-menu" id="actual-rents">Reservas actuales</a>
+        </li>
+        <li class="nav-item px-5">
+          <a class="nav-link" href="#rent-history-menu" id="history-rents">Historial de reservas</a>
+        </li>
+      </ul>
+      <hr>
+    </section>
+
+    <section class="my-5 pb-5" id="books-rent-resume">
+    </section>
+
+
+      <!-- footer -->
+
+      <footer id="footer" class="container-fluid">
+        <div class="footer-newsletter p-5">
+          <div class="row mb-5">
+            <div class="col-lg-5">
+              <p class="news">
+                Enterate de todas las novedades de nuestra biblioteca
+              </p>
+            </div>
+            <div class="col-lg-7">
+              <form action="" method="post" class="row justify-content-around">
+                <input type="email" name="email" class="col-md-8 p-2 mb-3 mb-md-0"
+                  placeholder="Ingresá tu correo electrónico" />
+                <button type="submit" role="button" class="col-md-3 primary-button text-sm-center fw-800">
+                  Suscribete
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="row justify-content-between">
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <img src="../assets/img/Logo biblioteca franklin.png" class="img-fluid" alt="Logo biblioteca franklin" />
+            </div>
+            <div class="col-6 col-md-3 row d-flex justify-content-around justify-content-center align-items-center">
+              <a type="link" title="Instagram" href="#" target="_blank" rel="noopener noreferrer" class="col-1 text-primary-red"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a type="link" title="Twitter" href="#" target="_blank" rel="noopener noreferrer" class="col-1 text-primary-red"><i
+                  class="fa-brands fa-twitter"></i></a>
+              <a type="link" title="Facebook" href="#" target="_blank" rel="noopener noreferrer" class="col-1 text-primary-red"><i
+                  class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    <!-- Register modal-->
+
+  <div class="modal" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-body p-0 m-0">
+          <section class="container-fluid vh-100">
+            <div class="row justify-content-evenly vh-100">
+              <div class="d-none d-lg-block col-lg-6 bg-half-color pt-4">
+                <div class="row justify-content-center pt-4">
+                  <div class="col-8 pt-4">
+                    <img src="../assets/img/girl-sitting-on-armchair-with-laptop-by-oblik-studio.png"
+                      class="img-fluid pt-4" alt="">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-12  col-lg-6 py-4 pe-4 mb-4">
+                <div class="text-end mb-4 pb-2">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h4 class="fw-400">Te invitamos a formar parte de nuestra comunidad</h4>
+
+                <form class="row g-3 mt-4 pe-2 formulario" action="./profile.html">
+                  <div class="col-12 form-register">
+                    <input type="text" class="form-control fw-300 py-2" name="name" id="nombresu" title="Sólo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Nombre y apellido" required />
+                  </div>
+                  <div class="col-12 form-register">
+                    <input type="text" class="form-control fw-300 py-2" name="doc" id="dnisu" title="DNI debe tener 7-8 dígitos (con o sin puntos)" pattern="^[\d]{1,2}\.?[\d]{3,3}\.?[\d]{3,3}$" placeholder="Documento de identidad" required />
+                  </div>
+                  <div class="col-md-4 form-register">
+                    <input type="text" class="form-control fw-300 py-2" name="cod" id="areasu" title="Solo acepta números" pattern="^[0-9]+" placeholder="Código de área" required />
+                  </div>
+                  <div class="col-md-8 form-register">
+                    <input type="tel" class="form-control fw-300 py-2" name="telep" id="telefonosu" title="Solo acepta números" pattern="^[0-9]+" placeholder="Número de teléfono" required />
+                  </div>
+                  <div class="col-md-6 form-register">
+                    <input type="text" class="form-control fw-300 py-2" name="local" id="localidadsu" title="Solo acepta letras" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Localidad" required />
+                  </div>
+                  <div class="col-md-6 form-register">
+                    <input type="text" class="form-control fw-300 py-2" name="prov" id="provinciasu" title="Solo acepta letras" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" placeholder="Provincia" required />
+                  </div>
+                  <div class="col-12 form-register">
+                    <input type="email" class="form-control fw-300 py-2" name="email" id="mailsu" title="Ingrese un correo válido" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Correo electronico" required />
+                  </div>
+                  <div class="col-12 form-register">
+                    <input type="password" class="form-control fw-300 py-2" name="contra" id="contrasenasu" title="Mínimo: 8 caracteres, 1 mayúscula y 1 número" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" placeholder="Contraseña" required />
+                  </div>
+                  <div class="col-12 fw-300 text-end">
+                    <span>
+                      Ya tenes una cuenta?
+                      <a type="button" class="fw-700 text-reset text-decoration-none text-primary-black"
+                        data-bs-toggle="modal" data-bs-target="#loginModal">Ingresá</a>
+                    </span>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button class="primary-button fw-800 form-control" type="submit" name="crearsu" id="crear" value="registro">
+                      Crear cuenta
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login modal-->
+
+  <div class="modal" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-body p-0 m-0">
+          <section class="container-fluid vh-100">
+            <div class="row justify-content-evenly vh-100">
+              <div class="d-none d-lg-block col-lg-6 bg-half-color pt-4">
+                <div class="row justify-content-center pt-4">
+                  <div class="col-7 pt-4">
+                    <img src="../assets/img/girl-with-objects-around-her-by-oblik-studio.png" class="img-fluid pt-4"
+                      alt="" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6 py-4 pe-4 mb-4 align-self-center">
+                <div class="text-end mb-4 pb-2">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <h4 class="fw-400">Bienvenidx!! Nos alegra tenerte aquí</h4>
+
+                <!-- Mensajes de Verificación -->
+                <div id="error" class="alert alert-danger d-none" role="alert">
+                  La Contraseña o el email no coinciden, vuelve a intentar !
+                </div>
+                <div id="ok" class="alert alert-success d-none" role="alert">
+                  Conectando ...
+               </div>
+                <!-- Fin Mensajes de Verificación -->
+
+                <form class="row mt-4 pe-2 needs-validation" novalidate>
+                  <div class="col-12 form-register pb-4 pt-4">
+                    <input id="emailog" type="email" class="form-control fw-300 py-3" placeholder="Correo electronico"
+                      required />
+                    
+                    <div class="invalid-feedback">El correo no es válido</div>
+                  </div>
+
+                  <div class="col-12 pb-5">
+                    <input id="passlog" type="password" class="form-control fw-300 py-3" placeholder="Contraseña"
+                      required />
+                  
+                    <div class="invalid-feedback">
+                      El campo no puede estar vacio
+                    </div>
+                  </div>
+                  <div class="d-grid gap-2 pb-5">
+                    <button class="primary-button fw-800" type="submit" id="liveToast">
+                      Confirmar
+                    </button>
+                  </div>
+                  <div class="col-12 fw-300 text-end">
+                    <span>
+                      No tenés cuenta?
+                      <a type="button" class="fw-700 text-reset text-decoration-none text-primary-black"
+                        data-bs-toggle="modal" data-bs-target="#registerModal">Registrate</a>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script src="../dist/bundle.js"></script>
+  <script src="../js/singup.js"></script>
+  <script src="../js/logica.js"></script>
+  <script src="../js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+[
+  {
+    "title": "Punk 57",
+    "author": {
+      "name": "Penelope Douglas"
+    },
+    "img": "../assets/img/book-cover/punk-57.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Prisionero",
+    "author": {
+      "name": "Roma Damned"
+    },
+    "img": "../assets/img/book-cover/prisionero.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate":  "23/12/2020",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Boulevard",
+    "author": {
+      "name": "Flor M. Salvador"
+    },
+    "img": "../assets/img/book-cover/boulevard.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "La casa de las grietas",
+    "author": {
+      "name": "Krystal Sutherland"
+    },
+    "img": "../assets/img/book-cover/la-casa-de-las-grietas.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate": "",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Un linaje oscuro",
+    "author": {
+      "name": "Victoria Vilchez"
+    },
+    "img": "../assets/img/book-cover/un-linaje-oscuro.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate": "",
+    "score": 5,
+    "stock": 100,
+    "rentedTotal": 10
+  },
+  {
+    "title": "Violeta",
+    "author": {
+      "name": "Isabel Allende"
+    },
+    "img": "../assets/img/book-cover/violeta.png",
+    "description": "",
+    "publisher": {
+      "name": "Ivrea"
+    },
+    "isbn": "",
+    "pageAmount": 100,
+    "language": "",
+    "genre": "",
+    "releaseDate": "",
+    "score": 4,
+    "stock": 100,
+    "rentedTotal": 10
+  }
+
+]

@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Mariano Salgado",
+    "supscription": true,
+    "profilePic": "../assets/img/users-profile-photos/mariano-salgado.png",
+    "actualRented": 2,
+    "rentedTotal": 4
+  },
+  {
+    "name": "Mariana Herrera",
+    "supscription": false,
+    "profilePic": "../assets/img/users-profile-photos/mariana-herrera.png",
+    "actualRented": 0,
+    "rentedTotal": 10
+  },
+  {
+    "name": "Pedro Altamar",
+    "supscription": true,
+    "profilePic": "../assets/img/users-profile-photos/pedro-altamar.png",
+    "actualRented": 3,
+    "rentedTotal": 5
+  },
+  {
+    "name": "juan-cruz",
+    "supscription": true,
+    "profilePic": "../assets/img/users-profile-photos/juan-cruz.png",
+    "actualRented": 1,
+    "rentedTotal": 6
+  },
+  {
+    "name": "Romina Belp",
+    "supscription": true,
+    "profilePic": "../assets/img/users-profile-photos/romina-belp.png",
+    "actualRented": 2,
+    "rentedTotal": 8
+  },
+  {
+    "name": "Jonathan Hernandez",
+    "supscription": false,
+    "profilePic": "../assets/img/users-profile-photos/jonathan-hernandez.png",
+    "actualRented": 0,
+    "rentedTotal": 15
+  },
+  {
+    "name": "Marcos Guerrin",
+    "supscription": false,
+    "profilePic": "../assets/img/users-profile-photos/marcos-guerrin.png",
+    "actualRented": 0,
+    "rentedTotal": 2
+  },
+  {
+    "name": "Lucia Estrada",
+    "supscription": false,
+    "profilePic": "../assets/img/users-profile-photos/lucia-estrada.png",
+    "actualRented": 4,
+    "rentedTotal": 24
+  }
+]
