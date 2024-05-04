@@ -6,7 +6,6 @@ import { CheckoutModule } from './checkout/checkout.module';
 import { BookDetailModule } from './book/book-detail.module';
 import { CartModule } from './cart/cart.module';
 import { AccountModule } from './account/account.module';
-import { AboutUsModule } from '../modules/about-us/about-us.module';
 
 @NgModule({
   imports: [
@@ -16,8 +15,7 @@ import { AboutUsModule } from '../modules/about-us/about-us.module';
     CartModule,
     AccountModule,
     CheckoutModule,
-    PagesRoutingModule,
-    AboutUsModule
+    PagesRoutingModule
   ],
   exports: [
     HomeModule,
@@ -25,7 +23,6 @@ import { AboutUsModule } from '../modules/about-us/about-us.module';
     CartModule,
     AccountModule,
     CheckoutModule,
-    AboutUsModule
   ]
 })
 export class PagesModule { }
