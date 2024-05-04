@@ -74,6 +74,14 @@ export class NavbarComponent implements OnInit {
     this.adminNavigationService.navigateToPublisherDashboard();
   }
 
+  onClickNavigateToContact() {
+    console.log('Ir a contacto');
+  }
+
+  onClickNavigateToAboutUs() {
+    this.navigationService.navigateToAboutUs();
+  };
+
   getProfile() {
     this.authService.getProfileListener().subscribe((user) => {
       this.profile = user;
