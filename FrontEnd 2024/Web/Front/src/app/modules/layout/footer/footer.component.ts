@@ -25,4 +25,8 @@ export class FooterComponent {
   onClickMyAccount() {
     this.navigationService.navigateToProfile();
   }
+
+  onClickAboutUs() {
+    this.navigationService.navigateToAboutUs();
+  }
 }
