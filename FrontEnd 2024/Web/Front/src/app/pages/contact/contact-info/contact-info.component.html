@@ -1,0 +1,19 @@
+<div class="main-container">
+  <p class="fs-md">{{ description }}</p>
+  <div class="icons-container">
+    <a *ngFor="let red of socialMedia" [href]="red.link" target="_blank" [attr.aria-label]="red.ariaLabel">
+      <img [src]="red.src" alt="">
+    </a>
+  </div>
+  <div class="separator"></div>
+  <div class="data-container">
+    <div *ngFor="let data of contactData" class="mb-40">
+      <h2 class="fs-md-1 subtitle">{{ data.title }}</h2>
+      <div class="source-container">
+        <div><img [src]="data.icon" alt="" class="data-icon"></div>
+        <p *ngIf="!data.icon.includes('mail')" class="fs-md">{{ data.text }}</p>
+        <a class="fs-md" *ngIf="data.icon.includes('mail')" [href]="'mailto:' + data.text">{{ data.text }}</a>
+      </div>
+    </div>
+  </div>
+</div>
