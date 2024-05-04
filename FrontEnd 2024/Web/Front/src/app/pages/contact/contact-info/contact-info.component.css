@@ -35,3 +35,15 @@ a:hover {
 .mb-40 {
   margin-bottom: 40px;
 }
+
+@media all and (max-width: 1200px) {
+  .main-container {
+    width: 320px;
+  }
+}
+
+@media all and (max-width: 380px) {
+  a {
+    word-break: break-all;
+  }
+}
