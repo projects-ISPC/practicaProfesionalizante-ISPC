@@ -75,7 +75,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onClickNavigateToContact() {
-    console.log('Ir a contacto');
+    this.navigationService.navigateToContact();
   }
 
   onClickNavigateToAboutUs() {
