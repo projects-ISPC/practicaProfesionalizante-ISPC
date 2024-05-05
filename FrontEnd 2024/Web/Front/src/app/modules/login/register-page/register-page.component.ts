@@ -22,6 +22,10 @@ export class RegisterPageComponent implements OnInit {
       { type: 'required', message: 'Campo requerido.' },
       { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
     ],
+    lastname: [
+      { type: 'required', message: 'Campo requerido.' },
+      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
+    ],
     document: [
       { type: 'required', message: 'Campo requerido.' },
       { type: 'minlength', message: 'Mínimo 7 dígitos' },
@@ -86,6 +90,7 @@ export class RegisterPageComponent implements OnInit {
   createForm() {
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.maxLength(80)]],
+      lastname: ['', [Validators.required, Validators.maxLength(80)]],
       email: ['', [Validators.required, Validators.maxLength(80), Validators.pattern(regExEmail)]],
       password: ['', [Validators.required, Validators.pattern(regExPassword)]],
       areaCode: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(4), Validators.pattern(regExOnlyNumbers)]],
@@ -136,6 +141,10 @@ export class RegisterPageComponent implements OnInit {
     return this.registerForm.get('name');
   }
 
+  get lastname() {
+    return this.registerForm.get('lastname');
+  }
+
   get document() {
     return this.registerForm.get('document');
   }
@@ -176,6 +185,7 @@ export class RegisterPageComponent implements OnInit {
   getUserDto(): CreateUserDTO {
     return {
       username: this.registerForm.value.name,
+      // userlastname: this.registerForm.value.lastname,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       telephone_area_code: this.registerForm.value.areaCode,
