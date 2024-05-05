@@ -112,7 +112,7 @@ class Publisher(models.Model):
     class Meta:
         db_table = "publisher"
         verbose_name = "Publisher"
-        verbose_name_plura = "Publishers"
+        verbose_name_plural = "Publishers"
     def __unicode__(self):
         return self.name
     def __str__(self):
