@@ -14,7 +14,7 @@ a:hover {
 }
 
 .main-container {
-  width: 30%;
+  max-width: 360px;
 }
 
 .separator {
@@ -39,6 +39,12 @@ a:hover {
 @media all and (max-width: 1200px) {
   .main-container {
     width: 320px;
+  }
+}
+
+@media all and (max-width: 769px) {
+  .main-container {
+    margin: 0 auto;
   }
 }
 
