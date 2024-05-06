@@ -1,0 +1,107 @@
+CREATE TABLE ROLE (
+    id_rol INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE USER (
+    id_user INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    dni INT,
+    address_province VARCHAR(30),
+    address_location VARCHAR(50),
+    address_street VARCHAR(50),
+    address_number INT,
+    id_rol INT,
+    FOREIGN KEY (id_rol) REFERENCES ROLE(id_rol)
+);
+
+CREATE TABLE DELIVERY (
+    id_del INT PRIMARY KEY AUTO_INCREMENT,
+    status BOOLEAN NOT NULL
+);
+
+CREATE TABLE PAYMENT (
+    id_pay INT PRIMARY KEY AUTO_INCREMENT,
+    namecard VARCHAR(30) NOT NULL,
+    numbercard INT NOT NULL,
+    exp_date DATE NOT NULL,
+    id_user INT,
+    FOREIGN KEY (id_user) REFERENCES USER(id_user)
+);
+
+CREATE TABLE SALE (
+    id_sal INT PRIMARY KEY AUTO_INCREMENT,
+    sale_date DATE NOT NULL,
+    delivery_type BOOLEAN NOT NULL,
+    payment_type BOOLEAN NOT NULL,
+    total_quantity INT NOT NULL,
+    total_cost DECIMAL(10,2) NOT NULL,
+    id_del INT,
+    id_user INT,
+    FOREIGN KEY (id_del) REFERENCES DELIVERY(id_del),
+    FOREIGN KEY (id_user) REFERENCES USER(id_user)
+);
+
+CREATE TABLE AUTOR (
+    id_aut INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE GENRE (
+    id_gen INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE PUBLISHER (
+    id_pub INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE BOOK (
+    id_book INT PRIMARY KEY AUTO_INCREMENT,
+    isbn INT,
+    title VARCHAR(100) NOT NULL,
+    pages INT NOT NULL,
+    releaseyear INT,
+    bookcover VARCHAR(100),
+    stock INT NOT NULL,
+    synopsis TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    id_aut INT,
+    id_pub INT,
+    FOREIGN KEY (id_aut) REFERENCES AUTOR(id_aut),
+    FOREIGN KEY (id_pub) REFERENCES PUBLISHER(id_pub)
+);
+
+CREATE TABLE PRODUCTS (
+    id_pro INT PRIMARY KEY AUTO_INCREMENT,
+    id_book INT NOT NULL,
+    id_sal INT NOT NULL,
+    amount INT NOT NULL,
+    FOREIGN KEY (id_book) REFERENCES BOOK(id_book),
+    FOREIGN KEY (id_sal) REFERENCES SALE(id_sal)
+);
+
+CREATE TABLE BOOK_GENRE (
+    id_bg INT PRIMARY KEY AUTO_INCREMENT,
+    id_book INT NOT NULL,
+    id_gen INT NOT NULL,
+    FOREIGN KEY (id_book) REFERENCES BOOK(id_book),
+    FOREIGN KEY (id_gen) REFERENCES GENRE(id_gen)
+);
+
+CREATE TABLE CREDENTIAL (
+    id_cred INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT NOT NULL,
+    psw VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    FOREIGN KEY (id_user) REFERENCES USER(id_user)
+);
+
+CREATE TABLE CONTACT (
+    id_cont INT PRIMARY KEY AUTO_INCREMENT,
+    email_cont VARCHAR(100) NOT NULL,
+    fullname VARCHAR(100) NOT NULL,
+    mensseger TEXT NOT NULL
+);
