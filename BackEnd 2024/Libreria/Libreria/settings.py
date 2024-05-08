@@ -57,8 +57,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'Libreria.urls'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost/",
-    "http://127.0.0.1/",
+    'http://127.0.0.1',
+    'http://localhost',
 ]
 
 TEMPLATES = [
