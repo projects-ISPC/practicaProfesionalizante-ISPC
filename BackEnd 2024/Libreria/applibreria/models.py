@@ -138,7 +138,7 @@ class Book(models.Model):
     title = models.CharField(max_length=100, blank=False)
     pages = models.IntegerField(blank=True)
     releaseyear = models.IntegerField(blank=True)
-    bookcover = models.CharField(max_length=150, blank=True)
+    bookcover = models.URLField(blank=True)
     stock = models.IntegerField(blank=False)
     synopsis = models.TextField(max_length=2000, blank=False)
     price = models.DecimalField(default=1, decimal_places=2, max_digits=10, blank=False)

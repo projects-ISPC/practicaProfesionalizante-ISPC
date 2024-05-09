@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
-import { SearchService } from 'src/app/services/search/search.service';
+import { SearchService } from 'src/app/services/payment/search/search.service';
 import { BookService } from 'src/app/services/book/book.service';
 
 @Component({
