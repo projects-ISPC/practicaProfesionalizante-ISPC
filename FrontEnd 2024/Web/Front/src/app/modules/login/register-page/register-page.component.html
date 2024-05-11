@@ -188,17 +188,17 @@
 
             <div class="col-12 py-3">
               <input
-                formControlName="password"
+                formControlName="psw"
                 type="password"
                 class="form-control fw-300 py-3 formInput"
                 placeholder="Contraseña"
                 required
               />
-              <div *ngIf="password?.errors && password?.touched">
-                <ng-container *ngFor="let error of errorMessages.password">
+              <div *ngIf="psw?.errors && psw?.touched">
+                <ng-container *ngFor="let error of errorMessages.psw">
                   <div
                     class="text-danger"
-                    *ngIf="password?.hasError(error.type)"
+                    *ngIf="psw?.hasError(error.type)"
                   >
                     {{ error.message }}
                   </div>

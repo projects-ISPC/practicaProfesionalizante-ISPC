@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -59,6 +60,7 @@ ROOT_URLCONF = 'Libreria.urls'
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1',
     'http://localhost',
+    'http://localhost:4200',
 ]
 
 TEMPLATES = [
@@ -88,10 +90,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dblibreria',
         'USER': 'root',
-       #  'PASSWORD': 'asd2022013',
-        'PASSWORD': 'root',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '33065',
         'OPTIONS': {
         'sql_mode': 'traditional',
 }
