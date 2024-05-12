@@ -6,15 +6,12 @@ class ContactSerializer(serializers.ModelSerializer):
         model = Contact
         fields = '__all__'
 
-#Guardo sólo los datos name y lastname en el formulario de registro
-class RegisterSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['name', 'lastname', 'id_rol']
- #       model = Credential
- #       fields = '__all__'
+        fields = ['id_user', 'name', 'lastname', 'dni', 'address_province', 'address_location', 'address_street', 'address_number', 'id_rol']
 
 class CredentialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Credential
-        fields = ['email', 'psw']
+        fields = ['id_user', 'email', 'psw']

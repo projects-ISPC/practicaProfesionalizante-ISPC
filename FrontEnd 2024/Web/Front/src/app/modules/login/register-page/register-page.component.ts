@@ -5,10 +5,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user/user.service';
 import { Auth } from 'src/app/models/auth/auth-model';
 import { CreateUserDTO } from 'src/app/models/user/user-model';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, switchMap } from 'rxjs/operators';
 import { regExEmail, regExOnlyNumbers, regExPassword } from 'src/app/utils/regex/regex';
 import { HttpClient } from '@angular/common/http';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register-page',
@@ -65,90 +64,23 @@ export class RegisterPageComponent implements OnInit {
     if (this.registerForm.valid) {
       console.log('Formulario válido');
 
-      const userData = this.registerForm.value;
-      this.submitRegistro(userData);
-    }
-  }
+      const { name, lastname, email, psw } = this.registerForm.value;
+      const userBackendUrl = 'http://127.0.0.1:8000/api/register/';
 
-  /* SUBMIT REGISTRO CREA USER Y LUEGO CREDENCIALES - AUN NO FUNCIONAN CRED */
-
-  submitRegistro(userData: any) {
-    const { name, lastname, email, psw } = userData;
-    const userBackendUrl = 'http://127.0.0.1:8000/api/register/';
-    const credentialBackendUrl = 'http://127.0.0.1:8000/api/credential/';
-  
-    // Primera solicitud POST para crear el usuario
-    this.http.post(userBackendUrl, { name, lastname, id_rol: 2 })
-      .pipe(
-        switchMap((userResponse: any) => {
-          console.log('Usuario registrado', userResponse);
-          const userId = userResponse.id_user; // Obtener el id_user del usuario recién registrado
-  
-          // Segunda solicitud POST para crear las credenciales asociadas al usuario
-          return this.http.post(credentialBackendUrl, { id_user: userId, email, psw });
-        }),
-        tap(credentialResponse => {
-          console.log('Credenciales registradas', credentialResponse);
-          this.onClickRegister();
-        }),
-        catchError(error => {
-          console.log('Error al registrar credenciales', error);
-          throw error;
-        })
-      )
-      .subscribe();
-  }
-
-/* SUBMIT REGISTRO (SOLO TABLA USER)
-
-  submitRegistro(userData: any) {
-
-    const { name, lastname } = userData; // Extraer name y lastname del userData
-    const id_rol = 2;
-    const dataToSend = { name, lastname, id_rol }; // Crear un nuevo objeto con name, lastname, role 2 (user)
-    const backendUrl = 'http://127.0.0.1:8000/api/register/';
-
-    this.http.post(backendUrl, dataToSend)
-      .pipe(
-        tap(response => {
-          console.log('Usuario registrado', response);
-          this.onClickRegister();
-        }),
-        catchError(error => {
-          console.log('Error al registrar', error);
-          throw error;
-        })
-      )
-      .subscribe();
-  }
-
-*/
-
-
-
-/* Código del proyecto anterior:
-
-  registerUser() {
-    this.registerForm.markAllAsTouched();
-    if (this.registerForm.valid) {
-      console.log('valido');
-
-      const userDto = this.getUserDto();
-      this.userService.createUser(userDto)
+      // Realizar la solicitud POST para crear el usuario y las credenciales asociadas
+      this.http.post(userBackendUrl, { name, lastname, email, psw, id_rol: 2 })
         .pipe(
-          tap(response => {
-            console.log('Usuario registrado', response);
-            this.onClickRegister();
-          }),
           catchError(error => {
-            console.log('Error al registrar', error);
+            console.log('Error al registrar usuario', error);
             throw error;
           })
         )
-        .subscribe();
+        .subscribe(() => {
+          console.log('Registro exitoso');
+          this.onClickRegister();
+        });
     }
-
-  }*/
+  }
 
   get name() {
     return this.registerForm.get('name');
@@ -165,18 +97,6 @@ export class RegisterPageComponent implements OnInit {
   get psw() {
     return this.registerForm.get('psw');
   }
-
-  /* Código del proyecto anterior:
-  
-  getUserDto(): CreateUserDTO {
-    return {
-      first_name: this.registerForm.value.name,
-      last_name: this.registerForm.value.lastname,
-      email: this.registerForm.value.email,
-      password: this.registerForm.value.password,
-    };
-  }
-*/
 
   onClickRegister() {
     this.activeModal.close();
