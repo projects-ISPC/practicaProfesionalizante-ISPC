@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import Role, User, Credential, Payment, Contact, Autor, Publisher, Genre, Book, BookGenre, Sale, Products
+from .models import Role, User, Credential, Payment, Contact, Autor, Publisher, Genre, Book, BookGenre, Sale, Products, CustomUser
+from django.contrib.auth import get_user_model
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 # Register your models here.
 
@@ -38,7 +42,16 @@ class SaleAdmin(admin.ModelAdmin):
 
 class ProductsAdmin(admin.ModelAdmin):
     list_display = ("id_book", "id_sal", "amount")
+    
 
+class CustomUserAdmin(BaseUserAdmin):
+    model = CustomUser
+    list_display = ('email', 'username', 'first_name', 'last_name', 'is_staff', 'role')
+    fieldsets = BaseUserAdmin.fieldsets + (
+        (None, {'fields': ('telephone_number', 'telephone_area_code', 'document', 'address_province', 'address_location', 'address_street', 'postal_code', 'role')}),
+    )
+
+admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Role, RoleAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Credential, CredentialAdmin)
@@ -50,4 +63,4 @@ admin.site.register(Genre, GenreAdmin)
 admin.site.register(Book, BookAdmin)
 admin.site.register(BookGenre, BookGenreAdmin)
 admin.site.register(Sale, SaleAdmin)
-admin.site.register(Products, ProductsAdmin)
+admin.site.register(Products, ProductsAdmin)            

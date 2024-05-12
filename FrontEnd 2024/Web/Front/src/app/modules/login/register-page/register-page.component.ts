@@ -7,6 +7,7 @@ import { Auth } from 'src/app/models/auth/auth-model';
 import { CreateUserDTO } from 'src/app/models/user/user-model';
 import { tap, catchError } from 'rxjs/operators';
 import { regExEmail, regExOnlyNumbers, regExPassword } from 'src/app/utils/regex/regex';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-register-page',
@@ -78,6 +79,7 @@ export class RegisterPageComponent implements OnInit {
     private modalService: NgbModal,
     private formBuilder: FormBuilder,
     private userService: UserService,
+    private authService: AuthService,
   ) {
 
   }
@@ -104,27 +106,36 @@ export class RegisterPageComponent implements OnInit {
   }
 
   registerUser() {
-    this.registerForm.markAllAsTouched();
-    if (this.registerForm.valid) {
-      console.log('valido');
-
-      const userDto = this.getUserDto();
-      this.userService.createUser(userDto)
-        .pipe(
-          tap(response => {
-            console.log('Usuario registrado', response);
-            this.onClickRegister();
-          }),
-          catchError(error => {
-            console.log('Error al registrar', error);
-            throw error;
-          })
-        )
-        .subscribe();
-    }
-
+  this.registerForm.markAllAsTouched();
+  if (this.registerForm.valid) {
+    console.log('Registration data is valid');
+    const credentials = this.getRegistrationCredentials();
+    this.authService.registerUser(credentials) // Assuming this is the correct method to call for registration
+      .pipe(
+        tap(response => {
+          console.log('User registered', response);
+          this.authService.updateProfileListener(response); // Assuming you want to update some user profile observable
+          this.onClickClose(); // Assuming this is to close the modal on successful registration
+        }),
+        catchError(error => {
+          console.error('Error during registration', error);
+          throw error;
+        })
+      )
+      .subscribe();
   }
+}
 
+  getRegistrationCredentials(): any {
+    // Extract data from the registerForm and return the credentials object
+    return {
+      name: this.registerForm.value.name,
+      lastname: this.registerForm.value.lastname,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+      // Other fields as needed
+    };
+  }
   // registerUser(event: Event){
   //   event.preventDefault;
 
@@ -185,7 +196,7 @@ export class RegisterPageComponent implements OnInit {
   getUserDto(): CreateUserDTO {
     return {
       username: this.registerForm.value.name,
-      // userlastname: this.registerForm.value.lastname,
+      last_name: this.registerForm.value.lastname,
       email: this.registerForm.value.email,
       password: this.registerForm.value.password,
       telephone_area_code: this.registerForm.value.areaCode,

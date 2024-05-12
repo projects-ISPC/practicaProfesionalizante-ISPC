@@ -29,6 +29,10 @@ export class AuthService {
     return this.http.post<User>(`${this.authApiUrl}/login/`, credentials);
   }
 
+  registerUser(credentials: Credentials): Observable<User> {
+    return this.http.post<User>(`${this.authApiUrl}/register/`, credentials);
+  }
+
   // getProfile(token: string, userId: number) {
   //   const headers = new HttpHeaders();
   //   headers.set('Authorization',  `Bearer ${token}`);
