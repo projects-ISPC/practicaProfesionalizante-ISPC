@@ -60,7 +60,7 @@ export class BookService {
   }
 
   getBookById(id: number) {
-    const url = `${this.apiUrl}/books/${id}/`
+    const url = `http://127.0.0.1:8000/api/detail-book/${id}/`
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`
     return this.http.get<Book>(url);
   }

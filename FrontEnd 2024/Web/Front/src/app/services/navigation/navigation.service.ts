@@ -23,7 +23,7 @@ export class NavigationService {
   }
 
   navigateToCatalogue() {
-    this.router.navigate(['catalogue']);
+    this.router.navigate(['/catalogue']);
   }
 
   navigateToCartDetail() {
