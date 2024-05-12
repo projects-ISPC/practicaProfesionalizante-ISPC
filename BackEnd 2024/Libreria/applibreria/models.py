@@ -3,23 +3,23 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 
-class CustomUser(AbstractUser):
-    email = models.EmailField(('email address'), unique=True)  # Override email field
-    telephone_number = models.CharField(max_length=50)
-    telephone_area_code = models.CharField(max_length=50)
-    document = models.PositiveIntegerField(blank=True, null=True)
-    address_province = models.CharField(max_length=50)
-    address_location = models.CharField(max_length=50)
-    address_street = models.CharField(max_length=50)
-    postal_code = models.CharField(max_length=50)
-    role = models.ForeignKey('Role', on_delete=models.SET_NULL, null=True)
+# class CustomUser(AbstractUser):
+#     email = models.EmailField(('email address'), unique=True)  # Override email field
+#     telephone_number = models.CharField(max_length=50)
+#     telephone_area_code = models.CharField(max_length=50)
+#     document = models.PositiveIntegerField(blank=True, null=True)
+#     address_province = models.CharField(max_length=50)
+#     address_location = models.CharField(max_length=50)
+#     address_street = models.CharField(max_length=50)
+#     postal_code = models.CharField(max_length=50)
+#     role = models.ForeignKey('Role', on_delete=models.SET_NULL, null=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+#     USERNAME_FIELD = 'email'
+#     REQUIRED_FIELDS = ['username']
     
-    def get_user_model():
-        from .models import CustomUser
-        return CustomUser
+#     def get_user_model():
+#         from .models import CustomUser
+#         return CustomUser
 
 
 

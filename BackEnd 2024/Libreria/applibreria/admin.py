@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Role, User, Credential, Payment, Contact, Autor, Publisher, Genre, Book, BookGenre, Sale, Products, CustomUser
+from .models import Role, User, Credential, Payment, Contact, Autor, Publisher, Genre, Book, BookGenre, Sale, Products
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.models import AbstractUser
@@ -14,7 +14,7 @@ class UserAdmin(admin.ModelAdmin):
     list_display = ("name", "lastname", "dni", "address_province", "address_location", "address_street", "address_number", "id_rol")
 
 class CredentialAdmin(admin.ModelAdmin):
-    list_display = ("id_user", "email")
+    list_display = ("id_user", "email", "psw")
 
 class PaymentAdmin(admin.ModelAdmin):
     list_display = ("namecard", "numbercard", "exp_date", "id_user")
@@ -44,14 +44,14 @@ class ProductsAdmin(admin.ModelAdmin):
     list_display = ("id_book", "id_sal", "amount")
     
 
-class CustomUserAdmin(BaseUserAdmin):
-    model = CustomUser
-    list_display = ('email', 'username', 'first_name', 'last_name', 'is_staff', 'role')
-    fieldsets = BaseUserAdmin.fieldsets + (
-        (None, {'fields': ('telephone_number', 'telephone_area_code', 'document', 'address_province', 'address_location', 'address_street', 'postal_code', 'role')}),
-    )
+# class CustomUserAdmin(BaseUserAdmin):
+#     model = CustomUser
+#     list_display = ('email', 'username', 'first_name', 'last_name', 'is_staff', 'role')
+#     fieldsets = BaseUserAdmin.fieldsets + (
+#         (None, {'fields': ('telephone_number', 'telephone_area_code', 'document', 'address_province', 'address_location', 'address_street', 'postal_code', 'role')}),
+#     )
 
-admin.site.register(CustomUser, CustomUserAdmin)
+# admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Role, RoleAdmin)
 admin.site.register(User, UserAdmin)
 admin.site.register(Credential, CredentialAdmin)

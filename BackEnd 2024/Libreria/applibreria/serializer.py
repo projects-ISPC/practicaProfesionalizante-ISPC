@@ -1,19 +1,23 @@
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import get_user_model
 from rest_framework import serializers
-from .models import Contact, CustomUser
+from .models import Contact,  Credential
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = '__all__'
 
-class CustomUserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CustomUser
-        fields = '__all__'
-        read_only_fields = ('id', ) 
+# class CustomUserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = CustomUser
+#         fields = '__all__'
+#         read_only_fields = ('id', ) 
 
+class CredentialSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Credential
+        fields = '__all__'
 
 
 
