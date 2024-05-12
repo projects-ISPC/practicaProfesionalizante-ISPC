@@ -37,6 +37,8 @@ export class RegisterPageComponent implements OnInit {
     ],
   };
 
+  showConfirmationMessage = false;
+
   constructor(
     public activeModal: NgbActiveModal,
     private modalService: NgbModal,
@@ -77,7 +79,7 @@ export class RegisterPageComponent implements OnInit {
         )
         .subscribe(() => {
           console.log('Registro exitoso');
-          this.onClickRegister();
+          this.showConfirmationMessage = true;
         });
     }
   }
@@ -96,10 +98,6 @@ export class RegisterPageComponent implements OnInit {
 
   get psw() {
     return this.registerForm.get('psw');
-  }
-
-  onClickRegister() {
-    this.activeModal.close();
   }
 
   onClickClose() {

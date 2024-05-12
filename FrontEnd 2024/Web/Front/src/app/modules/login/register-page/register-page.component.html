@@ -31,6 +31,10 @@
           </div>
         </div>
 
+        <div *ngIf="showConfirmationMessage" class="alert alert-success" role="alert">
+        Tu cuenta ha sido creada con éxito. ¡Gracias por sumarte a nuestra comunidad!
+        </div>
+
         <form
           [formGroup]="registerForm"
           (ngSubmit)="registerUser()"
