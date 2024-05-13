@@ -109,7 +109,7 @@ export class BookFormComponent implements OnInit {
         this.bookForm.get('isbn')?.setValue(result.isbn);
         this.bookForm.get('title')?.setValue(result.title);
         this.bookForm.get('pageAmount')?.setValue(result.page_amount);
-        this.bookForm.get('bookCover')?.setValue(result.book_cover);
+        this.bookForm.get('bookCover')?.setValue(result.bookcover);
         this.bookForm.get('stock')?.setValue(result.stock);
         this.bookForm.get('releaseYear')?.setValue(result.release_year);
         this.bookForm.get('synopsis')?.setValue(result.synopsis);
@@ -162,7 +162,7 @@ export class BookFormComponent implements OnInit {
       isbn: this.bookForm.value.isbn as string,
       title: this.bookForm.value.title as string,
       page_amount: this.bookForm.value.pageAmount as number,
-      book_cover: this.bookForm.value.bookCover as string,
+      bookcover: this.bookForm.value.bookCover as string,
       stock: this.bookForm.value.stock as number,
       release_year: this.bookForm.value.releaseYear as number,
       synopsis: this.bookForm.value.synopsis as string,
@@ -189,7 +189,7 @@ export class BookFormComponent implements OnInit {
       isbn: this.bookForm.value.isbn as string,
       title: this.bookForm.value.title as string,
       page_amount: this.bookForm.value.pageAmount as number,
-      book_cover: this.bookForm.value.bookCover as string,
+      bookcover: this.bookForm.value.bookCover as string,
       stock: this.bookForm.value.stock as number,
       release_year: this.bookForm.value.releaseYear as number,
       synopsis: this.bookForm.value.synopsis as string,

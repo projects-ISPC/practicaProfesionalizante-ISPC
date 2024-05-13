@@ -20,8 +20,9 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.getAllBooks();
+    this.getAllBooks();    
   }
+
 
   ngOnDestroy() {
     this.bookService.clearSearchResults();
@@ -31,6 +32,7 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
     this.selectedGenre = 0;
     this.bookService.getAllBooks().subscribe((result: Book[]) => {
       this.books = this.bookService.oderBooksByAuthorNameAsc(result);
+      console.log(this.books);
     });
   }
 

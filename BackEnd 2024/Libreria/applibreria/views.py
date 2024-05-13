@@ -33,7 +33,6 @@ class BookDetailView(APIView):
 
 class CatalogueView(APIView):
     def get(self, request):
-        #print("Llamado a la vista CatalogueView")
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)

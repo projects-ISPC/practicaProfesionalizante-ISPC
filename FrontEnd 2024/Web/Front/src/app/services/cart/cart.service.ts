@@ -19,7 +19,7 @@ export class CartService {
       isbn: book.isbn,
       title: book.title,
       author: book.author,
-      book_cover: book.book_cover,
+      bookcover: book.bookcover,
       price: book.price,
       selectedAmount: 0,
     };
