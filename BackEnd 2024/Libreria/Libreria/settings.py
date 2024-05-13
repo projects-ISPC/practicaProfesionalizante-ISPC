@@ -59,6 +59,8 @@ ROOT_URLCONF = 'Libreria.urls'
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1',
     'http://localhost',
+    'http://localhost:4200',
+    'http://localhost:8000',
 ]
 
 TEMPLATES = [
