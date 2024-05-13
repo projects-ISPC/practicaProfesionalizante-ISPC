@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { SendContact } from 'src/app/models/contact/contact-model';
+import { ContactserviceService } from 'src/app/services/contact/contactservice.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,14 +15,25 @@ export class ContactFormComponent {
   contactForm!: FormGroup;
   validForm: boolean;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private contactService: ContactserviceService) {
     this.description = 'Dejanos tu comentario o sugerencia, responderemos a la brevedad.';
     this.validForm = false;
   }
 
   onSaveHandle(event: Event) {
     event.preventDefault;
-    console.log(event,'Formulario enviado');
+    this.contactService.sendContact(this.contactForm.value as SendContact).subscribe({
+      next: (contactRequest) => {
+        console.log(contactRequest);
+      },
+      error: (contactError) => {
+        console.error(contactError);
+      },
+      complete: () => {
+        console.info("Mensaje enviado");
+        this.contactForm.reset();
+      }
+    })
   }
 
   ngOnInit(): void {

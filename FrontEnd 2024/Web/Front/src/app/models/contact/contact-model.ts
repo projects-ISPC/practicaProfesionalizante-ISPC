@@ -9,3 +9,9 @@ export interface ContactData {
   text: string;
   icon: string;
 }
+
+export interface SendContact{
+  email: string,
+  messege: string, 
+  name: string
+}
