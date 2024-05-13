@@ -41,4 +41,8 @@ export class NavigationService {
   navigateToAboutUs() {
     this.router.navigate(['about-us']);
   }
+
+  navigateToContact() {
+    this.router.navigate(['contact']);
+  }
 }
