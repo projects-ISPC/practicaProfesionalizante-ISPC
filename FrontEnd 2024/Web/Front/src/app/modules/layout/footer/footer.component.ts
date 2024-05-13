@@ -29,4 +29,9 @@ export class FooterComponent {
   onClickAboutUs() {
     this.navigationService.navigateToAboutUs();
   }
+
+  onClickNavigateToContact() {
+    this.navigationService.navigateToContact()
+  }
+
 }
