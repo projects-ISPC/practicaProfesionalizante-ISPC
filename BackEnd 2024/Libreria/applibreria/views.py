@@ -6,7 +6,6 @@ from .serializer import ContactSerializer
 from .serializer import BookSerializer
 from .models import Book
 from django.http import Http404
-
 # Create your views here.
 
 class AddContactView(APIView):
@@ -19,7 +18,7 @@ class AddContactView(APIView):
 
 
 #¿Esta view es necesaria?
-"""
+
 class BookDetailView(APIView):
     def get_object(self, pk):
         try:
@@ -31,10 +30,10 @@ class BookDetailView(APIView):
         book = self.get_object(pk)
         serializer = BookSerializer(book)
         return Response(serializer.data)
-"""
+
 class CatalogueView(APIView):
     def get(self, request):
-        print("Llamado a la vista CatalogueView")
+        #print("Llamado a la vista CatalogueView")
         books = Book.objects.all()
         serializer = BookSerializer(books, many=True)
         return Response(serializer.data)
