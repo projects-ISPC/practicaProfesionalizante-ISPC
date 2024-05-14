@@ -4,8 +4,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import ContactSerializer
 from .serializer import BookSerializer
-from .models import Book
-from django.http import Http404
+from .models import Book, BookGenre, Genre
+from django.http import Http404, JsonResponse
 # Create your views here.
 
 class AddContactView(APIView):
@@ -32,7 +32,27 @@ class BookDetailView(APIView):
         return Response(serializer.data)
 
 class CatalogueView(APIView):
-    def get(self, request):
+    def get(self,request):
         books = Book.objects.all()
-        serializer = BookSerializer(books, many=True)
-        return Response(serializer.data)
+        lib = []
+        for book in books:
+            genres = BookGenre.objects.filter(id_book=book.id_book)
+            g = []
+            for obj in genres:
+                g.append(obj.id_gen)           
+            lib.append ({
+                'id_book':book.id_book, 
+                'isbn': book.isbn,
+                'author':book.id_aut.name,
+                #'genres': g, 
+                'title': book.title, 
+                'page_amount': book.pages, 
+                'bookcover': book.bookcover, 
+                'stock': book.stock,
+                'release_year': book.releaseyear,
+                'synopsis': book.synopsis,
+                'price': book.price,
+                'tags': "No se que es... ( ˘︹˘ )"
+                })
+        response_data= lib
+        return JsonResponse(response_data, safe=False)

@@ -86,8 +86,8 @@ export class BookService {
   oderBooksByAuthorNameAsc(books: Book[]) {
     books.sort((a, b) => {
       if(a && a.author && b && b.author){
-        const nameA = a.author.name.toLowerCase();
-        const nameB = b.author.name.toLowerCase();
+        const nameA = a.author;
+        const nameB = b.author;
 
         if (nameA < nameB) {
           return -1;
