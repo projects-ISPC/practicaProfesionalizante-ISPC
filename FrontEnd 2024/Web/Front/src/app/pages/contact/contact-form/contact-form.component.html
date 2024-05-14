@@ -1,0 +1,10 @@
+<div class="main-container">
+  <h1 class="title fs-lg-2 font-bold">No dudes en escribirnos</h1>
+  <p class="fs-md">{{ description }}</p>
+  <form [formGroup]="contactForm" (ngSubmit)="onSaveHandle($event)">
+    <input type="text" placeholder="Nombre y apellido" formControlName="name" (keypress)="validateInputName($event)" />
+    <input type="email" placeholder="Correo electrónico" formControlName="email" />
+    <textarea placeholder="Comentarios" formControlName="message"></textarea>
+    <button type="submit" [disabled]="!validForm">Enviar comentario</button>
+  </form>
+</div>

@@ -10,18 +10,19 @@ import { Purchase } from 'src/app/models/user/purchase-model';
   providedIn: 'root'
 })
 export class UserService {
+  private baseURL = 'http://localhost:8000/';
+
   private apiURL = `${environment.API_URL}`;
 
-  private authApiUrl = `${environment.AUTH_API_URL}/register/`;
+/*  private authApiUrl = `${environment.AUTH_API_URL}/register/`; */
 
   constructor(
     private http: HttpClient
   ) { }
 
-  createUser(dto: CreateUserDTO): Observable<CreateUserDTO> {
-    return this.http.post<CreateUserDTO>(this.authApiUrl, dto);
+  createUser(userData: any) {
+    return this.http.post(`${this.baseURL}api/register/`, userData);
   }
-
 
   getPersonalData(id: number): Observable<CreateUserDTO> {
     const url = `${this.apiURL}/profiles/${id}`;

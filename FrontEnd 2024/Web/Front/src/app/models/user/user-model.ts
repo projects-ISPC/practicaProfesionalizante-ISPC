@@ -23,7 +23,15 @@ export interface User {
   user_permissions: any[];
 }
 
-export interface CreateUserDTO extends Omit
+export interface CreateUserDTO {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+}
+
+/* export interface CreateUserDTO extends Omit
   <User, 'id_user' | 'last_login' | 'is_superuser' | 'first_name' | 'last_name' | 'is_staff' | 'is_active' | 'date_joined' | 'groups' | 'user_permissions'> { }
+*/
 
 export interface UserBasicInfoDTO extends Pick<User, 'username' | 'email' | 'telephone_area_code' | 'telephone_number'> { }
