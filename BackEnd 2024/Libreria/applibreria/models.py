@@ -20,11 +20,11 @@ class User(models.Model):
     id_user = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, blank=False)
     lastname = models.CharField(max_length=50, blank=False)
-    dni = models.IntegerField(blank=True)
-    address_province = models.CharField(max_length=30, blank=True)
-    address_location = models.CharField(max_length=30, blank=True)
-    address_street = models.CharField(max_length=50, blank=True)
-    address_number = models.IntegerField(blank=True)
+    dni = models.IntegerField(blank=True, null=True)
+    address_province = models.CharField(max_length=30, blank=True, null=True)
+    address_location = models.CharField(max_length=30, blank=True, null=True)
+    address_street = models.CharField(max_length=50, blank=True, null=True)
+    address_number = models.IntegerField(blank=True, null=True)
     id_rol = models.ForeignKey(Role, to_field="id_rol", on_delete=models.CASCADE)
     class Meta:
         db_table = "user"
