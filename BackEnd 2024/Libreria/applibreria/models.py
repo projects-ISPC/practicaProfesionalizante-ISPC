@@ -81,8 +81,8 @@ class Contact(models.Model):
 
     id_cont = models.AutoField(primary_key=True)
     email_cont = models.CharField(max_length=100, blank=False)
-    fullname = models.CharField(max_length=100, blank=False)
-    menssenger = models.TextField(max_length=1500, blank=False)
+    name = models.CharField(max_length=100, blank=False)
+    messege = models.TextField(max_length=1500, blank=False)
     class Meta:
         db_table = "contact"
         verbose_name = "Payment"
