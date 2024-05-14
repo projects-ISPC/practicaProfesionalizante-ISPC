@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -61,6 +62,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1',
     'http://localhost',
     'http://localhost:4200',
+    'http://localhost:4200',
     'http://localhost:8000',
 ]
 
@@ -92,8 +94,9 @@ DATABASES = {
         'NAME': 'dblibreria',
         'USER': 'root',
         'PASSWORD': '',
+        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '33065',
+        'PORT': '3306',
         'OPTIONS': {
         'sql_mode': 'traditional',
 }
@@ -141,3 +144,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'FrontEnd2024', 'Web', 'Front', 'src', 'assets', 'img', 'book-cover', 'media')

@@ -1,5 +1,7 @@
 from rest_framework import serializers
 from .models import Contact, User, Credential
+from .models import Contact
+from .models import Book
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,3 +17,9 @@ class CredentialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Credential
         fields = ['id_user', 'email', 'psw']
+
+class BookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = '__all__'
+

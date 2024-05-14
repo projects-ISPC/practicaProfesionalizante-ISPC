@@ -45,7 +45,7 @@ export class BookService {
   }
 
   getAllBooks() {
-    const url = `${this.apiUrl}/books/`;
+    const url = `http://127.0.0.1:8000/api/catalogue`;
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc`;
     return this.http.get<Book[]>(url);
   }
@@ -60,7 +60,7 @@ export class BookService {
   }
 
   getBookById(id: number) {
-    const url = `${this.apiUrl}/books/${id}/`
+    const url = `http://127.0.0.1:8000/api/book-detail/${id}`
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&isbn=${isbn}`
     return this.http.get<Book>(url);
   }
@@ -85,14 +85,16 @@ export class BookService {
 
   oderBooksByAuthorNameAsc(books: Book[]) {
     books.sort((a, b) => {
-      const nameA = a.author.name.toLowerCase();
-      const nameB = b.author.name.toLowerCase();
+      if(a && a.author && b && b.author){
+        const nameA = a.author;
+        const nameB = b.author;
 
-      if (nameA < nameB) {
-        return -1;
-      }
-      if (nameA > nameB) {
-        return 1;
+        if (nameA < nameB) {
+          return -1;
+        }
+        if (nameA > nameB) {
+          return 1;
+        }
       }
       return 0;
     });

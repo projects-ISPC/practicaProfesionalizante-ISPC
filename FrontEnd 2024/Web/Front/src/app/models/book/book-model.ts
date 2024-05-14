@@ -10,7 +10,7 @@ export interface Book {
   genres: number[];
   title: string;
   page_amount: number;
-  book_cover: string;
+  bookcover: string;
   stock: number;
   release_year: number;
   synopsis: string;
@@ -19,7 +19,7 @@ export interface Book {
 }
 
 export interface SelectedBookDto
-  extends Pick<Book, 'id_book' | 'isbn' | 'title' | 'author' | 'book_cover' | 'price'> {
+  extends Pick<Book, 'id_book' | 'isbn' | 'title' | 'author' | 'bookcover' | 'price'> {
   selectedAmount: number;
 }
 
