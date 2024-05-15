@@ -39,7 +39,7 @@ class Credential(models.Model):
 
     id_cred = models.AutoField(primary_key=True)
     id_user = models.ForeignKey(User, to_field="id_user", on_delete=models.CASCADE)
-    email = models.CharField(max_length=100, blank=False)
+    email = models.CharField(max_length=100, blank=False, unique=True)
     psw = models.CharField(max_length=255, blank=False)
     class Meta:
         db_table = "credential"

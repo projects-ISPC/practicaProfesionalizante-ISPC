@@ -93,10 +93,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dblibreria',
         'USER': 'root',
-        'PASSWORD': '',
-        'PASSWORD': '',
+        'PASSWORD': 'Argentina10#',
+        # 'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '3301',
         'OPTIONS': {
         'sql_mode': 'traditional',
 }
