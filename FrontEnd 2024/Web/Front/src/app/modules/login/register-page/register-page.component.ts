@@ -78,6 +78,7 @@ export class RegisterPageComponent implements OnInit {
         .subscribe(() => {
           console.log('Registro exitoso');
           this.showConfirmationMessage = true;
+          this.registerForm.reset(); // Vaciar los campos del formulario
         });
     }
   }
