@@ -23,6 +23,19 @@ export interface User {
   user_permissions: any[];
 }
 
+export interface Profile {
+  id_user: number;
+  name: string;
+  lastname: string;
+  dni: number;
+  address_province: string;
+  address_location: string;
+  address_street: string;
+  address_number: number;
+  id_rol: number;
+  email: string;
+}
+
 export interface CreateUserDTO {
   first_name: string;
   last_name: string;

@@ -6,7 +6,7 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 import { AdminNavigationService } from 'src/app/admin/services/navigation/navigation.service';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Auth } from 'src/app/models/auth/auth-model';
-import { User } from 'src/app/models/user/user-model';
+import { Profile } from 'src/app/models/user/user-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { CartService } from 'src/app/services/cart/cart.service';
 
@@ -16,7 +16,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  profile: User | null = null;
+  profile: Profile | null = null;
   @Input() isAdmin = false;
 
   constructor(

@@ -6,7 +6,7 @@ from .serializer import ContactSerializer, CredentialSerializer, UserSerializer
 
 from .serializer import ContactSerializer
 from .serializer import BookSerializer
-from .models import Book, BookGenre, Genre
+from .models import Book, BookGenre, Genre, Credential
 from django.http import Http404, JsonResponse
 # Create your views here.
 
@@ -76,3 +76,31 @@ class CatalogueView(APIView):
                 })
         response_data= lib
         return JsonResponse(response_data, safe=False)
+
+class LoginView(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        psw = request.data.get('password')
+        user = Credential.objects.filter(email=email, psw=psw)
+        print(user[0])
+        if user.exists():
+            response_data = {
+                'id_user': user[0].id_user.id_user,
+                'name': user[0].id_user.name,
+                'lastname': user[0].id_user.lastname,
+                'dni': user[0].id_user.dni,
+                'address_province': user[0].id_user.address_province,
+                'address_location': user[0].id_user.address_location,
+                'address_street': user[0].id_user.address_street,
+                'address_number': user[0].id_user.address_number,
+                'id_rol': user[0].id_user.id_rol.id_rol,
+                'email': user[0].email
+            }
+            return Response(response_data, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Credenciales incorrectas'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class LogoutView(APIView):
+    def post(self, request):
+        return Response({'response': 'Deslogeo exitoso'}, status=status.HTTP_200_OK)

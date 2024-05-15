@@ -7,8 +7,11 @@ import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { tap, catchError} from 'rxjs/operators';
 import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
 
-
-
+interface ErrorMessages {
+  email: { type: string, message: string }[],
+  password: { type: string, message: string }[],
+  login: { valid: boolean, message: string }
+}
 
 @Component({
   selector: 'app-login-page',
@@ -19,7 +22,7 @@ export class LoginPageComponent {
 
   loginForm!: FormGroup;
 
-  errorMessages = {
+  errorMessages: ErrorMessages = {
     email: [
       { type: 'required', message: 'Campo requerido.' },
       { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
@@ -29,6 +32,7 @@ export class LoginPageComponent {
       { type: 'required', message: 'Campo requerido.' },
       { type: 'pattern', message: 'Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres'}
     ],
+    login: { valid: true, message: 'Ha ingresado credenciales incorrectas. Inténtelo nuevamente.' }
   }
 
   constructor(
@@ -64,11 +68,11 @@ export class LoginPageComponent {
         }),
         catchError(error => {
           console.log('Error al ingresar', error);
+          this.errorMessages.login.valid = false;
           throw error;
         })
       )
       .subscribe();
-      this.activeModal.close();
       } 
       
      

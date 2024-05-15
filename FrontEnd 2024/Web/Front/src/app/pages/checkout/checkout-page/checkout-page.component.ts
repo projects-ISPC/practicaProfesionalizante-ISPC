@@ -24,7 +24,7 @@ import { CartService } from 'src/app/services/cart/cart.service';
 import { Subscription } from 'rxjs';
 import { SelectedBookDto } from 'src/app/models/book/book-model';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { User } from 'src/app/models/user/user-model';
+import { Profile } from 'src/app/models/user/user-model';
 
 @Component({
   selector: 'app-checkout-page',
@@ -51,7 +51,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
   books: SelectedBookDto[] = [];
   totalItems: number = 0;
   totalCost: number = 0;
-  profile: User | null = null;
+  profile: Profile | null = null;
   orderNumber: number | string = '';
 
   stepperOrientation: Observable<StepperOrientation>;

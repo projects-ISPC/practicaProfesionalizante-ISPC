@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { User } from './models/user/user-model';
+import { Profile } from './models/user/user-model';
 import { AuthService } from './services/auth/auth.service';
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Librería Franklin';
   isAdmin = false;
 
-  profile: User | null = null;
+  profile: Profile | null = null;
 
   constructor(
     private router: Router,
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
           this.isAdmin = false;
           return;
         }
-        this.isAdmin = this.profile.is_staff;
+        this.isAdmin = this.profile.id_rol === 2;
         if (this.isAdmin) {
           this.router.navigate(['/admin']);
         }
