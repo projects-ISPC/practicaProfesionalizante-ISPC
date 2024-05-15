@@ -94,9 +94,8 @@ DATABASES = {
         'NAME': 'dblibreria',
         'USER': 'root',
         'PASSWORD': '',
-        'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': '3306',
+        'PORT': '33065',
         'OPTIONS': {
         'sql_mode': 'traditional',
 }
