@@ -74,7 +74,7 @@
         <ng-container *ngIf="!isAdmin">
           <a class="nav-link" (click)="onProfile()" *ngIf="profile">
             <img src="./assets/img/navbar/user.png" alt="perfil" /> Hola
-            {{ profile.username }}</a>
+            {{ profile.name }}</a>
           <a class="nav-link" (click)="logout()" *ngIf="profile">| Cerrar sesión</a>
         </ng-container>
 
