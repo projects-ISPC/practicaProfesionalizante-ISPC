@@ -17,6 +17,11 @@ class CredentialSerializer(serializers.ModelSerializer):
     class Meta:
         model = Credential
         fields = ['id_user', 'email', 'psw']
+        
+    def validate_email(self, value):
+        if Credential.objects.filter(email=value).exists():
+            raise serializers.ValidationError("A user with this email already exists.")
+        return value
 
 class BookSerializer(serializers.ModelSerializer):
     class Meta:

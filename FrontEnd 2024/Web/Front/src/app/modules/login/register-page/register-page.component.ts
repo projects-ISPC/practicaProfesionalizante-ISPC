@@ -2,19 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { LoginPageComponent } from '../login-page/login-page.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/services/user/user.service';
-import { Auth } from 'src/app/models/auth/auth-model';
-import { CreateUserDTO } from 'src/app/models/user/user-model';
-import { tap, catchError, switchMap } from 'rxjs/operators';
-import { regExEmail, regExOnlyNumbers, regExPassword } from 'src/app/utils/regex/regex';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
 
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css']
 })
-
 export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
   errorMessages = {
@@ -38,15 +35,14 @@ export class RegisterPageComponent implements OnInit {
   };
 
   showConfirmationMessage = false;
+  errorMessage: string = '';
 
   constructor(
     public activeModal: NgbActiveModal,
     private modalService: NgbModal,
     private formBuilder: FormBuilder,
-    private userService: UserService,
     private http: HttpClient,
-  ) {
-  }
+  ) {}
 
   ngOnInit(): void {
     this.createForm();
@@ -64,17 +60,19 @@ export class RegisterPageComponent implements OnInit {
   registerUser() {
     this.registerForm.markAllAsTouched();
     if (this.registerForm.valid) {
-      console.log('Formulario válido');
-
       const { name, lastname, email, psw } = this.registerForm.value;
       const userBackendUrl = 'http://127.0.0.1:8000/api/register/';
 
-      // Realizar la solicitud POST para crear el usuario y las credenciales asociadas
       this.http.post(userBackendUrl, { name, lastname, email, psw, id_rol: 2 })
         .pipe(
           catchError(error => {
             console.log('Error al registrar usuario', error);
-            throw error;
+            if (error.status === 400 && error.error.email) {
+              this.errorMessage = 'Ya existe un usuario con este email.';
+            } else {
+              this.errorMessage = 'Un error ha sucedido, intente de nuevo';
+            }
+            return throwError(error);
           })
         )
         .subscribe(() => {
@@ -92,12 +90,16 @@ export class RegisterPageComponent implements OnInit {
     return this.registerForm.get('lastname');
   }
 
- get email() {
+  get email() {
     return this.registerForm.get('email');
   }
 
   get psw() {
     return this.registerForm.get('psw');
+  }
+
+  onEmailInput() {
+    this.errorMessage = '';
   }
 
   onClickClose() {
