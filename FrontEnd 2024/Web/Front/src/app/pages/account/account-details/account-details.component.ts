@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { CreateUserDTO, User } from 'src/app/models/user/user-model';
+import { CreateUserDTO, Profile } from 'src/app/models/user/user-model';
 import { UserService } from 'src/app/services/user/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AddressFormComponent } from '../address-form/address-form.component';
@@ -19,7 +19,7 @@ import { Purchase } from 'src/app/models/user/purchase-model';
 export class AccountDetailsComponent implements OnInit, OnDestroy {
   personalData!: CreateUserDTO;
   purchaseData!: Sale[];
-  profile: User | null = null;
+  profile: Profile | null = null;
   userDataSub!: Subscription
 
   constructor(
@@ -32,10 +32,10 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getUserData();
-    this.authService.getProfileListener().subscribe((profile: User | null) => {
+    this.authService.getProfileListener().subscribe((profile: Profile | null) => {
       if (profile) {
         this.profile = { ...profile };
-        this.loadUserPurchases();
+        //this.loadUserPurchases();
 
       }
     });
@@ -54,23 +54,23 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
   }
 
 
-  loadUserPurchases() {
-    if (this.profile === null) {
-      return
+  // loadUserPurchases() {
+  //   if (this.profile === null) {
+  //     return
 
-    }
-    this.authService.getBookPurchases(this.profile.id_user)
-      .subscribe((purchases: Sale[]) => {
-        this.purchaseData = purchases;
-        console.log('Get purchase user', this.purchaseData)
-      });
-  }
+  //   }
+    // this.authService.getBookPurchases(this.profile.id_user)
+    //   .subscribe((purchases: Sale[]) => {
+    //     this.purchaseData = purchases;
+    //     console.log('Get purchase user', this.purchaseData)
+    //   });
+  // }
 
   onEditAddress() {
     const modalRef = this.modalService.open(AddressFormComponent, { size: 'lg', centered: true });
     modalRef.componentInstance.addressData = { ...this.profile };
     console.log('Addres form', this.profile)
-    modalRef.componentInstance.addressUpdated.subscribe((updateData: User) => {
+    modalRef.componentInstance.addressUpdated.subscribe((updateData: Profile) => {
       this.profile = { ...updateData };
       console.log('Put address usuario', this.profile)
       this.authService.updateProfileListener(this.profile);
@@ -84,7 +84,7 @@ export class AccountDetailsComponent implements OnInit, OnDestroy {
     });
     console.log(this.profile);
     modalRef.componentInstance.Data = { ...this.profile };
-    modalRef.componentInstance.dataUpdated.subscribe((updateData: User) => {
+    modalRef.componentInstance.dataUpdated.subscribe((updateData: Profile) => {
       this.profile = { ...updateData };
       console.log('Put usuario', this.profile)
       this.authService.updateProfileListener(this.profile);
