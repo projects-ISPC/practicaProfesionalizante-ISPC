@@ -33,7 +33,7 @@ export class AppComponent implements OnInit {
           this.isAdmin = false;
           return;
         }
-        this.isAdmin = this.profile.id_rol === 2;
+        this.isAdmin = this.profile.id_rol === 1;
         if (this.isAdmin) {
           this.router.navigate(['/admin']);
         }

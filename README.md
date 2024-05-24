@@ -26,7 +26,7 @@ En Librería Franklin, ponemos el control en tus manos. En tu perfil personal, t
 
 ***
 
-<p><h2>Equipo</h2>
+<p><h3>👩‍💻 El Equipo 👨‍💻</h3>
   <a href='https://github.com/Andrea-Cal'>Andrea Caligiuri</a><br>
   <a href='https://github.com/tefsantana'>Estefanía Muriel Santana Fagnani</a><br>
   <a href='https://github.com/GiulianaDeEt'>Giuliana Dealbera Etchechoury</a><br>
@@ -35,3 +35,24 @@ En Librería Franklin, ponemos el control en tus manos. En tu perfil personal, t
   <a href='https://github.com/Natalinacn'>Natalin Gisele Acuña</a><br>
   <a href='https://github.com/Vibianco'>Viviana Lucia Bianco</a><br>
 </p>
+
+***
+
+<h3>💻 Enlaces Importantes 💻</h3>
+<a href='https://docs.google.com/document/d/1LtDdFU92bnC9JfbDalYzzKQfU7brhtlf/edit?usp=sharing&ouid=100014269401658648669&rtpof=true&sd=true'>Documentación IEEE-830</a>
+<br>
+<a href='https://github.com/orgs/projects-ISPC/projects/1/views/1'>Tablero Kanban del proyecto </a>
+<br>
+<a href='https://github.com/projects-ISPC/practicaProfesionalizante-ISPC/wiki'>Wiki</a>
+<br>
+<a href='https://www.canva.com/design/DAGDQecNHI8/qgOOj1ytQAU1K2l3ef3Ykw/edit?utm_content=DAGDQecNHI8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Retrospectives en Canva</a>
+<br>
+<a href='https://www.figma.com/file/4ZQ4G8yNCN6mw6RVmMwonF/Libreria-web-(2024)?type=design&node-id=0-1&mode=design'>Prototipo en Figma de la app web</a>
+<br>
+<a href='https://www.figma.com/file/BfeJbWX26REKPjt1GiJDuI/Libreria-app-(2024)?type=design&node-id=0-1&mode=design'>Prototipo en Figma de la app móvil</a>
+<br>
+<a href='https://github.com/proyectos-tsdwad/integrador-modulo-fullstack'>Proyecto app web anterior</a>
+<br>
+<a href='https://github.com/Proyectos-ISPC/proyecto-app-mobile'>Proyecto app móvil anterior</a>
+<br>
+
