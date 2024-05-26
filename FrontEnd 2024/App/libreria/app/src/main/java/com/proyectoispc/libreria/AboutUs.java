@@ -18,7 +18,12 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_us);
 
+        // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
+
+        // Set Home selected
+        bottomNavigationView.setSelectedItemId(R.id.about);
+
         ImageButton btnFlecha = findViewById(R.id.btn_back);
 
         btnFlecha.setOnClickListener(new View.OnClickListener() {
@@ -46,12 +51,18 @@ public class AboutUs extends AppCompatActivity {
                 }
 
                 if(id == R.id.contact){
+                    startActivity(new Intent(getApplicationContext(),Contact.class));
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
                 if(id == R.id.profile){
                     startActivity(new Intent(getApplicationContext(),Profile.class));
                     overridePendingTransition(0,0);
+                    return true;
+                }
+
+                if(id == R.id.about){
                     return true;
                 }
 
