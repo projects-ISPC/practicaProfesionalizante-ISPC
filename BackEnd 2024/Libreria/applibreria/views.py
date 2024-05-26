@@ -56,16 +56,16 @@ class CatalogueView(APIView):
         books = Book.objects.all()
         lib = []
         for book in books:
-            genres = BookGenre.objects.filter(id_book=book.id_book)
+            '''genres = BookGenre.objects.filter(id_book=book.id_book)
             g = []
             for obj in genres:
-                g.append(obj.id_gen)           
+                g.append(obj.id_gen) '''         
             lib.append ({
                 'id_book':book.id_book, 
                 'isbn': book.isbn,
                 'author':book.id_aut.name,
                 'publisher':book.id_pub.name,                
-                'genres': g, 
+                #'genres': g, 
                 'title': book.title, 
                 'page_amount': book.pages, 
                 'bookcover': book.bookcover, 
