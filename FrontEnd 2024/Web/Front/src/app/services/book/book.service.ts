@@ -51,7 +51,7 @@ export class BookService {
   }
 
   getBooksByGenre(genre: number) {
-    const url = `${this.apiUrl}/genres/${genre}`
+    const url = `http://127.0.0.1:8000/api/genres/${genre}`
     // const url = `${this.apiUrl}/books?_expand=author&_expand=publisher&_sort=authorName&_order=asc&genre_like=${genre}`
     return this.http.get<Genre>(url)
       .pipe(map((result: Genre) => {
