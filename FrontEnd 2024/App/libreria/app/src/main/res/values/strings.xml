@@ -63,5 +63,20 @@
     <string name="imagen_punto">Imagen punto</string>
     <string name="confirmacion_compra">Compra realizada</string>
 
+    <!--Strings para activity About Us-->
+    <string name="btn_backButton">volver</string>
+    <string name="titulo_sobreNos">Sobre nosotros</string>
+    <string name="texto_sobreNos">En Librería Franklin, hemos creado una plataforma digital donde podrás sumergirte en el apasionante mundo de la lectura desde la comodidad de tu hogar. Tendrás acceso a un extenso catálogo de libros de diversas temáticas y géneros.</string>
+    <string name="subtit_explora">Explora y encuentra</string>
+    <string name="texto_explora">Nuestra plataforma te permite explorar fácilmente nuestro catálogo.</string>
+    <string name="subtit_info">Información detallada</string>
+    <string name="texto_info">Además de navegar por nuestro catálogo, podrás acceder a información detallada sobre cada libro, sinópsis y reseña.</string>
+    <string name="subtit_compra">Compra con confianza</string>
+    <string name="texto_compra">Con unos simples pasos, podrás adquirir tus libros favoritos y tenerlos en tus manos en poco tiempo. </string>
+    <string name="subtit_gestiona">Gestioná tu experiencia</string>
+    <string name="texto_gestiona">En tu perfil personal, tendrás acceso a tu historial de compras, donde podrás revisar tus pedidos anteriores y realizar un seguimiento de tus lecturas. </string>
+    <string name="subtit_unete">Únete a la Comunidad de Lectores</string>
+    <string name="texto_unete">Descubre nuevas lecturas, comparte tus opiniones y encuentra recomendaciones personalizadas. </string>
+    <string name="texto_final">Visita nuestra página web hoy mismo y déjate llevar por el maravilloso mundo de la lectura con Librería Franklin. ¡Empieza tu viaje literario hoy mismo!</string>
 
 </resources>

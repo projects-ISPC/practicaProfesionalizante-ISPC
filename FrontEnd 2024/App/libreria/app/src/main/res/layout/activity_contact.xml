@@ -4,21 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F9F8"
+
     tools:context=".Contact">
 
     <ImageButton
         android:id="@+id/imagenFlecha"
         android:layout_width="50dp"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        android:background="#F7F9F8"
+        android:background="@color/white"
         android:contentDescription="@string/volver_atras"
         app:layout_constraintBottom_toTopOf="@+id/titleContact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.444"
         app:srcCompat="?attr/actionModeCloseDrawable" />
 
     <ImageButton
@@ -26,13 +26,14 @@
         android:layout_width="50dp"
         android:layout_height="48dp"
         android:layout_marginTop="16dp"
-        android:background="#F7F9F8"
+        android:background="@color/white"
         android:contentDescription="@string/ir_al_carrito"
         app:layout_constraintBottom_toTopOf="@+id/titleContact"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285"
         app:srcCompat="@drawable/shoppingcarticon" />
 
     <TextView
@@ -43,7 +44,7 @@
         android:layout_marginTop="120dp"
         android:fontFamily="@font/rubik_medium"
         android:text="Estemos en contacto"
-        android:textColor="@color/black"
+        android:textColor="@color/color1"
         android:textFontWeight="500"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -98,7 +99,7 @@
         android:layout_marginTop="472dp"
         android:fontFamily="@font/rubik_medium"
         android:text="Encontranos en"
-        android:textColor="@color/black"
+        android:textColor="@color/color1"
         android:textFontWeight="500"
         android:textSize="18sp"
         android:textStyle="bold"
