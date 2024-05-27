@@ -79,6 +79,12 @@ public class Pago extends AppCompatActivity {
                     return true;
                 }
 
+                if(id == R.id.about){
+                    startActivity(new Intent(getApplicationContext(), AboutUs.class));
+                    overridePendingTransition(0,0);
+                    return true;
+                }
+
                 return false;
             }
         });
