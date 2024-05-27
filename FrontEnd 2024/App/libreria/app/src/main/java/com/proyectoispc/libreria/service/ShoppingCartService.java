@@ -10,6 +10,7 @@ import com.proyectoispc.libreria.models.Book;
 import com.proyectoispc.libreria.models.SelectedBook;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ShoppingCartService {
@@ -37,6 +38,34 @@ public class ShoppingCartService {
         SelectedBook newBook = new SelectedBook(book, 1);
         this.selectedBooks.add(newBook);
     }
+
+    //
+    // Eliminar un Libro del Carrito
+    public void removeBook(Book book) {
+        Iterator<SelectedBook> iterator = selectedBooks.iterator();
+        while (iterator.hasNext()) {
+            SelectedBook element = iterator.next();
+            if (element.getBook().getId() == book.getId()) {
+                iterator.remove();
+                return;
+            }
+        }
+    }
+    // Vaciar el Carrito
+    public void clearCart() {
+        selectedBooks.clear();
+    }
+    // Actualizar Cantidad de un Libro
+    public void updateBookQuantity(Book book, int quantity) {
+        for (SelectedBook element : selectedBooks) {
+            if (element.getBook().getId() == book.getId()) {
+                element.setCuantity(quantity);
+                return;
+            }
+        }
+    }
+    //
+
 
     public List<SelectedBook> getBooks() {
         return this.selectedBooks;

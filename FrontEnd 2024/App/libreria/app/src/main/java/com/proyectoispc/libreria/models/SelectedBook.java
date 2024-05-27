@@ -28,4 +28,10 @@ public class SelectedBook {
     public void setCuantity(int cuantity) {
         this.cuantity = cuantity;
     }
+
+    //
+    public void incrementQuantity() {
+        cuantity++;
+    }
+
 }

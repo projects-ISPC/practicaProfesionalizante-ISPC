@@ -21,11 +21,19 @@ public class DbBook  extends DbHelper {
         this.context = context;
     }
 
-    public Cursor getBooks(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from t_book", null );
-
+    public Cursor getBooks() {
+        SQLiteDatabase db = this.getReadableDatabase(); // Usar getReadableDatabase() en lugar de getWritableDatabase()
+        Cursor cursor = db.rawQuery("select * from t_book", null);
         return cursor;
+    }
+
+    //
+    public Cursor getTheBookById(int bookId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"_id", "title", "author", "price"}; // Suponiendo que estas son las columnas de tu tabla t_book
+        String selection = "_id=?";
+        String[] selectionArgs = {String.valueOf(bookId)};
+        return db.query("t_book", columns, selection, selectionArgs, null, null, null);
     }
 
 }
