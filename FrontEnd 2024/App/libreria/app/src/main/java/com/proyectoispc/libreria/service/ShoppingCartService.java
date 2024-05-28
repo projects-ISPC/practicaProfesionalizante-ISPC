@@ -21,9 +21,7 @@ public class ShoppingCartService {
         if (shoppingCartService != null) {
             return shoppingCartService;
         }
-
         shoppingCartService = new ShoppingCartService();
-
         return shoppingCartService;
     }
 
@@ -34,7 +32,6 @@ public class ShoppingCartService {
                 return;
             }
         }
-
         SelectedBook newBook = new SelectedBook(book, 1);
         this.selectedBooks.add(newBook);
     }
@@ -46,7 +43,11 @@ public class ShoppingCartService {
         while (iterator.hasNext()) {
             SelectedBook element = iterator.next();
             if (element.getBook().getId() == book.getId()) {
-                iterator.remove();
+                if (element.getCuantity() > 1) {
+                    element.setCuantity(element.getCuantity() - 1);
+                } else {
+                    iterator.remove();
+                }
                 return;
             }
         }

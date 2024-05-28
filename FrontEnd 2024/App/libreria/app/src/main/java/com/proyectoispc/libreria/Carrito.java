@@ -29,10 +29,9 @@ public class Carrito extends AppCompatActivity {
 
     private ShoppingCartService shoppingCartService;
     double totalAmount;
-
-    //
     private RecyclerView recyclerView;
-    //
+    private TextView totalAmountText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +40,11 @@ public class Carrito extends AppCompatActivity {
 
         shoppingCartService = ShoppingCartService.getInstance();
         recyclerView = findViewById(R.id.selectedBooksCard);
-        // RecyclerView recyclerView = findViewById(R.id.selectedBooksCard);
-        totalAmount = shoppingCartService.getTotalAmount();
-        TextView totalAmountText = findViewById(R.id.totalCompra);
-        totalAmountText.setText(String.valueOf(totalAmount));
+        totalAmountText = findViewById(R.id.totalCompra);
+
+        actualizarTotalAmount();
 
 
-        //List<SelectedBook> selectedBooks = shoppingCartService.getBooks();
-
-        //this.totalAmount = this.shoppingCartService.getTotalAmount();
-        //TextView totalAmountText = findViewById(R.id.totalCompra);
-        //totalAmountText.setText("" + totalAmount);
-
-        //ProductCardAdapter adapter = new ProductCardAdapter(this ,selectedBooks);
-        //recyclerView.setAdapter(adapter);
-
-        // Initialize and assign variable
-        //BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
         ImageView flechaAtras = findViewById(R.id.backButton);
         flechaAtras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,6 +95,12 @@ public class Carrito extends AppCompatActivity {
         // Configuración del RecyclerView
         List<SelectedBook> selectedBooks = shoppingCartService.getBooks();
         ProductCardAdapter adapter = new ProductCardAdapter(this, selectedBooks);
+        adapter.setOnQuantityChangeListener(new ProductCardAdapter.OnQuantityChangeListener() {
+            @Override
+            public void onQuantityChanged() {
+                actualizarTotalAmount();
+            }
+        });
         recyclerView.setAdapter(adapter);
     }
 
@@ -123,6 +116,7 @@ public class Carrito extends AppCompatActivity {
         Book bookToAdd = obtenerLibroSegunId(bookId);
         shoppingCartService.addBook(bookToAdd);
         actualizarCantidadEnInterfaz();
+        //actualizarTotalAmount();
     }
 
     // Método para quitar una unidad de un libro del carrito
@@ -131,6 +125,7 @@ public class Carrito extends AppCompatActivity {
         Book bookToRemove = obtenerLibroSegunId(bookId);
         shoppingCartService.removeBook(bookToRemove);
         actualizarCantidadEnInterfaz();
+        //actualizarTotalAmount();
     }
 
     // Método para eliminar un producto del carrito
@@ -139,12 +134,16 @@ public class Carrito extends AppCompatActivity {
         Book bookToDelete = obtenerLibroSegunId(bookId);
         shoppingCartService.removeBook(bookToDelete);
         actualizarCantidadEnInterfaz();
+        //actualizarTotalAmount();
+    }
+
+    private void actualizarTotalAmount() {
+        totalAmount = shoppingCartService.getTotalAmount();
+        totalAmountText.setText(String.valueOf(totalAmount));
     }
 
     private void actualizarCantidadEnInterfaz() {
-        totalAmount = shoppingCartService.getTotalAmount();
-        TextView totalAmountText = findViewById(R.id.totalCompra);
-        totalAmountText.setText(String.valueOf(totalAmount));
+        actualizarTotalAmount();
 
         // Actualizar el RecyclerView si es necesario
         List<SelectedBook> selectedBooks = shoppingCartService.getBooks();

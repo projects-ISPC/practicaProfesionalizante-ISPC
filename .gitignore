@@ -18,3 +18,10 @@ gradle/wrapper/gradle-wrapper.properties
 
 # Others
 *.lock
+
+# Ignore local.properties file
+local.properties
+
+# Ignore build output
+/build/
+app/build/

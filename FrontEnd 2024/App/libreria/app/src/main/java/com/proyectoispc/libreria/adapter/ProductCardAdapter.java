@@ -18,13 +18,22 @@ import com.proyectoispc.libreria.models.SelectedBook;
 import java.util.List;
 public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.ViewHolder>
  {
-    private List<SelectedBook> products;
-    private Activity activity;
+
+     public interface OnQuantityChangeListener {
+         void onQuantityChanged();
+     }
+     private List<SelectedBook> products;
+     private Activity activity;
+     private OnQuantityChangeListener onQuantityChangeListener;
 
     public ProductCardAdapter(Activity activity, List<SelectedBook> products) {
         this.activity = activity;
         this.products = products;
     }
+
+     public void setOnQuantityChangeListener(OnQuantityChangeListener listener) {
+         this.onQuantityChangeListener = listener;
+     }
 
     @NonNull
     @Override
@@ -67,8 +76,12 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
                     holder.cardTotalCuantity.setText(String.valueOf(selectedBook.getCuantity()));
 
                     // Actualizar el total del carrito
-                    double newTotal = selectedBook.getBook().getPrice() * selectedBook.getCuantity();
+                    //double newTotal = selectedBook.getBook().getPrice() * selectedBook.getCuantity();
                     // Aquí puedes actualizar el total en la interfaz de usuario si es necesario
+
+                    if (onQuantityChangeListener != null) {
+                        onQuantityChangeListener.onQuantityChanged();
+                    }
                 }
             }
         });
@@ -83,6 +96,9 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
                         selectedBook.setCuantity(currentQuantity - 1);
                         holder.cardTotalCuantity.setText(String.valueOf(selectedBook.getCuantity()));
                         // Aquí puedes realizar cualquier otra operación necesaria, como actualizar el total del carrito.
+                        if (onQuantityChangeListener != null) {
+                            onQuantityChangeListener.onQuantityChanged();
+                        }
                     }
                 }
             }
@@ -95,11 +111,12 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
                     products.remove(position);
                     notifyItemRemoved(position);
                     // Aquí puedes realizar cualquier otra operación necesaria, como actualizar el total del carrito.
+                    if (onQuantityChangeListener != null) {
+                        onQuantityChangeListener.onQuantityChanged();
+                    }
                 }
             }
         });
-
-
     }
 
 
@@ -114,8 +131,6 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
         public TextView cardBookPrice;
         public TextView cardTotalCuantity;
         public ImageView cardImageProduct;
-
-        //
         public ImageView agregarButton;
         public ImageView quitarButton;
         public ImageView eliminarButton;
@@ -127,7 +142,6 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
             cardBookPrice = view.findViewById(R.id.cardBookPrice);
             cardImageProduct = view.findViewById(R.id.cardImageProduct);
             cardTotalCuantity = view.findViewById(R.id.cardTotalCuantity);
-
             agregarButton = view.findViewById(R.id.agregar1);
             quitarButton = view.findViewById(R.id.quitar1);
             eliminarButton = view.findViewById(R.id.eliminar1);
