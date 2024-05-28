@@ -88,9 +88,9 @@ class Contact(models.Model):
         verbose_name = "Contact"
         verbose_name_plural = "Contacts"
     def __unicode__(self):
-        return self.email_cont
+        return self.email
     def __str__(self):
-        return self.email_cont
+        return self.email
     
 class Autor(models.Model):
 
