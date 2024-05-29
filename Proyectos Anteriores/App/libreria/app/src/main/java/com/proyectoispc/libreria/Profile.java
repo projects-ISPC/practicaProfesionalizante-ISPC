@@ -35,7 +35,7 @@ public class Profile extends AppCompatActivity {
     TextInputLayout emailInputLayout, nameInputLayout;
     SharedPreferences sharedPreferences;
     EditText emailInput, nameInput;
-    Button buttonNames, buttonEmail;
+    Button buttonNames, buttonEmail, buttonLogOut;
     DbUser dbUser;
 
     @Override
@@ -61,6 +61,7 @@ public class Profile extends AppCompatActivity {
         nameInput = nameInputLayout.getEditText();
         buttonNames = findViewById(R.id.buttonNames);
         buttonEmail = findViewById(R.id.buttonEmail);
+        buttonLogOut = findViewById(R.id.buttonLogOut);
         deleteButton = findViewById(R.id.delete);
 
         // Conexion con BBDD
@@ -108,14 +109,20 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        buttonLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Profile.this, "Deslogeo exitoso", Toast.LENGTH_LONG).show();
+                redirectToLogin();
+            }
+        });
+
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showConfirmationDialog();
             }
         });
-
-
 
         // Navegabilidad de los botones superiores
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -169,6 +176,11 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void redirectToLogin(){
+        startActivity(new Intent(getApplicationContext(),Login.class));
+        overridePendingTransition(0,0);
     }
 
     public void fetchUserData(){

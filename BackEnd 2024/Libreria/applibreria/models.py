@@ -20,11 +20,11 @@ class User(models.Model):
     id_user = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50, blank=False)
     lastname = models.CharField(max_length=50, blank=False)
-    dni = models.IntegerField(blank=True, null=True)
-    address_province = models.CharField(max_length=30, blank=True, null=True)
-    address_location = models.CharField(max_length=30, blank=True, null=True)
-    address_street = models.CharField(max_length=50, blank=True, null=True)
-    address_number = models.IntegerField(blank=True, null=True)
+    dni = models.IntegerField(blank=True, null=True, default=0)
+    address_province = models.CharField(max_length=30, blank=True, null=True, default="")
+    address_location = models.CharField(max_length=30, blank=True, null=True, default="")
+    address_street = models.CharField(max_length=50, blank=True, null=True, default="")
+    address_number = models.IntegerField(blank=True, null=True, default=0)
     id_rol = models.ForeignKey(Role, to_field="id_rol", on_delete=models.CASCADE)
     class Meta:
         db_table = "user"
@@ -39,7 +39,7 @@ class Credential(models.Model):
 
     id_cred = models.AutoField(primary_key=True)
     id_user = models.ForeignKey(User, to_field="id_user", on_delete=models.CASCADE)
-    email = models.CharField(max_length=100, blank=False)
+    email = models.CharField(max_length=100, blank=False, unique=True)
     psw = models.CharField(max_length=255, blank=False)
     class Meta:
         db_table = "credential"
@@ -80,17 +80,17 @@ class Payment(models.Model):
 class Contact(models.Model):
 
     id_cont = models.AutoField(primary_key=True)
-    email_cont = models.CharField(max_length=100, blank=False)
+    email = models.CharField(max_length=100, blank=False)
     name = models.CharField(max_length=100, blank=False)
-    messege = models.TextField(max_length=1500, blank=False)
+    message = models.TextField(max_length=1500, blank=False)
     class Meta:
         db_table = "contact"
-        verbose_name = "Payment"
-        verbose_name_plural = "Payments"
+        verbose_name = "Contact"
+        verbose_name_plural = "Contacts"
     def __unicode__(self):
-        return self.email_cont
+        return self.email
     def __str__(self):
-        return self.email_cont
+        return self.email
     
 class Autor(models.Model):
 
