@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DeliveryService } from './../../../services/delivery/delivery.service';
 import { StoreHelperComponent } from '../store-helper/store-helper/store-helper.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-delivery-helper',
   templateUrl: './delivery-helper.component.html',
@@ -12,7 +13,7 @@ export class DeliveryHelperComponent {
   shippingCost: number;
   postalCodeError: boolean;
 
-  constructor(private deliveryService: DeliveryService, private modalService: NgbModal) {
+  constructor(private deliveryService: DeliveryService, private modalService: NgbModal, private translate: TranslateService) {
     this.postalCode = '';
     this.shippingCost = 0;
     this.postalCodeError = true;
@@ -36,5 +37,9 @@ export class DeliveryHelperComponent {
 
   onWatchStores() {
     const modalRef = this.modalService.open(StoreHelperComponent, { size: 'lg', centered: true });
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }

@@ -1,0 +1,281 @@
+{
+  "BUSCADOR": {
+    "placeholder_text_barra_de_buscador": "Buscar"
+  },
+
+  "NAV": {
+    "inicio": "Inicio",
+    "catalogo": "Catálogo",
+    "contactános": "Contáctanos",
+    "sobre_nosotros": "Sobre nosotros",
+    "button_crear_cuenta": "Crear cuenta",
+    "button_iniciar_sesion": "Iniciar sesión",
+    "button_alemán": "Alemán",
+    "button_español": "Español",
+    "button_ingles": "Inglés"
+  },
+
+
+
+  "REGISTRO": {
+    "main_title": "Formá parte de nuestra comunidad",
+    "placeholder_text_nombre": "Nombre",
+    "placeholder_text_apellido": "Apellido",
+    "placeholder_text_email": "Correo electronico",
+    "placeholder_text_contrasena": "Contraseña",
+    "Ya tenes una cuenta?": "Ya tenes una cuenta?",
+    "crear_cuenta_ingresa": "Ingresá",
+    "button": "Crear Cuenta",
+    "mensaje_error": "Campo requerido",
+    "confirmation_message": "Tu cuenta ha sido creada con éxito. ¡Gracias por sumarte a nuestra comunidad!",
+    "default_error": "Un error ha sucedido, intente de nuevo",
+    "duplicidad_email": "Ya existe un usuario con este email."
+  },
+
+  "LOGIN": {
+    "placeholder_text_email": "Correo electronico",
+    "placeholder_text_contrasena": "Contraseña",
+    "main_title": "Te damos la bienvenida. Nos alegra tenerte aquí",
+    "No tenés cuenta?": "No tenés cuenta?",
+    "Registrate": "Registrate",
+    "button_despues_de_llenar_los_campos": "Confirmar",
+    "mensaje_error": "Campo requerido"
+  },
+
+  "HEADER": {
+    "titulo_principal": "Librería Franklin",
+    "descripcion_principal": "Encontrá el libro que estás buscando. Novelas, cuentos, infantiles, historia, economía, jardinería y mucho más.",
+    "button_ver_catalogo": "Ver catálogo",
+    "ejemplares": "ejemplares",
+    "autores": "autores",
+    "editoriales": "editoriales"
+  },
+
+  "HOME_PAGE": {
+    "RECOMENDADOS": "RECOMENDADOS",
+    "descripcion_RECOMENDADOS": "Encontrá todos esos libros que debes leer",
+    "NOVEDADES": "NOVEDADES",
+    "descripcion_NOVEDADES": "Encontrá acá los nuevos lanzamientos",
+    "mas_vendidos": "MÁS VENDIDOS",
+    "descripcion_mas_vendidos": "Encontrá acá lo más vendido del mes",
+    "button_ver_todos": "Ver todos"
+  },
+
+  "FOOTER": {
+    "home": "Home",
+    "catálogo": "Catálogo",
+    "contáctenos": "Contáctenos",
+    "sobre_nosotros": "Sobre nosotros",
+    "mi_cuenta": "Mi cuenta",
+    "carrito_de_compras": "Carrito de compras",
+    "titulo_metodo_de_pago": "Método de pago",
+    "titulo_Contacto": "Contacto"
+  },
+
+  "SOBRE_NOSOTROS": {
+    "titulo_principal": "Sobre nosotros",
+    "pequena_descripcion_de_sobre_nosotros": "En la Librería Franklin, hemos creado una plataforma digital...",
+    "titulo_principal_Explora_y_Encuentra": "Explora y Encuentra",
+    "pequena_descripcion_de_Explora_y_Encuentra": "Nuestra plataforma te permite explorar fácilmente...",
+    "titulo_principal_Información_Detallada": "Información Detallada",
+    "pequena_descripcion_de_Información_Detallada": "Además de navegar por nuestro catálogo...",
+    "titulo_principal_Compra_con_Confianza": "Compra con Confianza",
+    "pequena_descripcion_de_Compra_con_Confianza": "Una vez que hayas encontrado ese libro...",
+    "titulo_principal_Gestiona_tu_Experiencia": "Gestiona tu Experiencia",
+    "pequena_descripcion_de_Gestiona_tu_Experiencia": "En la Librería Franklin, ponemos el control en tus manos...",
+    "titulo_principal_Únete_a_la_Comunidad_de_Lectores": "Únete a la Comunidad de Lectores",
+    "pequena_descripcion_de_Únete_a_la_Comunidad_de_Lectores": "Únete a nuestra comunidad de lectores apasionados...",
+    "text_sobre_nosotros_descargar_nuestra_app": "Descarga nuestra aplicación móvil...",
+    "text_sobre_nosotros_empieza_tu_viaje_literar_hoy_mismo": "¡Empieza tu viaje literario hoy mismo!"
+  },
+
+
+
+  "CONTACTO": {
+    "titulo_principal": "Contáctanos",
+    "pequena_descripcion_titulo_principal": "Podés encontrarnos en nuestras redes sociales",
+    "titulo_email": "Correo electrónico",
+    "titulo_teléfono": "Teléfono",
+    "titulo_ubicación": "Ubicación",
+    "titulo_form": "No dudes en escribirnos",
+    "pequena_descripcion_de_titulo_form": "Dejanos tu comentario o sugerencia, responderemos a la brevedad.",
+    "placeholder_nombre_apellido": "Nombre y pellido",
+    "placeholder_correo_electronico": "Correo electrónico",
+    "placeholder_comentarios": "Comentarios",
+    "button_form": "Enviar comentario"
+  },
+
+  "CATALOGO": {
+    "todos": "Todos",
+    "arte": "Arte",
+    "ciencia_ficcion": "Ciencia Ficción",
+    "gastronomia": "Gastronomia",
+    "romantico": "Romantico",
+    "suspenso": "Suspenso",
+    "novela": "Novela"
+  },
+
+  "LIBROS": {
+    "stock_de_productos": "Stock de productos",
+    "buscador": "Buscá por ISBN, título, autor",
+    "button_agregar_stock": "Agregar stock",
+    "libro": "Libro",
+    "autor": "Autor",
+    "precio": "Precio",
+    "stock": "Stock",
+    "acciones": "Acciones"
+  },
+
+  "LIBROS_FORM": {
+    "isbn": "ISBN",
+    "titulo": "Título",
+    "cantidad_de_páginas": "Cantidad de páginas",
+    "imagen_de_portada": "Imagen de portada",
+    "stock": "Stock",
+    "precio": "Precio",
+    "ano_de_lanzamiento": "Año de lanzamiento",
+    "seleccione_un_autor": "Seleccione un autor",
+    "seleccione_una_editorial": "Seleccione una editorial",
+    "editorial": "Editorial",
+    "seleccione_una_genero": "Seleccione una genero",
+    "genero": "Genero",
+    "tag": "Tag",
+    "sinopsis": "Sinopsis",
+    "desear_eleminar_un_libro": "¿Desea eliminar el libro?",
+    "cancelar": "Cancelar",
+    "confirmar": "Guardar"
+  },
+
+  "AUTORES": {
+    "titulo_principal": "Autores registrados",
+    "buscador": "Buscá por nombre",
+    "button": "Agregar autor",
+    "nombre": "Nombre",
+    "acciones": "Acciones",
+    "desear_eleminar_libro": "¿Desea eliminar el autor?",
+    "cancelar": "Abbrechen",
+    "confirmar": "Confirmar",
+    "agregar_autor": "Agregar autor"
+  },
+
+  "EDITORIALES": {
+    "titulo_principal": "Editoriales registradas",
+    "placeholder": "Buscá por nombre",
+    "button": "Agregar editorial",
+    "nombre": "Nombre",
+    "acciones": "acciones"
+  },
+
+  "EDITORIALES_FORM":{
+    "nombre": "Nombre",
+    "cancelar": "Cancelar",
+    "desear_eleminar": "¿Desea eliminar la editorial?",
+    "confirmar": "Confirmar",
+    "titulo_principal": "Agregar Editorial",
+    "campo_requerido": "Campo requerido",
+    "guardar": "Guardar"
+  },
+
+  "VENTAS": {
+    "titulo_principal": "Ventas realizadas",
+    "placeholder": "Buscá por número de orden"
+  },
+
+  "SUCURSALES": {
+    "titulo_principal": "Sucursales",
+    "button": "Agregar Sucursal",
+    "direccion": "Dirección",
+    "provincia": "Provincia",
+    "localidad": "Localidad",
+    "telefono": "Télefono",
+    "acciones": "Acciones",
+    "agregar_libro": "Agregar Libro",
+    "cancelar": "Cancelar",
+    "confirmar": "Confirmar"
+  },
+
+  "CLIENTES": {
+    "titulo_principal": "Usuarios registrados",
+    "placeholder": "Buscá por nombre",
+    "nombre": "Nombre",
+    "correo_electronico": "Correo Electrónico",
+    "telefono": "Teléfono"
+  },
+
+  "ADMIN": {
+    "titulo_principal": "Mi cuenta",
+    "titulo_datos": "Datos",
+    "titulo_datos_personales": "Datos personales",
+    "titulo_direccion": "Dirección",
+    "titulo_pedidos_realizados": "Pedidos realizados",
+    "titulo_no_usario_logeado": "No hay usuario logueado"
+  },
+
+    "ADMIN_FORM_EDITAR_DATOS_PERSONALES": {
+    "titulo_principal": "Datos personales",
+    "titulo_principal_form": "Editar datos personales",
+    "nombre_apellido": "Nombre y apellido",
+    "dni": "Documento de identidad",
+    "codigo_de_area": "Código de área",
+    "numero": "Número",
+    "cancelar": "Cancelar",
+    "guardar_cambios": "Guardar cambios"
+  },
+
+  "ADMIN_FORM_EDITAR_DATOS_DIRECCION": {
+    "titulo_principal": "Dirección",
+    "calle_numero": "Calle y número",
+    "codigo_postal": "Código postal",
+    "localidad": "Localidad",
+    "provincia": "Provincia",
+    "cancelar": "Cancelar",
+    "guardar_cambios": "Guardar cambios",
+    "editar_direcciones": "Editar dirección"
+  },
+
+  "ADMIN_PEDIDOS_ITEM": {
+    "orden": "Orden:",
+    "producto": "Producto",
+    "precio": "Precio",
+    "cantidad": "Cantidad",
+    "total": "Total"
+  },
+
+  "NAV_AUTORIZADOS": {
+    "libros": "Libros",
+    "autores": "Autores",
+    "editoriales": "Editoriales",
+    "ventas": "Ventas",
+    "sucursales": "Sucursales",
+    "clientes": "Clientes",
+    "hola_admin": "Hola Admin",
+    "cerrar_sesion": "|Cerrar Sesión",
+    "saludo": "Hola"
+  },
+
+  "CARRITO": {
+    "titulo_principal": "Mi carrito",
+    "cantidad_de_items": "items",
+    "titulo_form": "Ingresá tu código postal",
+    "text_placeholder": "Código postal",
+    "button": "Calcular envío",
+    "retiro": "Retirá gratis en nuestro local",
+    "button_sucursales": "Ver sucursales",
+    "total": "Total:",
+    "seguir_comprando": "Seguir comprando",
+    "iniciar_compra": "iniciar compra",
+    "nuestras_tiendas": "Nuestras Tiendas"
+  },
+
+  "mensajes_de_errores": {
+    "error_80_caracteres": "Por favor ingresá un máximo de 80 caracteres.",
+    "error_ingreso_email_valido": "Ingresa un email válido.",
+    "error_mas_errores": "Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres",
+    "error_credenciales": "Ha ingresado credenciales incorrectas. Inténtelo nuevamente.",
+    "campo_requerido": "Campo requerido",
+    "min_10_digitos": "Mínimo 10 dígitos",
+    "max_13_digitos": "Máximo 13 dígitos."
+  }
+}
+
+

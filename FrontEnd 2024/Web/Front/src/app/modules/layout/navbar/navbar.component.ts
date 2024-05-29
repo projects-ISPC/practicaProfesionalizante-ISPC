@@ -9,6 +9,7 @@ import { Auth } from 'src/app/models/auth/auth-model';
 import { Profile } from 'src/app/models/user/user-model';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-navbar',
@@ -25,6 +26,7 @@ export class NavbarComponent implements OnInit {
     private adminNavigationService: AdminNavigationService,
     private authService: AuthService,
     private cartService: CartService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -70,6 +72,7 @@ export class NavbarComponent implements OnInit {
   onClickNavigateToAuthorDashboard() {
     this.adminNavigationService.navigateToAuthorDashboard();
   }
+
   onClickNavigateToPublisherDashboard() {
     this.adminNavigationService.navigateToPublisherDashboard();
   }
@@ -80,7 +83,7 @@ export class NavbarComponent implements OnInit {
 
   onClickNavigateToAboutUs() {
     this.navigationService.navigateToAboutUs();
-  };
+  }
 
   getProfile() {
     this.authService.getProfileListener().subscribe((user) => {
@@ -107,4 +110,9 @@ export class NavbarComponent implements OnInit {
       this.navigationService.navigateToHome();
     });
   }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
 }

@@ -1,10 +1,26 @@
 <section>
-  <h1 class="title fs-lg-2 font-bold">Sobre nosotros</h1>
-  <p class="mb-30">{{ mainDescription }}</p>
-  <div *ngFor="let bullet of bullets">
-    <h2 class="fs-md font-bold">{{ bullet.subtitle }} <span role="img" aria-label="">{{ bullet.icon }}</span></h2>
-    <p>{{ bullet.text }}</p>
+  <h1 class="title fs-lg-2 font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal' | translate }}</h1>
+  <p class="mb-30">{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_sobre_nosotros' | translate }}</p>
+  <div>
+    <h2 class="fs-md font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal_Explora_y_Encuentra' | translate }} <span role="img" aria-label="">🔍</span></h2>
+    <p>{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_Explora_y_Encuentra' | translate }}</p>
   </div>
-  <p class="mt-30">{{ downloadText }}</p>
-  <p>{{ greetingText }}</p>
+  <div>
+    <h2 class="fs-md font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal_Información_Detallada' | translate }} <span role="img" aria-label="">📚</span></h2>
+    <p>{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_Información_Detallada' | translate }}</p>
+  </div>
+  <div>
+    <h2 class="fs-md font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal_Compra_con_Confianza' | translate }} <span role="img" aria-label="">🛒</span></h2>
+    <p>{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_Compra_con_Confianza' | translate }}</p>
+  </div>
+  <div>
+    <h2 class="fs-md font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal_Gestiona_tu_Erperiencia' | translate }} <span role="img" aria-label="">🔧</span></h2>
+    <p>{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_Gestiona_tu_Erperiencia' | translate }}</p>
+  </div>
+  <div>
+    <h2 class="fs-md font-bold">{{ 'SOBRE_NOSOTROS.titulo_principal_Únete_a_la_Comunidad_de_Lectores' | translate }} <span role="img" aria-label="">📖</span></h2>
+    <p>{{ 'SOBRE_NOSOTROS.pequena_descripcion_de_Únete_a_la_Comunidad_de_Lectores' | translate }}</p>
+  </div>
+  <p class="mt-30">{{ 'SOBRE_NOSOTROS.text_sobre_nosotros_descargar_nuestra_app' | translate }}</p>
+  <p>{{ 'SOBRE_NOSOTROS.text_sobre_nosotros_empieza_tu_viaje_literar_hoy_mismo' | translate }}</p>
 </section>

@@ -8,71 +8,78 @@
       <div class="row justify-content-start">
         <div class="col-12 mb-2">
           <h4 class="font-medium fs-md-1 fc-primary">
-            Editar datos personales
+            {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.titulo_principal_form' | translate }}
           </h4>
         </div>
       </div>
     </div>
     <form [formGroup]="formUser" (submit)="updateUserData()">
       <div class="row mb-3">
-        <label for="inputEmail3" class="col-sm-2 col-form-label visually-hidden">Nombre y apellido</label>
+        <label for="inputUsername" class="col-sm-2 col-form-label visually-hidden">
+          {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.nombre_apellido' | translate }}
+        </label>
         <div class="col-sm-12">
-          <input type="text" formControlName="username" class="form-control" id="inputEmail3"
-            placeholder="Nombre y apellido" />
+          <input type="text" formControlName="username" class="form-control" id="inputUsername"
+            placeholder="{{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.nombre_apellido' | translate }}" />
           <small class="text-danger mt-2" [hidden]="username.valid || username.pristine">
             <span *ngIf="username.errors?.['required']">
-              El campo "Nombre y apellido"es obligatorio
+              {{ 'mensajes_de_errores.campo_requerido' | translate }}
             </span>
             <span *ngIf="username.errors?.['minlength']">
-              Minimo de 5 caracteres
+              {{ 'mensajes_de_errores.min_10_digitos' | translate }}
             </span>
-
+            <span *ngIf="username.errors?.['maxlength']">
+              {{ 'mensajes_de_errores.error_80_caracteres' | translate }}
+            </span>
           </small>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputPassword3" class="col-sm-2 col-form-label visually-hidden">DNI</label>
+        <label for="inputDocument" class="col-sm-2 col-form-label visually-hidden">
+          {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.dni' | translate }}
+        </label>
         <div class="col-sm-12">
-          <input type="number" formControlName="document" class="form-control" id="inputPassword3"
-            placeholder="Documento de identidad" />
+          <input type="number" formControlName="document" class="form-control" id="inputDocument"
+            placeholder="{{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.dni' | translate }}" />
           <small class="text-danger mt-2" [hidden]="document.valid || document.pristine">
-
             <span *ngIf="document.errors?.['required']">
-              El campo "Documento de identidad" es obligatorio
+              {{ 'mensajes_de_errores.campo_requerido' | translate }}
             </span>
             <span *ngIf="document.errors?.['pattern']">
-              El "DNI" debe ser válido
+              {{ 'mensajes_de_errores.error_ingreso_email_valido' | translate }}
             </span>
-
           </small>
         </div>
       </div>
       <div class="row mb-3">
         <div class="col-sm-5">
-          <input type="number" formControlName="telephone_area_code" class="form-control" placeholder="Código de área"
-            aria-label="Codigo de area" />
+          <input type="number" formControlName="telephone_area_code" class="form-control"
+            placeholder="{{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.codigo_de_area' | translate }}" aria-label="Codigo de area" />
           <small class="text-danger mt-2" [hidden]="telephone_area_code.valid || telephone_area_code.pristine">
-            El campo "Código de área" es obligatorio
+            {{ 'mensajes_de_errores.campo_requerido' | translate }}
           </small>
         </div>
         <div class="col-sm-7">
-          <input type="tel" formControlName="telephone_number" class="form-control" placeholder="Número" aria-label="Numero" />
+          <input type="tel" formControlName="telephone_number" class="form-control"
+            placeholder="{{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.numero' | translate }}" aria-label="Numero" />
           <small class="text-danger mt-2" [hidden]="telephone_number.valid || telephone_number.pristine">
-            El campo "Número" es obligatorio
+            {{ 'mensajes_de_errores.campo_requerido' | translate }}
           </small>
         </div>
       </div>
       <div class="row mb-3">
-        <label for="inputEmail" class="col-sm-2 col-form-label visually-hidden">Email</label>
+        <label for="inputEmail" class="col-sm-2 col-form-label visually-hidden">
+          {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.email' | translate }}
+        </label>
         <div class="col-sm-12">
           <input type="email" formControlName="email" class="form-control" id="inputEmail"
-            placeholder="Correo electrónico" />
+            placeholder="{{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.email' | translate }}" />
           <small class="text-danger mt-2" [hidden]="email.valid || email.pristine">
             <span *ngIf="email.errors?.['required']">
-              El email es obligatorio
+              {{ 'mensajes_de_errores.campo_requerido' | translate }}
             </span>
             <span *ngIf="email.errors?.['email']">
-              El email debe ser válido
+              {{ 'mensajes_de_errores.error_ingreso_email_valido' | translate }}
             </span>
           </small>
         </div>
@@ -80,12 +87,12 @@
       <div class="modal-footer">
         <div>
           <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
-            Cancelar
+            {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.cancelar' | translate }}
           </button>
         </div>
         <div>
           <button type="submit" class="btn btn-danger" [disabled]="formUser.invalid">
-            Guardar cambios
+            {{ 'ADMIN_FORM_EDITAR_DATOS_PERSONALES.guardar_cambios' | translate }}
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Book } from 'src/app/models/book/book-model';
 import { BookService } from 'src/app/services/book/book.service';
 import { GENRE } from 'src/app/utils/enums/book.enum';
 import { Subscription } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-catalogue-page',
@@ -15,12 +16,14 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
   genre = GENRE;
   selectedGenre: number = 0;
 
-  constructor(bookService: BookService) {
+  constructor(bookService: BookService,
+    private translate: TranslateService,
+  ) {
     this.bookService = bookService;
   }
 
   ngOnInit() {
-    this.getAllBooks();    
+    this.getAllBooks();
   }
 
 
@@ -45,5 +48,9 @@ export class BookCataloguePageComponent implements OnInit, OnDestroy {
 
   isActive(navGenre: number) {
     return this.selectedGenre === navGenre;
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }
