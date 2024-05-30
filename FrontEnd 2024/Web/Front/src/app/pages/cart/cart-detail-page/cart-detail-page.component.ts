@@ -68,4 +68,8 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
     }
     this.navigationService.navigateToCheckout();
   }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
+  }
 }

@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Component } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { StoreHelperComponent } from './store-helper.component';
 
 describe('StoreHelperComponent', () => {
@@ -22,15 +21,3 @@ describe('StoreHelperComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-
-@Component({
-  selector: 'app-store-helper',
-  templateUrl: './store-helper.component.html',
-})
-export class StoreHelperComponent {
-  constructor(public activeModal: NgbActiveModal) {}
-
-  closeModal() {
-    this.activeModal.close();
-  }
-}
