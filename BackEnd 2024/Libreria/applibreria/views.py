@@ -2,11 +2,9 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .serializer import ContactSerializer, CredentialSerializer, UserSerializer
-
-from .serializer import ContactSerializer
-from .serializer import BookSerializer
-from .models import Book, BookGenre, Genre, Credential
+from .serializer import *
+from .models import *
+from django.utils import timezone
 from django.http import Http404, JsonResponse
 # Create your views here.
 
@@ -36,9 +34,6 @@ class AddRegisterView(APIView):
                 return Response(credential_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         else:
             return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#¿Esta view es necesaria?
-
 
 class BookDetailView(APIView):
     def get_object(self, pk):
@@ -105,13 +100,62 @@ class LoginView(APIView):
         else:
             return Response({'error': 'Credenciales incorrectas'}, status=status.HTTP_400_BAD_REQUEST)
 
-
 class LogoutView(APIView):
     def post(self, request):
         return Response({'response': 'Deslogeo exitoso'}, status=status.HTTP_200_OK)
-    
 
+""" class SaleView(APIView):
+    queryset = Sale.objects.all()
+    serializer_class = SaleSerializer
 
+class ProductsViewSet(viewsets.ModelViewSet):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
 
+class PaymentViewSet(viewsets.ModelViewSet):
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializer """
+
+class AddPaymentView(APIView):
+    def post(self, request):
+        serializer = PaymentSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response( status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AddSaleView(APIView):
+    def post(self, request):
+        serializer = SaleSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response( status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+  
+class AddProductsView(APIView):
+    def post(self, request):
+        serializer = ProductsSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response( status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+""" class AddSaleView(APIView):
+    def post(self, request):
+        user = request.user  # Obtén el usuario logueado
+        data = request.data.copy()
+        data['id_user'] = user.id_user  # Asigna el id del usuario logueado
+        
+        # Campos con valores por defecto ya se manejan en el modelo, no es necesario pasarlos
+        
+        serializer = SaleSerializer(data=data)
+        if serializer.is_valid():
+            sale = serializer.save()
+            sale.sale_date = timezone.now()  # Generar la fecha de venta automáticamente
+            sale.save()
+            return Response({"id_sal": sale.id_sal}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+ """
 
 
