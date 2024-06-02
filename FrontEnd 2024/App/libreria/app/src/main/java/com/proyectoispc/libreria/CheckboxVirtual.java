@@ -154,9 +154,11 @@ public class CheckboxVirtual extends AppCompatActivity {
                 }
 
                 DbSale dbSale = new DbSale(CheckboxVirtual.this);
-                dbSale.insertSale(userId, shoppingCartService.getTotalAmount(), shoppingCartService.getTotalQuantity(), "virtual", "mail", shoppingCartService.getBookId(), new Date().toString());
+                long saleId = dbSale.insertSale(userId, shoppingCartService.getTotalAmount(), shoppingCartService.getTotalQuantity(), "virtual", "mail", shoppingCartService.getBookId(), new Date().toString());
 
-                startActivity(new Intent(getApplicationContext(), ConfirmacionCompra.class));
+                Intent intent = new Intent(getApplicationContext(), ConfirmacionCompra.class);
+                intent.putExtra("ID_SALE", saleId);
+                startActivity(intent);
                 overridePendingTransition(0,0);
             }
         });
