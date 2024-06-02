@@ -131,12 +131,6 @@ public class CheckboxVirtual extends AppCompatActivity {
                         return;
                     }
 
-                // Validaciones de campos vacíos
-                // if (nombreCompletoStr.isEmpty() || numeroTarjetaStr.isEmpty() || fechaExpiracionStr.isEmpty() || codigoSeguridadStr.isEmpty()) {
-                //    Toast.makeText(CheckboxVirtual.this, "Todos los campos son requeridos.", Toast.LENGTH_SHORT).show();
-                //    return; // Termina la ejecución del método si hay campos vacíos.
-                // }
-
                 // Validaciones adicionales
                 if (!nombreCompletoStr.matches("^[a-zA-Z]+( [a-zA-Z]+)*$")) {
                     nombreCompleto.setError("El nombre debe contener solo letras y espacios.");
