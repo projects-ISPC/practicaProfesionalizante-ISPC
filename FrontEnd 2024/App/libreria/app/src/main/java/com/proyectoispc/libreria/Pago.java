@@ -10,10 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Pago extends AppCompatActivity {
+
+    private CheckBox checkBoxPagoLocal;
+    private CheckBox checkBoxPagoVirtual;
+    private EditText editTextNombreCompleto;
+    private EditText editTextNumeroTarjeta;
+    private EditText editTextFechaExpiracion;
+    private EditText editTextCodigoSeguridad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
