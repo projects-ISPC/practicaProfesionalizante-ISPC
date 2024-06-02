@@ -41,8 +41,9 @@ public class CheckboxVirtual extends AppCompatActivity {
 
         shoppingCartService = ShoppingCartService.getInstance();
 
-        CheckBox checkBoxPagoVirtual = findViewById(R.id.checkBoxPagoVirtual);
-        CheckBox checkBoxPagoLocal = findViewById(R.id.checkBoxPagoLocal);
+        RadioGroup RadioGroupPago = findViewById(R.id.RadioGroupPago);
+        RadioButton checkBoxPagoVirtual = findViewById(R.id.checkBoxPagoVirtual);
+        RadioButton checkBoxPagoLocal = findViewById(R.id.checkBoxPagoLocal);
         EditText nombreCompleto = findViewById(R.id.editTextNombreCompleto);
         EditText numeroTarjeta = findViewById(R.id.editTextNumeroTarjeta);
         EditText fechaExpiracion = findViewById(R.id.editTextFechaExpiracion);
