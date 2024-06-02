@@ -36,9 +36,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="337dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="335dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,19 +64,20 @@
         android:textColor="#626364"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView15"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.044" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="335dp"
-        android:layout_height="52dp"
+        android:layout_height="70dp"
         android:layout_marginTop="8dp"
         android:hint="@string/mail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameInput"
         tools:ignore="NotSibling">
@@ -94,8 +95,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordInput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="337dp"
-        android:layout_height="52dp"
+        android:layout_width="335dp"
+        android:layout_height="70dp"
         android:layout_marginTop="8dp"
         android:hint="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,7 +106,7 @@
         tools:ignore="NotSibling">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="335dp"
             android:layout_height="45dp"
             android:inputType="textPassword"
             android:paddingBottom="13dp"
