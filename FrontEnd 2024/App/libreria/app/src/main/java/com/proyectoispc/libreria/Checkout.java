@@ -25,8 +25,8 @@ public class Checkout extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
 
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.contact);
+        // Set catalogue selected
+        bottomNavigationView.setSelectedItemId(R.id.catalogue);
 
         goToPurchase = findViewById(R.id.botonPagar);
 
@@ -74,6 +74,8 @@ public class Checkout extends AppCompatActivity {
                 }
 
                 if(id == R.id.contact){
+                    startActivity(new Intent(getApplicationContext(),Contact.class));
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
