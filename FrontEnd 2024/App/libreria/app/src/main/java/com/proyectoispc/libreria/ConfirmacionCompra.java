@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -19,6 +20,18 @@ public class ConfirmacionCompra extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmacion_compra);
+
+        // Obtener el ID_SALE del Intent
+        Intent intent = getIntent();
+        long saleId = intent.getLongExtra("ID_SALE", -1);
+
+        // Configurar el TextView para mostrar el ID_SALE
+        TextView numeroOrden = findViewById(R.id.numeroOrden);
+        if (saleId != -1) {
+            numeroOrden.setText(String.valueOf(saleId));
+        } else {
+            numeroOrden.setText("ID no disponible");
+        }
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
