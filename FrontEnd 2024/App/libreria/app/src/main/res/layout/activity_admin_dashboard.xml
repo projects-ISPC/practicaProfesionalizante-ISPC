@@ -34,18 +34,31 @@
 
 
     <Button
+        android:id="@+id/deleteBookButton"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:background="@drawable/redondeado_button"
+        android:text="@string/btn_delBook"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@+id/addBookButton"
+        tools:layout_editor_absoluteY="195dp" />
+
+    <Button
         android:id="@+id/addBookButton"
         android:layout_width="150dp"
         android:layout_height="100dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="36dp"
         android:background="@drawable/redondeado_button"
-        android:textColor="@color/white"
-        android:textSize="20sp"
         android:text="@string/btn_addBook"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="165dp" />
+        tools:layout_editor_absoluteY="195dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -57,7 +70,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/menu_navigation">
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+        app:menu="@menu/menu_navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
