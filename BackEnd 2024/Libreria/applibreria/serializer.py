@@ -6,7 +6,7 @@ from .models import Book, Sale
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ['email', 'name', 'message']
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
