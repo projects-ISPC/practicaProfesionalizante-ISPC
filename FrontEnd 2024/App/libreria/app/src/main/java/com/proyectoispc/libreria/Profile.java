@@ -35,8 +35,9 @@ public class Profile extends AppCompatActivity {
     TextInputLayout emailInputLayout, nameInputLayout;
     SharedPreferences sharedPreferences;
     EditText emailInput, nameInput;
-    Button buttonNames, buttonEmail, buttonLogOut;
+    Button buttonNames, buttonEmail, buttonLogOut, buttonAdmin;
     DbUser dbUser;
+    boolean isAdmin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,15 @@ public class Profile extends AppCompatActivity {
         buttonEmail = findViewById(R.id.buttonEmail);
         buttonLogOut = findViewById(R.id.buttonLogOut);
         deleteButton = findViewById(R.id.delete);
+        buttonAdmin = findViewById(R.id.buttonAdmin);
+
+        // Check de admin
+
+        isAdmin = this.email.equals("testusuario@gmail.com");
+
+        if (!isAdmin) {
+            buttonAdmin.setVisibility(View.GONE);
+        }
 
         // Conexion con BBDD
         dbUser = new DbUser(this);
