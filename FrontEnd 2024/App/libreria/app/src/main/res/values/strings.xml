@@ -85,6 +85,11 @@
     <string name="btn_addBook">Agregar Libro</string>
     <string name="btn_delBook">Eliminar Libro</string>
     <string name="btn_editBook">Editar Libro</string>
+    <string name="text1">Titulo del Libro</string>
+    <string name="text2">Nombre del Autor</string>
+    <string name="text3">Precio</string>
+    <string name="text4">Sinopsis</string>
+    <string name="text5">Selecciona Portada</string>
 
 
 </resources>
