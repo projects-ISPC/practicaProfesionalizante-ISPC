@@ -10,7 +10,7 @@
       </div>
       <div class="col-md-8 pt-0 mt-0">
         <p class="fc-basic-4 fs-lg-3 font-medium mb-0">
-          {{ book.author.name }}
+          {{ book.author}}
         </p>
       </div>
       <p class="col-md-12 py-2 fc-primary fs-md mb-0">
@@ -40,7 +40,7 @@
       <tbody class="font-medium fc-primary fs-sm-2">
         <tr>
           <th scope="row">Editorial</th>
-          <td class="ps-5 fc-secondary">{{ book.publisher.name }}</td>
+          <td class="ps-5 fc-secondary">{{ book.publisher }}</td>
         </tr>
         <tr>
           <th scope="row">ISBN</th>
@@ -50,10 +50,14 @@
           <th scope="row">Páginas</th>
           <td class="ps-5 fc-secondary">{{ book.page_amount }}</td>
         </tr>
-        <tr>
+        <!---<tr>
           <th scope="row">Clasificación</th>
-          <td class="ps-5 fc-secondary">{{ book.genres[0] }}</td>
-        </tr>
+          <td class="ps-5 fc-secondary">
+            <div *ngFor="let genre of book.genres">
+              {{ genre }}
+            </div>
+          </td>
+        </tr>--->
         <tr>
           <th scope="row">Publicación</th>
           <td class="ps-5 fc-secondary">{{ book.release_year }}</td>

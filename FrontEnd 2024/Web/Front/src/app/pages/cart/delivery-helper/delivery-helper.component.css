@@ -19,6 +19,10 @@ button:disabled {
   cursor: not-allowed;
 }
 
+.button-color {
+  color: darkblue !important;
+}
+
 .background {
   border-radius: 20px;
   background-color: #eaeaea66;

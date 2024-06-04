@@ -108,7 +108,7 @@ export class RegisterPageComponent implements OnInit {
   }
 
   onClickEnterLogin() {
-    const modalRef = this.modalService.open(LoginPageComponent, { fullscreen: true });
+    const modalRef = this.modalService.open(LoginPageComponent, { fullscreen: true, ariaLabelledBy: 'Modal de Login', ariaDescribedBy: 'Modal de Login'});
     this.activeModal.close();
   }
 }

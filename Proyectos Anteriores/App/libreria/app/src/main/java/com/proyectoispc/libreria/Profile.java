@@ -115,8 +115,6 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-
-
         // Navegabilidad de los botones superiores
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override

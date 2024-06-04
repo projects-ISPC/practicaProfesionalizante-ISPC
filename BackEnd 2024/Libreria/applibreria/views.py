@@ -39,6 +39,7 @@ class AddRegisterView(APIView):
 
 #¿Esta view es necesaria?
 
+
 class BookDetailView(APIView):
     def get_object(self, pk):
         try:
@@ -46,34 +47,38 @@ class BookDetailView(APIView):
         except Book.DoesNotExist:
             raise Http404
 
+    def get_book_data(self, book):
+        return {
+            'id_book': book.id_book, 
+            'isbn': book.isbn,
+            'author': book.id_aut.name,
+            'publisher': book.id_pub.name,                
+            'title': book.title, 
+            'page_amount': book.pages, 
+            'bookcover': book.bookcover, 
+            'stock': book.stock,
+            'release_year': book.releaseyear,
+            'synopsis': book.synopsis,
+            'price': book.price,
+            'tags': "No se que es... ( ˘︹˘ )"
+        }
+
     def get(self, request, pk, format=None):
         book = self.get_object(pk)
-        serializer = BookSerializer(book)
-        return Response(serializer.data)
+        book_data = self.get_book_data(book)
+        return JsonResponse(book_data, safe=False)
 
 class CatalogueView(APIView):
     def get(self,request):
         books = Book.objects.all()
         lib = []
-        for book in books:
-            genres = BookGenre.objects.filter(id_book=book.id_book)
-            g = []
-            for obj in genres:
-                g.append(obj.id_gen)           
-            lib.append ({
-                'id_book':book.id_book, 
-                'isbn': book.isbn,
-                'author':book.id_aut.name,
-                #'genres': g, 
+        for book in books:      
+            lib.append({
+                'id_book': book.id_book, 
                 'title': book.title, 
-                'page_amount': book.pages, 
-                'bookcover': book.bookcover, 
-                'stock': book.stock,
-                'release_year': book.releaseyear,
-                'synopsis': book.synopsis,
-                'price': book.price,
-                'tags': "No se que es... ( ˘︹˘ )"
-                })
+                'author': book.id_aut.name,
+                'bookcover': book.bookcover
+            })
         response_data= lib
         return JsonResponse(response_data, safe=False)
 

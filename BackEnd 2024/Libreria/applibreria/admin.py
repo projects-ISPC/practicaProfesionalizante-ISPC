@@ -16,7 +16,7 @@ class PaymentAdmin(admin.ModelAdmin):
     list_display = ("namecard", "numbercard", "exp_date", "id_user")
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ("email_cont", "name")
+    list_display = ("email", "message", "name")
 
 class AutorAdmin(admin.ModelAdmin):
     list_display = ("name",)
