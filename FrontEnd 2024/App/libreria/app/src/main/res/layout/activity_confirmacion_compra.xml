@@ -262,7 +262,7 @@
         android:backgroundTint="#538DCC"
         android:fontFamily="@font/rubik"
         android:onClick="launchCatalogo"
-        android:text="Volver al catálogo"
+        android:text="VOLVER AL CATÁLOGO"
         android:textAllCaps="false"
         android:textColor="#212121"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"

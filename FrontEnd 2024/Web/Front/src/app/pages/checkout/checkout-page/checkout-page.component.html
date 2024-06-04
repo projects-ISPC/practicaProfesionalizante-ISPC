@@ -1,7 +1,7 @@
-<mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+<mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!" role="tablist">
 
 
-  <mat-step [stepControl]="firstFormGroup" label="">
+  <mat-step [stepControl]="firstFormGroup" label="" role="tab">
     <div [formGroup]="firstFormGroup" class="notFormInput">
 
       <div class="container-fluid pt-5">
@@ -175,7 +175,7 @@
 
   </mat-step>
 
-  <mat-step [stepControl]="secondFormGroup">
+  <mat-step [stepControl]="secondFormGroup" role="tab">
     <form [formGroup]="secondFormGroup" (ngSubmit)="confirmPurchase($event)" class="notFormInput">
       <mat-radio-group>
         <div class="container-fluid pt-5">
@@ -306,7 +306,7 @@
     </form>
   </mat-step>
 
-  <mat-step>
+  <mat-step role="tab">
 
     <div class="container pt-5">
       <div class="row gy-4 justify-content-center">

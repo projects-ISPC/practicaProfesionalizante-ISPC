@@ -35,7 +35,7 @@ public class Profile extends AppCompatActivity {
     TextInputLayout emailInputLayout, nameInputLayout;
     SharedPreferences sharedPreferences;
     EditText emailInput, nameInput;
-    Button buttonNames, buttonEmail, buttonLogOut;
+    Button buttonNames, buttonEmail;
     DbUser dbUser;
 
     @Override
@@ -61,7 +61,6 @@ public class Profile extends AppCompatActivity {
         nameInput = nameInputLayout.getEditText();
         buttonNames = findViewById(R.id.buttonNames);
         buttonEmail = findViewById(R.id.buttonEmail);
-        buttonLogOut = findViewById(R.id.buttonLogOut);
         deleteButton = findViewById(R.id.delete);
 
         // Conexion con BBDD
@@ -106,14 +105,6 @@ public class Profile extends AppCompatActivity {
                     Toast.makeText(Profile.this, "En este momento no se puede actualizar el correo.", Toast.LENGTH_LONG).show();
                 }
 
-            }
-        });
-
-        buttonLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(Profile.this, "Deslogeo exitoso", Toast.LENGTH_LONG).show();
-                redirectToLogin();
             }
         });
 
@@ -176,11 +167,6 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-    }
-
-    private void redirectToLogin(){
-        startActivity(new Intent(getApplicationContext(),Login.class));
-        overridePendingTransition(0,0);
     }
 
     public void fetchUserData(){

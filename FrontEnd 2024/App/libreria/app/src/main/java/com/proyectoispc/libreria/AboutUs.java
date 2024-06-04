@@ -21,7 +21,7 @@ public class AboutUs extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
 
-        // Set Home selected
+        // Set about selected
         bottomNavigationView.setSelectedItemId(R.id.about);
 
         ImageButton btnFlecha = findViewById(R.id.btn_back);

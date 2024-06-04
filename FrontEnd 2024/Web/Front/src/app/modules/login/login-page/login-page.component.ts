@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterPageComponent } from '../register-page/register-page.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/services//auth/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { Credentials } from 'src/app/models/credentials/credentials-model';
 import { tap, catchError } from 'rxjs/operators';
 import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
@@ -119,7 +119,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   onClickEnterRegister() {
-    const modalRef = this.modalService.open(RegisterPageComponent, { fullscreen: true });
+    const modalRef = this.modalService.open(RegisterPageComponent, { fullscreen: true, ariaDescribedBy: 'Modal de registro', ariaLabelledBy: 'Modal de registro'});
     this.activeModal.close();
   }
 
