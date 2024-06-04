@@ -11,7 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.proyectoispc.libreria.db.DbSale;
 import com.proyectoispc.libreria.db.DbUser;
@@ -37,12 +41,15 @@ public class CheckboxVirtual extends AppCompatActivity {
 
         shoppingCartService = ShoppingCartService.getInstance();
 
-        CheckBox checkBoxPagoVirtual = findViewById(R.id.checkBoxPagoVirtual);
+        RadioGroup RadioGroupPago = findViewById(R.id.RadioGroupPago);
+        RadioButton checkBoxPagoVirtual = findViewById(R.id.checkBoxPagoVirtual);
+        RadioButton checkBoxPagoLocal = findViewById(R.id.checkBoxPagoLocal);
         EditText nombreCompleto = findViewById(R.id.editTextNombreCompleto);
         EditText numeroTarjeta = findViewById(R.id.editTextNumeroTarjeta);
         EditText fechaExpiracion = findViewById(R.id.editTextFechaExpiracion);
         EditText codigoSeguridad = findViewById(R.id.editTextCodigoSeguridad);
-
+        LinearLayout logosTarjetas = findViewById(R.id.logosTarjetas);
+        LinearLayout linearLayout1 = findViewById(R.id.linearLayout1);
         ImageButton imagenFlecha = findViewById(R.id.backButton);
         ImageButton imagenCarrito = findViewById(R.id.shoppingCartButton);
         Button botonAtras = findViewById(R.id.botonAtras);
@@ -76,13 +83,26 @@ public class CheckboxVirtual extends AppCompatActivity {
                     numeroTarjeta.setVisibility(View.VISIBLE);
                     fechaExpiracion.setVisibility(View.VISIBLE);
                     codigoSeguridad.setVisibility(View.VISIBLE);
+                    logosTarjetas.setVisibility(View.VISIBLE);
                     enableForm(true);
                 } else {
                     nombreCompleto.setVisibility(View.GONE);
                     numeroTarjeta.setVisibility(View.GONE);
                     fechaExpiracion.setVisibility(View.GONE);
                     codigoSeguridad.setVisibility(View.GONE);
+                    logosTarjetas.setVisibility(View.GONE);
                     enableForm(false);
+                }
+            }
+        });
+
+        checkBoxPagoLocal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    linearLayout1.setVisibility(View.VISIBLE);
+                } else {
+                    linearLayout1.setVisibility(View.GONE);
                 }
             }
         });
@@ -92,20 +112,28 @@ public class CheckboxVirtual extends AppCompatActivity {
         btnConfirmacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombreCompletoStr = nombreCompleto.getText().toString();
-                String numeroTarjetaStr = numeroTarjeta.getText().toString();
-                String fechaExpiracionStr = fechaExpiracion.getText().toString();
-                String codigoSeguridadStr = codigoSeguridad.getText().toString();
 
-                // Validaciones de campos vacíos
-                if (nombreCompletoStr.isEmpty() || numeroTarjetaStr.isEmpty() || fechaExpiracionStr.isEmpty() || codigoSeguridadStr.isEmpty()) {
-                    Toast.makeText(CheckboxVirtual.this, "Todos los campos son requeridos.", Toast.LENGTH_SHORT).show();
-                    return; // Termina la ejecución del método si hay campos vacíos.
+                // Verificar si se ha seleccionado algún método de pago
+                if (!checkBoxPagoVirtual.isChecked() && !checkBoxPagoLocal.isChecked()) {
+                    Toast.makeText(CheckboxVirtual.this, "Debe seleccionar al menos una opción de pago.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
+                if (checkBoxPagoVirtual.isChecked()) {
+                    // Validar los campos obligatorios
+                    String nombreCompletoStr = nombreCompleto.getText().toString().trim();
+                    String numeroTarjetaStr = numeroTarjeta.getText().toString().trim();
+                    String fechaExpiracionStr = fechaExpiracion.getText().toString().trim();
+                    String codigoSeguridadStr = codigoSeguridad.getText().toString().trim();
+
+                    if (nombreCompletoStr.isEmpty() || numeroTarjetaStr.isEmpty() || fechaExpiracionStr.isEmpty() || codigoSeguridadStr.isEmpty()) {
+                        Toast.makeText(CheckboxVirtual.this, "Todos los campos son requeridos para el pago virtual.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                 // Validaciones adicionales
-                if (!nombreCompletoStr.matches("[a-zA-Z]+")) {
-                    nombreCompleto.setError("El nombre debe contener solo letras.");
+                if (!nombreCompletoStr.matches("^[a-zA-Z]+( [a-zA-Z]+)*$")) {
+                    nombreCompleto.setError("El nombre debe contener solo letras y espacios.");
                     return;
                 }
 
@@ -123,11 +151,14 @@ public class CheckboxVirtual extends AppCompatActivity {
                     fechaExpiracion.setError("Ingrese una fecha de expiración válida (MM/YY).");
                     return;
                 }
+                }
 
                 DbSale dbSale = new DbSale(CheckboxVirtual.this);
-                dbSale.insertSale(userId, shoppingCartService.getTotalAmount(), shoppingCartService.getTotalQuantity(), "virtual", "mail", shoppingCartService.getBookId(), new Date().toString());
+                long saleId = dbSale.insertSale(userId, shoppingCartService.getTotalAmount(), shoppingCartService.getTotalQuantity(), "virtual", "mail", shoppingCartService.getBookId(), new Date().toString());
 
-                startActivity(new Intent(getApplicationContext(), ConfirmacionCompra.class));
+                Intent intent = new Intent(getApplicationContext(), ConfirmacionCompra.class);
+                intent.putExtra("ID_SALE", saleId);
+                startActivity(intent);
                 overridePendingTransition(0,0);
             }
         });
@@ -147,5 +178,3 @@ public class CheckboxVirtual extends AppCompatActivity {
         codigoSeguridad.setEnabled(enabled);
     }
 }
-
-

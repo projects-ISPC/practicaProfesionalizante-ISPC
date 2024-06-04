@@ -27,7 +27,7 @@ public class Contact extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
 
-        // Set Home selected
+        // Set contact selected
         bottomNavigationView.setSelectedItemId(R.id.contact);
 
         ImageView imagenFlecha = findViewById(R.id.imagenFlecha);

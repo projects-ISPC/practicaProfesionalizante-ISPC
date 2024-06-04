@@ -58,6 +58,15 @@
             android:name=".ConfirmacionCompra"
             android:exported="false" />
         <activity
+            android:name=".AboutUs"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".AddBookActivity"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="true"
             android:label="@string/app_name">

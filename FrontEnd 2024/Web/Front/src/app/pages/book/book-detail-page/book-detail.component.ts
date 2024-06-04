@@ -41,12 +41,12 @@ export class BookDetailComponent implements OnInit {
 
         if (this.book) {
           this.bookFound = true;
-          this.getRecomendations();
+          //this.getRecomendations();
         }
 
       });
   }
-
+  
   getRecomendations() {
     this.bookService.getBooksByGenre(this.book.genres[0])
       .subscribe((result: Book[]) => {
@@ -54,5 +54,5 @@ export class BookDetailComponent implements OnInit {
         result = result.sort(() => Math.random() - 0.5).slice(0, 5);
         this.recomendedBooks = result;
       });
-  }
+    }
 }
