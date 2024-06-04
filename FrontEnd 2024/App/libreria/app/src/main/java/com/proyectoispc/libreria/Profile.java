@@ -119,6 +119,13 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+        buttonAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redirectToAdminDashboard();
+            }
+        });
+
         buttonLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -192,6 +199,11 @@ public class Profile extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void redirectToAdminDashboard() {
+        startActivity(new Intent(getApplicationContext(),AdminDashboard.class));
+        overridePendingTransition(0,0);
     }
 
     private void redirectToLogin(){
