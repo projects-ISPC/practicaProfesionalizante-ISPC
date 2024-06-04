@@ -49,6 +49,7 @@ public class Checkout extends AppCompatActivity {
         EditText editTextText6 = findViewById(R.id.editTextText6);
         EditText editTextText7 = findViewById(R.id.editTextText7);
         EditText editTextText8 = findViewById(R.id.editTextText8);
+        EditText editTextText9 = findViewById(R.id.editTextText9);
         Button botonPagar = findViewById(R.id.botonPagar);
 
         botonVolver.setOnClickListener(new View.OnClickListener() {
@@ -194,6 +195,16 @@ public class Checkout extends AppCompatActivity {
                     return;
                 } else if (!nombreCompleto.matches("^[a-zA-Z]+( [a-zA-Z]+)*$")) {
                     editTextText.setError("El nombre debe contener solo letras y espacios.");
+                    return;
+                }
+
+                // Validar DNI
+                String dni = editTextText9.getText().toString().trim();
+                if (dni.isEmpty()) {
+                    editTextText.setError("Campo requerido.");
+                    return;
+                } else if (!dni.matches("^\\d{8}$")) {
+                    editTextText9.setError("El DNI debe contener 8 cifras.");
                     return;
                 }
 
