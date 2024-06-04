@@ -160,6 +160,8 @@ public class CheckboxVirtual extends AppCompatActivity {
                 intent.putExtra("ID_SALE", saleId);
                 startActivity(intent);
                 overridePendingTransition(0,0);
+
+                shoppingCartService.clearCart();
             }
         });
 
