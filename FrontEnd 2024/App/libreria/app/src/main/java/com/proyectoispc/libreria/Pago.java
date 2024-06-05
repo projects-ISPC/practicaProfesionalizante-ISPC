@@ -10,10 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Pago extends AppCompatActivity {
+
+    private CheckBox checkBoxPagoLocal;
+    private CheckBox checkBoxPagoVirtual;
+    private EditText editTextNombreCompleto;
+    private EditText editTextNumeroTarjeta;
+    private EditText editTextFechaExpiracion;
+    private EditText editTextCodigoSeguridad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +34,8 @@ public class Pago extends AppCompatActivity {
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
 
-        // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.contact);
+        // Set catalogue selected
+        bottomNavigationView.setSelectedItemId(R.id.catalogue);
 
         ImageButton imagenFlecha = findViewById(R.id.backButton);
         ImageButton imagenCarrito = findViewById(R.id.shoppingCartButton);
@@ -70,6 +81,8 @@ public class Pago extends AppCompatActivity {
                 }
 
                 if(id == R.id.contact){
+                    startActivity(new Intent(getApplicationContext(),Contact.class));
+                    overridePendingTransition(0,0);
                     return true;
                 }
 

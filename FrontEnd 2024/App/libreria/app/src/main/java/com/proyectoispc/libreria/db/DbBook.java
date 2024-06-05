@@ -31,6 +31,7 @@ public class DbBook extends DbHelper {
         Cursor cursor = db.rawQuery("SELECT * FROM t_book WHERE genre = ?", new String[]{genre});
         return cursor;
     }
+  
     public List<Book> getListBooks() {
         SQLiteDatabase db = this.getWritableDatabase();
         List<Book> bookList = new ArrayList<>();
@@ -45,7 +46,7 @@ public class DbBook extends DbHelper {
                 int coverIndex = cursor.getColumnIndexOrThrow("cover");
                 int priceIndex = cursor.getColumnIndexOrThrow("price");
                 int tagIndex = cursor.getColumnIndexOrThrow("tag");
-
+              
                 Book book = new Book(
                         cursor.getInt(idIndex),
                         cursor.getString(nameIndex),
@@ -61,4 +62,14 @@ public class DbBook extends DbHelper {
         cursor.close();
         return bookList;
     }
+  
+    public Cursor getTheBookById(int bookId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"_id", "title", "author", "price"}; // Suponiendo que estas son las columnas de tu tabla t_book
+        String selection = "_id=?";
+        String[] selectionArgs = {String.valueOf(bookId)};
+        return db.query("t_book", columns, selection, selectionArgs, null, null, null);
+    }
+
+
 }

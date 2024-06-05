@@ -34,12 +34,16 @@ export class NavbarComponent implements OnInit {
   onClickLogIn() {
     const modalRef = this.modalService.open(LoginPageComponent, {
       fullscreen: true,
+      ariaDescribedBy: 'Modal de Login',
+      ariaLabelledBy: 'Modal de Login'
     });
   }
 
   onClickRegister() {
     const modalRef = this.modalService.open(RegisterPageComponent, {
       fullscreen: true,
+      ariaDescribedBy: 'Modal de Registro',
+      ariaLabelledBy: 'Modal de Registro'
     });
   }
 

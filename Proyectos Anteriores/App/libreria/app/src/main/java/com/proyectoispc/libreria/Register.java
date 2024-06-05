@@ -46,14 +46,6 @@ public class Register extends AppCompatActivity {
                 }
 
                 DbUser dbUser = new DbUser(Register.this);
-
-                String email = emailInput.getText().toString();
-
-                if(dbUser.checkEmail(email)) {
-                    Toast.makeText(Register.this, "El correo electrónico ya está registrado", Toast.LENGTH_LONG).show();
-                    return;
-                }
-
                 long id = dbUser.insertUser(nameInput.getText().toString(), emailInput.getText().toString(), passwordInput.getText().toString());
 
                 if(id > 0){

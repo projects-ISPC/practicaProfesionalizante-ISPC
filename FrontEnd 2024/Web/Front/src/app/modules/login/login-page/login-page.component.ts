@@ -130,7 +130,7 @@ export class LoginPageComponent {
   }
 
   onClickEnterRegister(){
-    const modalRef = this.modalService.open(RegisterPageComponent, { fullscreen: true});
+    const modalRef = this.modalService.open(RegisterPageComponent, { fullscreen: true, ariaDescribedBy: 'Modal de registro', ariaLabelledBy: 'Modal de registro'});
     this.activeModal.close();
   }
 
