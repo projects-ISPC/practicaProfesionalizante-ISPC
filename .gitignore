@@ -8,6 +8,12 @@
 build/
 !gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
+.gradle/8.6/executionHistory/executionHistory.bin
+.gradle/8.6/executionHistory/executionHistory.lock
+.gradle/8.6/fileHashes/fileHashes.bin
+.gradle/8.6/fileHashes/fileHashes.lock
+.gradle/8.6/fileHashes/resourceHashesCache.bin
+.gradle/file-system.probe
 
 # IntelliJ IDEA
 .idea/
@@ -18,3 +24,12 @@ gradle/wrapper/gradle-wrapper.properties
 
 # Others
 *.lock
+
+# Ignore local.properties file
+local.properties
+
+# Ignore build output
+/build/
+app/build/
+
+
