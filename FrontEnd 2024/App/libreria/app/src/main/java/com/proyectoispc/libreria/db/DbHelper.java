@@ -2,15 +2,28 @@ package com.proyectoispc.libreria.db;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.proyectoispc.libreria.models.Book;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class DbHelper extends SQLiteOpenHelper {
+
+    //
+    private static DbHelper instance;
+    public static synchronized DbHelper getInstance(Context context) {
+        if (instance == null) {
+            instance = new DbHelper(context.getApplicationContext());
+        }
+        return instance;
+    }
+    //
 
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "library.db";
@@ -179,6 +192,28 @@ public class DbHelper extends SQLiteOpenHelper {
         values.add(book);
 
         return values;
+    }
+
+    // Método para obtener un libro según su ID
+    public Book queryBookById(int bookId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {"_id", "title", "author", "price"}; // Suponiendo que estas son las columnas de tu tabla t_book
+        String selection = "_id=?";
+        String[] selectionArgs = {String.valueOf(bookId)};
+        Cursor cursor = db.query("t_book", columns, selection, selectionArgs, null, null, null);
+
+        Book book = null;
+        if (cursor != null && cursor.moveToFirst()) {
+            String title = cursor.getString(cursor.getColumnIndex("title"));
+            String author = cursor.getString(cursor.getColumnIndex("author"));
+            double price = cursor.getDouble(cursor.getColumnIndex("price"));
+            // Puedes obtener el resto de los datos del libro de manera similar
+            // Construye un objeto Book con los datos obtenidos
+            book = new Book(bookId, title, author, price); // Suponiendo que tienes un constructor para Book
+            cursor.close();
+        }
+        db.close();
+        return book;
     }
 
 }
