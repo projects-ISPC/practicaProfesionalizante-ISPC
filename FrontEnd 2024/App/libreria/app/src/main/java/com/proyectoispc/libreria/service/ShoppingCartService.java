@@ -92,9 +92,4 @@ public class ShoppingCartService {
         return this.selectedBooks.get(0).getBook().getId();
     }
 
-    public void clearCart() {
-        selectedBooks.clear();
-    }
-
-
 }
