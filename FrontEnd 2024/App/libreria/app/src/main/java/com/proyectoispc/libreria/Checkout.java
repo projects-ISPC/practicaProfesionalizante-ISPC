@@ -21,7 +21,7 @@ import android.widget.RadioGroup;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Checkout extends AppCompatActivity {
+public class Checkout extends BaseActivity {
 
     Button goToPurchase;
 

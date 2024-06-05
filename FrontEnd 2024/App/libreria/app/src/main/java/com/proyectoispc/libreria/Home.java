@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Home extends AppCompatActivity {
+public class Home extends BaseActivity {
 
     DbBook dbBook;
     ImageButton backbutton, shoppingCartButton;
