@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Pago extends AppCompatActivity {
+public class Pago extends BaseActivity {
 
     private CheckBox checkBoxPagoLocal;
     private CheckBox checkBoxPagoVirtual;
