@@ -12,8 +12,9 @@
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
+        app:tint="?attr/gray_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -24,8 +25,9 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
+        app:tint="?attr/gray_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
@@ -50,6 +52,8 @@
         android:drawableStart="@drawable/vector_search"
         android:drawablePadding="12dp"
         android:hint="Buscá por género, autor, título"
+        android:textColor="@color/black"
+        android:textColorHint="?attr/gray_text"
         android:minHeight="48dp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +105,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Arte"
-            android:textColor="@color/black"
+            android:textColor="?attr/gray_text"
             android:textSize="10sp" />
 
         <Button
@@ -113,7 +117,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Ciencia"
-            android:textColor="@color/black"
+            android:textColor="?attr/gray_text"
             android:textSize="10sp" />
 
         <Button
@@ -125,7 +129,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Fantacia"
-            android:textColor="@color/black"
+            android:textColor="?attr/gray_text"
             android:textSize="10sp" />
 
         <Button
@@ -137,7 +141,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Economia"
-            android:textColor="@color/black"
+            android:textColor="?attr/gray_text"
             android:textSize="10sp" />
     </LinearLayout>
     <ScrollView
@@ -147,7 +151,8 @@
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        android:textColor="?attr/buttonTextColor">
         <LinearLayout
             android:id="@+id/content_catalogue"
             android:layout_width="match_parent"
@@ -155,6 +160,7 @@
             android:gravity="center"
             android:orientation="vertical"
             android:padding="5dp">
+
 
         </LinearLayout>
     </ScrollView>

@@ -36,7 +36,6 @@ public class ShoppingCartService {
         this.selectedBooks.add(newBook);
     }
 
-    //
     // Eliminar un Libro del Carrito
     public void removeBook(Book book) {
         Iterator<SelectedBook> iterator = selectedBooks.iterator();
@@ -52,10 +51,12 @@ public class ShoppingCartService {
             }
         }
     }
+
     // Vaciar el Carrito
     public void clearCart() {
         selectedBooks.clear();
     }
+
     // Actualizar Cantidad de un Libro
     public void updateBookQuantity(Book book, int quantity) {
         for (SelectedBook element : selectedBooks) {
@@ -65,8 +66,6 @@ public class ShoppingCartService {
             }
         }
     }
-    //
-
 
     public List<SelectedBook> getBooks() {
         return this.selectedBooks;
@@ -74,7 +73,7 @@ public class ShoppingCartService {
 
     public double getTotalAmount() {
         double total = 0;
-        for (SelectedBook element: this.selectedBooks) {
+        for (SelectedBook element : this.selectedBooks) {
             total += (element.getBook().getPrice() * element.getCuantity());
         }
         return total;
@@ -82,8 +81,8 @@ public class ShoppingCartService {
 
     public int getTotalQuantity() {
         int total = 0;
-        for (SelectedBook element: this.selectedBooks) {
-            total +=  element.getCuantity();
+        for (SelectedBook element : this.selectedBooks) {
+            total += element.getCuantity();
         }
         return total;
     }
@@ -91,10 +90,4 @@ public class ShoppingCartService {
     public int getBookId() {
         return this.selectedBooks.get(0).getBook().getId();
     }
-
-    public void clearCart() {
-        selectedBooks.clear();
-    }
-
-
 }

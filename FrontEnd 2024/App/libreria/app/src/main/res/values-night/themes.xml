@@ -12,5 +12,10 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="buttonTextColor">@color/white</item>
+        <item name="textColorLight">@color/black</item>
+        <item name="textColorDark">@color/white</item>
+        <item name="titulo_celeste">@color/celeste</item>
+        <item name="gray_text">@color/colorGray3</item>
     </style>
 </resources>
