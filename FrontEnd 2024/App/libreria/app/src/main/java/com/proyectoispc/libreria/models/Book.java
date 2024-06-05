@@ -11,18 +11,6 @@ public class Book {
     private double price;
     private String tag;
 
-    public Book() {
-    }
-
-    public Book(int id, String name, String author, String description, String cover, double price) {
-        this.id = id;
-        this.name = name;
-        this.author = author;
-        this.description = description;
-        this.cover = cover;
-        this.price = price;
-    }
-
     public Book(int id, String name, String author, String description, int coverID, double price) {
         this.id = id;
         this.name = name;
