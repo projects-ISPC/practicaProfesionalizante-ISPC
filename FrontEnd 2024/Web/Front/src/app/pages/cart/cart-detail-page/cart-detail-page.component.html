@@ -1,12 +1,12 @@
 <section class="container-fluid py-5 my-4">
   <div class="row ps-4">
     <div class="col-12 pb-4">
-      <h2>Mi carrito</h2>
+      <h2> {{ 'CARRITO.titulo_principal' | translate}}</h2>
     </div>
     <div class="col-12">
       <div class="row">
         <div class="col-6">
-          <span>{{ totalItems }} items</span>
+          <span>{{ totalItems }} {{ 'CARRITO.cantidad_de_items' | translate}}</span>
         </div>
         <div class="col-6" *ngIf="books.length">
           <button class="trash-icon-button" (click)="onClearCart()">
@@ -41,7 +41,7 @@
             <div class="col-12">
               <div class="row">
                 <div class="col-6">
-                  <span class="fs-md-1 font-bold fc-primary">Total:</span>
+                  <span class="fs-md-1 font-bold fc-primary">{{'CARRITO.total' | translate}}</span>
                 </div>
 
                 <div class="col-6">
@@ -53,12 +53,12 @@
             <div class="col-12 mt-5">
               <div class="row align-items-center">
                 <div class="col-6">
-                  <a type="button" class="font-light fs-sm-2 fc-primary">Seguir comprando</a>
+                  <a type="button" class="font-light fs-sm-2 fc-primary">{{'CARRITO.seguir_comprando' | translate}}</a>
                 </div>
 
                 <div class="col-6">
                   <button type="button" class="font-bold fs-md p-3 purchase-button" (click)="onClickConfirmPurchase()">
-                    iniciar compra
+                    {{'CARRITO.iniciar_compra' | translate}}
                   </button>
                 </div>
               </div>

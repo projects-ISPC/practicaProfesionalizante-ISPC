@@ -6,6 +6,7 @@ import { BookCataloguePageComponent } from './book-catalogue-page/catalogue-page
 import { SearchBookNotFoundComponent } from './search-book-not-found/search-book-not-found.component';
 import { SelectedBookNotFoundComponent } from './selected-book-not-found/selected-book-not-found.component';
 import { SearchBookPageComponent } from './search-book-page/search-book-page.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -13,11 +14,12 @@ import { SearchBookPageComponent } from './search-book-page/search-book-page.com
     BookCataloguePageComponent,
     SearchBookNotFoundComponent,
     SelectedBookNotFoundComponent,
-    SearchBookPageComponent
+    SearchBookPageComponent,
   ],
   imports: [
     CommonModule,
-    BookCardModule
+    BookCardModule,
+    TranslateModule,
   ]
 })
 export class BookDetailModule { }

@@ -22,6 +22,7 @@ import { PublisherFormComponent } from './pages/publisher-dashboard-page/publish
 import { StoreDashboardPageComponent } from './pages/store-dashboard-page/store-dashboard-page.component';
 import { AdminNavigationService } from './services/navigation/navigation.service';
 import { StoreFormComponent } from './pages/store-dashboard-page/store-form/store-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -43,7 +44,8 @@ import { StoreFormComponent } from './pages/store-dashboard-page/store-form/stor
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ],
   providers: [
     UserDashboardService,

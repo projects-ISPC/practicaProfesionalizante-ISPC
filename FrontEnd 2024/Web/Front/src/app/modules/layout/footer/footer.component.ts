@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,9 @@ import { NavigationService } from 'src/app/services/navigation/navigation.servic
 })
 export class FooterComponent {
 
-  constructor(private navigationService: NavigationService) { }
+  constructor(private navigationService: NavigationService,
+    private translate: TranslateService
+  ) { }
 
   onClickHome() {
     this.navigationService.navigateToHome();
@@ -32,6 +35,10 @@ export class FooterComponent {
 
   onClickNavigateToContact() {
     this.navigationService.navigateToContact()
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 
 }

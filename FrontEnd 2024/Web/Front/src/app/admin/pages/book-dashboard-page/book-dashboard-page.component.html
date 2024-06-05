@@ -3,12 +3,12 @@
     <div class="row mt-5 pt-5 justify-content-center align-items-center gy-5">
 
       <div class="col-12 col-lg-4 text-start">
-        <span class="fw-700 db-tittle">Stock de productos</span>
+        <span class="fw-700 db-tittle">{{'LIBROS.stock_de_productos' | translate}}</span>
       </div>
 
       <div class="col-12 col-lg-6">
         <div class="input-group">
-          <input type="text" class="form-control rounded-1 px-4 py-3" placeholder="Buscá por ISBN, título, autor">
+          <input type="text" class="form-control rounded-1 px-4 py-3" [placeholder]="'LIBROS.buscador' | translate">
           <button type="button" class="btn btn-outline-secondary"> <img src="./assets/icons/extra/lupa.png" alt="">
             <i class="bi bi-search"></i>
           </button>
@@ -17,7 +17,7 @@
 
       <div class="col-12 col-lg-2 text-end">
         <button type="button" role="button" class="primary-button-outline py-2 px-3 col-12"
-          (click)="onCreateBook()">Agregar stock</button>
+          (click)="onCreateBook()">{{'LIBROS.button_agregar_stock' | translate}}</button>
       </div>
     </div>
   </section>
@@ -26,11 +26,11 @@
 
     <thead>
       <tr>
-        <th class="col-5" scope="col">Libro</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
-        <th scope="col">Acciones</th>
+        <th class="col-5" scope="col">{{'LIBROS.libro' | translate}}</th>
+        <th scope="col">{{'LIBROS.autor' | translate}}</th>
+        <th scope="col">{{'LIBROS.precio' | translate}}</th>
+        <th scope="col">{{'LIBROS.stock' | translate}}</th>
+        <th scope="col">{{'LIBROS.acciones' | translate}}</th>
       </tr>
     </thead>
 

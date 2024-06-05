@@ -1,19 +1,15 @@
-<div class="main-container">
-  <p class="fs-md">{{ description }}</p>
-  <div class="icons-container">
-    <a *ngFor="let red of socialMedia" [href]="red.link" target="_blank" [attr.aria-label]="red.ariaLabel" tabindex="0">
-      <img [src]="red.src" alt="">
-    </a>
-  </div>
-  <div class="separator"></div>
-  <div class="data-container">
-    <div *ngFor="let data of contactData" class="mb-40">
-      <h2 class="fs-md-1 subtitle">{{ data.title }}</h2>
-      <div class="source-container">
-        <div><img [src]="data.icon" alt="" class="data-icon"></div>
-        <p *ngIf="!data.icon.includes('mail')" class="fs-md">{{ data.text }}</p>
-        <a class="fs-md" *ngIf="data.icon.includes('mail')" [href]="'mailto:' + data.text">{{ data.text }}</a>
-      </div>
+<section>
+  <div class="contact-info-container">
+    <div *ngFor="let contact of contactData">
+      <h3>{{ 'CONTACTO.' + contact.title | translate }}</h3>
+      <p><img [src]="contact.icon" alt="{{ 'CONTACTO.' + contact.title | translate }}" /> {{ contact.text }}</p>
     </div>
   </div>
-</div>
+
+  <div class="social-media-container">
+    <a *ngFor="let social of socialMedia" [href]="social.link" target="_blank" rel="noopener noreferrer">
+      <img [src]="social.src" [alt]="social.ariaLabel" />
+    </a>
+  </div>
+</section>
+

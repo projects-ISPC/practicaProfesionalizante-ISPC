@@ -4,7 +4,7 @@
       <button ngbAccordionButton class="accordion-button">
         <div class="col">
           <span class="fc-secondary font-bold fs-sm-2">
-            Orden: #{{purchase.id_sell}}
+            {{ 'ADMIN_PEDIDOS_ITEM.orden' | translate }} #{{purchase.id_sell}}
           </span>
         </div>
         <div class="text-end col">
@@ -20,14 +20,14 @@
           <table class="table">
             <thead>
               <tr class="fc-primary font-bold fs-sm-1">
-                <th scope="col">Producto</th>
-                <th scope="col">Precio</th>
+                <th scope="col">{{ 'ADMIN_PEDIDOS_ITEM.producto' | translate }}</th>
+                <th scope="col">{{ 'ADMIN_PEDIDOS_ITEM.precio' | translate }}</th>
               </tr>
             </thead>
             <tbody>
               <tr class="fc-primary font-medium fs-sm-1" *ngFor="let book of purchase.books">
-                <td>{{getBookTitle(book)}}</td>
-                <td>{{getBookPrice(book)}}</td>
+                <td>{{ getBookTitle(book) }}</td>
+                <td>{{ getBookPrice(book) }}</td>
               </tr>
             </tbody>
           </table>
@@ -35,14 +35,14 @@
           <table class="table">
             <thead>
               <tr class="fc-primary font-bold fs-sm-1">
-                <th scope="col">Cantidad</th>
-                <th scope="col">total</th>
+                <th scope="col">{{ 'ADMIN_PEDIDOS_ITEM.cantidad' | translate }}</th>
+                <th scope="col">{{ 'ADMIN_PEDIDOS_ITEM.total' | translate }}</th>
               </tr>
             </thead>
             <tbody>
               <tr class="fc-primary font-medium fs-sm-1">
-                <td>{{purchase.totalQuantity}}</td>
-                <td>{{purchase.totalCost}}</td>
+                <td>{{ purchase.totalQuantity }}</td>
+                <td>{{ purchase.totalCost }}</td>
               </tr>
             </tbody>
           </table>

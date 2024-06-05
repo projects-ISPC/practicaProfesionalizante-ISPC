@@ -1,10 +1,10 @@
 <div class="main-container">
-  <h1 class="title fs-lg-2 font-bold">No dudes en escribirnos</h1>
-  <p class="fs-md">{{ description }}</p>
+  <h1 class="title fs-lg-2 font-bold">{{ 'CONTACTO.titulo_form' | translate }}</h1>
+  <p class="fs-md">{{ 'CONTACTO.pequena_descripcion_de_titulo_form' | translate }}</p>
   <form [formGroup]="contactForm" (ngSubmit)="onSaveHandle($event)">
-    <input type="text" placeholder="Nombre y apellido" formControlName="name" (keypress)="validateInputName($event)" />
-    <input type="email" placeholder="Correo electrónico" formControlName="email" />
-    <textarea placeholder="Comentarios" formControlName="message"></textarea>
-    <button type="submit" [disabled]="!validForm">Enviar comentario</button>
+    <input type="text" [placeholder]="'CONTACTO.placeholder_nombre_apellido' | translate" formControlName="name" (keypress)="validateInputName($event)" />
+    <input type="email" [placeholder]="'CONTACTO.placeholder_correo_electronico' | translate" formControlName="email" />
+    <textarea [placeholder]="'CONTACTO.placeholder_comentarios' | translate" formControlName="message"></textarea>
+    <button type="submit" [disabled]="!validForm">{{ 'CONTACTO.button_form' | translate }}</button>
   </form>
 </div>

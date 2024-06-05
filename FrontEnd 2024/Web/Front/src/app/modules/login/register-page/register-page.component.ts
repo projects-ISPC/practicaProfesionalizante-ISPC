@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register-page',
@@ -14,26 +15,7 @@ import { regExEmail, regExPassword } from 'src/app/utils/regex/regex';
 })
 export class RegisterPageComponent implements OnInit {
   registerForm!: FormGroup;
-  errorMessages = {
-    name: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
-    ],
-    lastname: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
-    ],
-    email: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
-      { type: 'pattern', message: 'Ingresa un email válido.' }
-    ],
-    psw: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'pattern', message: 'Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres' }
-    ],
-  };
-
+  errorMessages: any = {};
   showConfirmationMessage = false;
   errorMessage: string = '';
 
@@ -42,10 +24,36 @@ export class RegisterPageComponent implements OnInit {
     private modalService: NgbModal,
     private formBuilder: FormBuilder,
     private http: HttpClient,
+    private translate: TranslateService,
   ) {}
 
   ngOnInit(): void {
+    this.loadErrorMessages();
     this.createForm();
+  }
+
+  loadErrorMessages() {
+    this.translate.get('mensajes_de_errores').subscribe((messages: any) => {
+      this.errorMessages = {
+        name: [
+          { type: 'required', message: 'Campo requerido.' },
+          { type: 'maxlength', message: messages.error_80_caracteres }
+        ],
+        lastname: [
+          { type: 'required', message: 'Campo requerido.' },
+          { type: 'maxlength', message: messages.error_80_caracteres }
+        ],
+        email: [
+          { type: 'required', message: 'Campo requerido.' },
+          { type: 'maxlength', message: messages.error_80_caracteres },
+          { type: 'pattern', message: messages.error_ingreso_email_valido }
+        ],
+        psw: [
+          { type: 'required', message: 'Campo requerido.' },
+          { type: 'pattern', message: messages.error_mas_errores }
+        ],
+      };
+    });
   }
 
   createForm() {
@@ -68,9 +76,13 @@ export class RegisterPageComponent implements OnInit {
           catchError(error => {
             console.log('Error al registrar usuario', error);
             if (error.status === 400 && error.error.email) {
-              this.errorMessage = 'Ya existe un usuario con este email.';
+              this.translate.get('REGISTRO.duplicidad.email').subscribe((res: string) => {
+                this.errorMessage = res;
+              });
             } else {
-              this.errorMessage = 'Un error ha sucedido, intente de nuevo';
+              this.translate.get('REGISTRO.default_error').subscribe((res: string) => {
+                this.errorMessage = res;
+              });
             }
             return throwError(error);
           })
@@ -110,5 +122,9 @@ export class RegisterPageComponent implements OnInit {
   onClickEnterLogin() {
     const modalRef = this.modalService.open(LoginPageComponent, { fullscreen: true, ariaLabelledBy: 'Modal de Login', ariaDescribedBy: 'Modal de Login'});
     this.activeModal.close();
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }
