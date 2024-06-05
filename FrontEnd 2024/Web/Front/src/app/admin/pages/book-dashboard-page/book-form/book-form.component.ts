@@ -11,6 +11,7 @@ import { GenreDashboardService } from 'src/app/admin/services/genre/genre-dashbo
 import { Genre } from 'src/app/models/genre/genre-model';
 import { map } from 'rxjs/operators'
 import { regExOnlyNumbers } from 'src/app/utils/regex/regex';
+import { TranslateService } from '@ngx-translate/core';
 
 
 
@@ -35,48 +36,48 @@ export class BookFormComponent implements OnInit {
   isDeleteForm: boolean = false
 
   errorMessages = {
-    isbn: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'minlength', message: 'Mínimo 10 dígitos' },
-      { type: 'maxlength', message: 'Máximo 13 dígitos.' }
-    ],
-    title: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' },
-    ],
-    pageAmount: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'pattern', message: 'Ingresa sólo números.' }
-    ],
-    bookCover: [
-      { type: 'required', message: 'Campo requerido.' }
-    ],
-    stock: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'pattern', message: 'Ingresa sólo números.' }
-    ],
-    releaseYear: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    synopsis: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    price: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    tags: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    author: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    publisher: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-    genre: [
-      { type: 'required', message: 'Campo requerido.' },
-    ],
-  };
+  isbn: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+    { type: 'minlength', message: 'Mínimo 10 dígitos' },
+    { type: 'maxlength', message: 'Máximo 13 dígitos.' }
+  ],
+  title: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+    { type: 'maxlength', message: this.translate.instant('mensajes_de_errores.error_80_caracteres') },
+  ],
+  pageAmount: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+    { type: 'pattern', message: 'Ingresa sólo números.' }
+  ],
+  bookCover: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') }
+  ],
+  stock: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+    { type: 'pattern', message: 'Ingresa sólo números.' }
+  ],
+  releaseYear: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  synopsis: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  price: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  tags: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  author: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  publisher: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+  genre: [
+    { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+  ],
+};
 
 
   constructor(
@@ -86,6 +87,7 @@ export class BookFormComponent implements OnInit {
     private authorService: AuthorDashboardService,
     private publisherService: PublisherDashboardService,
     private genreService: GenreDashboardService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit(): void {

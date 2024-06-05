@@ -3,6 +3,7 @@ import { Book } from 'src/app/models/book/book-model';
 import { BookService } from 'src/app/services/book/book.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
 import { TAG } from 'src/app/utils/enums/book.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class HomePageComponent implements OnInit {
   constructor(
     bookService: BookService,
     private navigationService: NavigationService,
+    private translate: TranslateService,
   ) {
     this.bookService = bookService;
   }
@@ -60,6 +62,9 @@ export class HomePageComponent implements OnInit {
     return books.sort(() => Math.random() - 0.5).slice(0, 5);
   }
 
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 }
 
 

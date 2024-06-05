@@ -1,12 +1,12 @@
 
 <div *ngIf="profile; else loginRequired" class="wrapper">
-  <h1 class="font-bold fs-md-2 fc-primary">Mi cuenta</h1>
+  <h1 class="font-bold fs-md-2 fc-primary">{{'ADMIN.titulo_principal' | translate}}</h1>
   <main>
     <section>
-      <h2 class="font-bold fs-md-2 fc-primary">Datos</h2>
+      <h2 class="font-bold fs-md-2 fc-primary">{{'ADMIN.titulo_datos' | translate}}</h2>
       <div class="dataCard">
         <div class="title">
-          <h3 class="fs-sm-2 font-semi-bold fc-primary">Datos personales</h3>
+          <h3 class="fs-sm-2 font-semi-bold fc-primary">{{'ADMIN.titulo_datos_personales' | translate}}</h3>
           <button type="button" (click)="onEditPersonalData()">
             <img src="/assets/icons/actions/edit.png" alt="Editar datos personales" />
           </button>
@@ -17,7 +17,7 @@
       </div>
       <div class="dataCard">
         <div class="title">
-          <h3 class="font-semi-bold fs-sm-2 fc-primary">Dirección</h3>
+          <h3 class="font-semi-bold fs-sm-2 fc-primary">{{'ADMIN.titulo_direccion' | translate}}</h3>
           <button type="button" (click)="onEditAddress()">
             <img src="/assets/icons/actions/edit.png" alt="Editar dirección" />
           </button>
@@ -29,12 +29,12 @@
       </div>
     </section>
     <section *ngIf="purchaseData" class="col-6">
-      <h2>Pedidos realizados</h2>
+      <h2>{{'ADMIN.titulo_pedidos_realizados' | translate}}</h2>
       <app-pedidos-item [purchases]="purchaseData"></app-pedidos-item>
     </section>
   </main>
 </div>
 
 <ng-template #loginRequired>
-  <p>No hay usuario logueado</p>
+  <p>{{'ADMIN.titulo_no_usario_logeado' | translate}}</p>
 </ng-template>

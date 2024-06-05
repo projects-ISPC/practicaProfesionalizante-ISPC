@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { ContactData, SocialMedia } from 'src/app/models/contact/contact-model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-info',
   templateUrl: './contact-info.component.html',
   styleUrls: ['./contact-info.component.css']
 })
-
 export class ContactInfoComponent {
-  description: string;
   socialMedia: SocialMedia[];
   contactData: ContactData[];
 
-  constructor() {
-    this.description = 'Podés encontrarnos en nuestras redes sociales',
+  constructor(private translate: TranslateService) {
     this.socialMedia = [
       {
         ariaLabel: 'Ir a Instagram.',
@@ -33,20 +31,24 @@ export class ContactInfoComponent {
     ];
     this.contactData = [
       {
-        title: 'Correo electrónico',
+        title: 'titulo_email',
         text: 'contacto@biblioteca.com',
         icon: './assets/icons/mail.png'
       },
       {
-        title: 'Teléfono',
+        title: 'titulo_teléfono',
         text: '1126789634',
         icon: './assets/icons/phone-call.png'
       },
       {
-        title: 'Ubicación',
+        title: 'titulo_ubicación',
         text: 'Humberto Primo 467. 2 Piso. Córdoba. Argentina.',
         icon: './assets/icons/map-pin.png'
       }
     ];
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }
