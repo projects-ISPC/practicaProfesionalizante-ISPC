@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
-        app:tint="?attr/gray_text"
+        app:tint="@color/colorGray3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -27,7 +27,7 @@
         android:layout_marginEnd="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
-        app:tint="?attr/gray_text"
+        app:tint="@color/colorGray3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
@@ -89,7 +89,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/sinopsis_charlie_y_nick_van_al_mismo_colegio_aunque_nunca_se_hab_an_cruzado_hasta_el_d_a_en_que_los_hacen_sentarse_juntos_en_su_grupo_de_estudio_muy_pronto_se_vuelven_amigos_y_m_s_pronto_a_n_charlie"
-        android:textColor="?attr/gray_text"
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

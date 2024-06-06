@@ -15,6 +15,5 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <!-- Customize your theme here. -->
-        <item name="gray_text">#3E3E3E</item>
     </style>
 </resources>
