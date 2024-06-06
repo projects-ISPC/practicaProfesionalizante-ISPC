@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    tools:context=".CardBookDashboardAdmin">
+
+    <!-- Book card -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/portadaLibro"
+            android:layout_width="100dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/colorGray2">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/listTitle"
+            android:layout_width="310dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_toStartOf="@+id/editBtn1"
+            android:layout_toEndOf="@+id/portadaLibro"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text1"
+            android:textColor="#626364"
+            android:textSize="20dp"
+            app:layout_constraintStart_toEndOf="@+id/portadaLibro" />
+
+        <TextView
+            android:id="@+id/listAuthor"
+            android:layout_width="302dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_below="@+id/listTitle"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text2"
+            android:textColor="#626364"
+            android:textSize="17dp"
+            android:layout_toEndOf="@+id/portadaLibro"/>
+
+        <ImageButton
+            android:id="@+id/editBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/editpencil" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
