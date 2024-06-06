@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class ConfirmacionCompra extends AppCompatActivity {
+public class ConfirmacionCompra extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

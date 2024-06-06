@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class AdminDashboard extends AppCompatActivity {
+public class AdminDashboard extends BaseActivity {
     ImageButton backButton;
     Button addBookButton;
     @Override

@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AboutUs extends AppCompatActivity {
+public class AboutUs extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

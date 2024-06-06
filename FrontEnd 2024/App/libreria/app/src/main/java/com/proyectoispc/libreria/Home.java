@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Home extends AppCompatActivity {
+public class Home extends BaseActivity {
 
     DbBook dbBook;
     ImageButton backbutton, shoppingCartButton;
@@ -62,6 +62,31 @@ public class Home extends AppCompatActivity {
         List<Book> recomendedBooks = getRecomendedBooks();
         ProductAdapter adapter = new ProductAdapter(this, recomendedBooks);
         recyclerView.setAdapter(adapter);
+
+        // Load theme preference
+        SharedPreferences sharedPreferencesTheme = getSharedPreferences("ThemePrefs", MODE_PRIVATE);
+        boolean isDarkMode = sharedPreferencesTheme.getBoolean("isDarkMode", false);
+        themeSwitch.setChecked(isDarkMode);
+
+        // Set theme based on preference
+        if (isDarkMode) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+
+        // Listener for theme switch
+        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+            // Save theme preference
+            SharedPreferences.Editor editorTheme = sharedPreferencesTheme.edit();
+            editorTheme.putBoolean("isDarkMode", isChecked);
+            editorTheme.apply();
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);

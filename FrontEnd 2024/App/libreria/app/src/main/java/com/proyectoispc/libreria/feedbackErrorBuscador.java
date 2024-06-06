@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class feedbackErrorBuscador extends AppCompatActivity {
+public class feedbackErrorBuscador extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

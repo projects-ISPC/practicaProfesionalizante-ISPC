@@ -15,7 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.proyectoispc.libreria.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

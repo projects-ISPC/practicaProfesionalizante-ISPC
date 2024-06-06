@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BookDetail extends AppCompatActivity {
+public class BookDetail extends BaseActivity {
 
     DbBook dbBook;
 

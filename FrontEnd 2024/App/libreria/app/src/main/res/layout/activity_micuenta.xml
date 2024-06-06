@@ -28,7 +28,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/atkinsonhyperlegibleregular"
         android:text="Luciano Fernandez"
-        android:textColor="@color/black"
+        android:textColor="@color/color1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,8 +101,6 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton2"
         app:srcCompat="@drawable/editpencil" />
 
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
@@ -147,7 +145,6 @@
                 android:text="En Proceso"
                 android:textColor="#2E7D32" />
 
-
             <TextView
                 android:id="@+id/cuerpo1"
                 android:layout_width="wrap_content"
@@ -159,3 +156,4 @@
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

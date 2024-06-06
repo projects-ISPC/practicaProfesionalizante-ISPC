@@ -24,7 +24,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.proyectoispc.libreria.db.DbUser;
 
-public class Profile extends AppCompatActivity {
+public class Profile extends BaseActivity {
     ImageButton backbutton, carrito, deleteButton ;
     LinearLayout inputNames;
     LinearLayout inputEmail;
