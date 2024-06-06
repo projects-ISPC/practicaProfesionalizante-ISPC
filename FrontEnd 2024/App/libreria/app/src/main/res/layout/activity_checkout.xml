@@ -192,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_envioDatos_checkout"
-        android:textColor="@color/color1"
+        android:textColor="?attr/titulo_celeste"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"

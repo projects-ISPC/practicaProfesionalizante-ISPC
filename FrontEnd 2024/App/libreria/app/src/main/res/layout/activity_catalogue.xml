@@ -12,8 +12,9 @@
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
+        app:tint="?attr/gray_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -24,8 +25,9 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
+        app:tint="?attr/gray_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
@@ -37,7 +39,8 @@
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toTopOf="parent">
+    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText2"
@@ -46,247 +49,15 @@
         android:layout_marginHorizontal="30dp"
         android:layout_marginTop="90dp"
         android:background="@drawable/edittext_background_checkout"
+        android:textColorHint="?attr/gray_text"
         android:drawableStart="@drawable/vector_search"
         android:drawablePadding="12dp"
-        android:hint="Buscá por género, autor, título"
-        android:textColorHint="?attr/gray_text"
+        android:hint="@string/busc_por_g_nero_autor_t_tulo"
         android:minHeight="48dp"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2">
-
-        <Button
-            android:id="@+id/btn_todos"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="0.13"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:text="Todos"
-            android:textColor="@color/color3"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/btn_arte"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="0.13"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:text="Arte"
-            android:textColor="?attr/gray_text"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/btn_ciencia"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="0.15"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:text="Ciencia"
-            android:textColor="?attr/gray_text"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/btn_fantacia"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="0.17"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:text="Fantasia"
-            android:textColor="?attr/gray_text"
-            android:textSize="10sp" />
-
-        <Button
-            android:id="@+id/btn_economica"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_weight="0.18"
-            android:background="@android:color/transparent"
-            android:padding="4dp"
-            android:text="Economia"
-            android:textColor="?attr/gray_text"
-            android:textSize="10sp" />
-    </LinearLayout>
-
-    <ScrollView
-        android:id="@+id/scrollViewCat"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        android:textColor="?attr/gray_text">
-
-        <LinearLayout
-            android:id="@+id/content_catalogue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="5dp">
-        </LinearLayout>
-    </ScrollView>
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
-        android:contentDescription="@string/portada_del_libro"
-        android:onClick="book_detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
-        app:srcCompat="@drawable/sanar_la_herida"
-        tools:ignore="DuplicateSpeakableTextCheck" />
-
-    <TextView
-        android:id="@+id/textLibro1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:onClick="book_detail"
-        android:text="Sanar la herida"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:text="Florencia H."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLibro1" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="5dp"
-        android:text="$ 5.098,00"
-        android:textColor="#0277BD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:contentDescription="@string/portada_del_libro"
-        android:onClick="book_detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
-        app:srcCompat="@drawable/todo_por_volver" />
-
-    <TextView
-        android:id="@+id/textLibro2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="5dp"
-        android:onClick="book_detail"
-        android:text="Dorothy"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="5dp"
-        android:text="$ 5.098,00"
-        android:textColor="#0277BD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="155dp"
-        android:layout_marginTop="5dp"
-        android:text="Laura F."
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLibro2" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:contentDescription="@string/portada_del_libro"
-        android:onClick="book_detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.795"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2"
-        app:srcCompat="@drawable/todo_por_volverte_a_ver" />
-
-    <TextView
-        android:id="@+id/textLibro3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:onClick="book_detail"
-        android:text="Todo por volver a verte"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="75dp"
-        android:text="Emilia Evans"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textLibro3" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="90dp"
-        android:text="$ 5.098,00"
-        android:textColor="#0277BD"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -300,4 +71,102 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/menu_navigation" />
 
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputEditText2">
+
+        <Button
+            android:id="@+id/btn_todos"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.4"
+            android:background="@android:color/transparent"
+            android:padding="2dp"
+            android:text="@string/todos"
+            android:textColor="@color/color3"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btn_arte"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.4"
+            android:background="@android:color/transparent"
+            android:padding="2dp"
+            android:text="@string/arte"
+            android:textColor="?attr/gray_text"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btn_ciencia"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.4"
+            android:background="@android:color/transparent"
+            android:padding="2dp"
+            android:text="@string/ciencia"
+            android:textColor="?attr/gray_text"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btn_fantacia"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.4"
+            android:background="@android:color/transparent"
+            android:padding="2dp"
+            android:text="@string/fantasia"
+            android:textColor="?attr/gray_text"
+            android:textSize="11sp" />
+
+        <Button
+            android:id="@+id/btn_economica"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_weight="0.4"
+            android:background="@android:color/transparent"
+            android:padding="2dp"
+            android:text="@string/economia"
+            android:textColor="?attr/gray_text"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewCat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/audio_catalogo"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        <LinearLayout
+            android:id="@+id/content_catalogue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

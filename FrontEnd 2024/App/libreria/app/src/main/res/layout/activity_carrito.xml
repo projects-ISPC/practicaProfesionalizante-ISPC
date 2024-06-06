@@ -53,6 +53,7 @@
         android:layout_marginStart="8dp"
         android:fontFamily="@font/rubik_bold"
         android:text="Total"
+        android:textColor="?attr/gray_text"
         app:layout_constraintBottom_toBottomOf="@+id/fondoBlancoTotal"
         app:layout_constraintStart_toStartOf="@+id/fondoBlancoTotal"
         app:layout_constraintTop_toTopOf="@+id/fondoBlancoTotal" />
@@ -79,6 +80,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/rubik_bold"
         android:text="$10000"
+        android:textColor="?attr/gray_text"
         app:layout_constraintBottom_toBottomOf="@+id/fondoBlancoTotal"
         app:layout_constraintEnd_toEndOf="@+id/fondoBlancoTotal"
         app:layout_constraintHorizontal_bias="0.968"
@@ -107,12 +109,12 @@
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="#F7F9F8"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
+        app:tint="?attr/gray_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
-
 
     <ImageButton
         android:id="@+id/shoppingCartButton"
@@ -120,8 +122,9 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="#F7F9F8"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
+        app:tint="?attr/gray_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
