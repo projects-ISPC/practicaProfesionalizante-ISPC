@@ -90,6 +90,7 @@
     <string name="text3">Precio</string>
     <string name="text4">Sinopsis</string>
     <string name="text5">Selecciona Portada</string>
+    <string name="book_details">Vas a eliminar el siguiente libro:\n\nTítulo: %1$s\n\nAutor: %2$s\n\nSinopsis: %3$s\n\nPrecio: %4$s</string>
     <string name="imagen_de_persona">Imagen de persona</string>
     <string name="bot_n_para_agregar_al_carrito">Botón para agregar al carrito</string>
     <string name="agregar_al_carrito">Agregar al carrito</string>
