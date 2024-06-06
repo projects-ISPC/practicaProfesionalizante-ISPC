@@ -3,14 +3,14 @@
     <div class="col-12 col-md-6 col-lg-5 mt-md-0">
       <div class="row gy-4 mt-2">
         <h1 class="col-12 header-title font-medium">
-          Librería <span class="text-primary-blue font-bold">Franklin</span>
+          {{ 'HEADER.titulo_principal' | translate }} <span class="text-primary-blue font-bold">Franklin</span>
         </h1>
         <p class="header-paragraph fs-sm-2 ">
-          Encontrá el libro que estás buscando. Novelas, cuentos, infantiles, historia, economía, jardinería y mucho más. 
+          {{ 'HEADER.descripcion_principal' | translate }}
         </p>
         <div>
           <button class="col-12 col-md-9 primary-button text-sm-center font-bold fs-sm-2" (click)="onClickCatalogue()">
-            Ver catálogo
+            {{ 'HEADER.button_ver_catalogo' | translate }}
           </button>
         </div>
       </div>
@@ -32,7 +32,7 @@
           </div>
           <div class="col-12 col-lg-5 text-start">
             <span class="text-primary-blue font-extra-bold d-block">+ 100.000</span>
-            <span class=""> ejemplares</span>
+            <span class=""> {{ 'HEADER.ejemplares' | translate }}</span>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
           </div>
           <div class="col-12 col-lg-5 text-start">
             <span class="text-primary-blue font-extra-bold d-block">+ 2.000</span>
-            <span class=""> autores</span>
+            <span class=""> {{ 'HEADER.autores' | translate }}</span>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
           </div>
           <div class="col-12 col-lg-5 text-start">
             <span class="text-primary-blue font-extra-bold d-block">+ 700</span>
-            <span class=""> editoriales</span>
+            <span class=""> {{ 'HEADER.editoriales' | translate }}</span>
           </div>
         </div>
       </div>

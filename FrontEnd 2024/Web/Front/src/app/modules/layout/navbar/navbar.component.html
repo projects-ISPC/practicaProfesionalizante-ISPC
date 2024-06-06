@@ -5,91 +5,105 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav width-nav d-flex align-items-center justify-content-between">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToHome()" *ngIf="!isAdmin">
-              Inicio
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToCatalogue()" *ngIf="!isAdmin">
-              Catálogo
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToContact()" *ngIf="!isAdmin">
-              Contáctanos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToAboutUs()" *ngIf="!isAdmin">
-              Sobre nosotros
-            </a>
-          </li>
-
-          <!-- NAV ADMIN -->
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToBookDashboard()" *ngIf="isAdmin">
-              Libros
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToAuthorDashboard()" *ngIf="isAdmin">
-              Autores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToPublisherDashboard()" *ngIf="isAdmin">
-              Editoriales
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToSalesDashboard()" *ngIf="isAdmin">
-              Ventas
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="navigateToStoreDashboard()" *ngIf="isAdmin">
-              Sucursales
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="onClickNavigateToClientDashboard()" *ngIf="isAdmin">
-              Clientes
-            </a>
-          </li>
-        </ul>
-
-        <ng-container *ngIf="!isAdmin">
-          <a class="nav-link" (click)="onClickRegister()" *ngIf="!profile">
-            <img src="./assets/img/navbar/plus-circle.png" alt="crear cuenta" />
-            Crear cuenta</a>
-        </ng-container>
-        <ng-container *ngIf="!isAdmin">
-          <a class="nav-link" (click)="onClickLogIn()" *ngIf="!profile">
-            <img src="./assets/img/navbar/user.png" alt="Iniciar sesion" />
-            Iniciar sesión</a>
-        </ng-container>
-        <ng-container *ngIf="!isAdmin">
-          <a class="nav-link" (click)="onProfile()" *ngIf="profile">
-            <img src="./assets/img/navbar/user.png" alt="perfil" /> Hola
-            {{ profile.name }}</a>
-          <a class="nav-link" (click)="logout()" *ngIf="profile">| Cerrar sesión</a>
-        </ng-container>
-
+      <ul class="navbar-nav mx-auto d-flex align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" (click)="onClickNavigateToHome()" *ngIf="!isAdmin">
+            {{ 'NAV.inicio' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" (click)="onClickNavigateToCatalogue()" *ngIf="!isAdmin">
+            {{ 'NAV.catalogo' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" (click)="onClickNavigateToContact()" *ngIf="!isAdmin">
+            {{ 'NAV.contactános' | translate }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" (click)="onClickNavigateToAboutUs()" *ngIf="!isAdmin">
+            {{ 'NAV.sobre_nosotros' | translate }}
+          </a>
+        </li>
         <!-- NAV ADMIN -->
-        <a class="nav-link" (click)="onProfile()" *ngIf="isAdmin">
-          <img src="./assets/img/navbar/user.png" alt="perfil" /> Hola Admin</a>
-
-        <a class="nav-link" (click)="logout()" *ngIf="isAdmin">| Cerrar sesión</a>
-
-        <app-button-cart *ngIf="!isAdmin"></app-button-cart>
-        <!-- <a href="#" class="nav-link menu-right"
-          ><img src="../../../../assets/img/navbar/shopping-cart.png " alt="Carrito" />0 -
-          <span>$0</span></a
-        > -->
-      </div>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onClickNavigateToBookDashboard()">
+            {{'NAV_AUTORIZADOS.libros' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onClickNavigateToAuthorDashboard()">
+            {{'NAV_AUTORIZADOS.autores' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onClickNavigateToPublisherDashboard()">
+            {{'NAV_AUTORIZADOS.editoriales' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onClickNavigateToSalesDashboard()">
+            {{'NAV_AUTORIZADOS.ventas' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="navigateToStoreDashboard()">
+            {{'NAV_AUTORIZADOS.sucursales' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onClickNavigateToClientDashboard()">
+            {{'NAV_AUTORIZADOS.clientes' | translate}}
+          </a>
+        </li>
+        <ng-container *ngIf="!isAdmin">
+          <li class="nav-item">
+            <a class="nav-link" (click)="onClickRegister()" *ngIf="!profile">
+              <img src="./assets/img/navbar/plus-circle.png" alt="crear cuenta" />
+              {{ 'NAV.button_crear_cuenta' | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onClickLogIn()" *ngIf="!profile">
+              <img src="./assets/img/navbar/user.png" alt="Iniciar sesion" />
+              {{ 'NAV.button_iniciar_sesion' | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="onProfile()" *ngIf="profile">
+              <img src="./assets/img/navbar/user.png" alt="perfil" /> {{'NAV_AUTORIZADOS.saludo' | translate}}
+              {{ profile.name }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" *ngIf="profile">{{'NAV_AUTORIZADOS.cerrar_sesion' | translate}}</a>
+          </li>
+        </ng-container>
+        <!-- NAV ADMIN -->
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="onProfile()">
+            <img src="./assets/img/navbar/user.png" alt="perfil" /> {{'NAV_AUTORIZADOS.hola_admin' | translate}}
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" (click)="logout()">{{'NAV_AUTORIZADOS.cerrar_sesion' | translate}}</a>
+        </li>
+        <li class="nav-item">
+          <app-button-cart *ngIf="!isAdmin"></app-button-cart>
+        </li>
+        <!-- Language Switch Buttons -->
+        <li class="nav-item">
+          <button class="btn btn-secondary" (click)="switchLanguage('es')">{{ 'NAV.button_español' | translate }}</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-secondary" (click)="switchLanguage('de')">{{ 'NAV.button_alemán' | translate }}</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-secondary" (click)="switchLanguage('en')">{{ 'NAV.button_ingles' | translate }}</button>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
+

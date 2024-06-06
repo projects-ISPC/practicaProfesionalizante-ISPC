@@ -1,16 +1,16 @@
-import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap'
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthorDashboardService } from 'src/app/admin/services/author/author-dashboard.service';
 import { Author, createAuthorDTO } from 'src/app/models/author/author-model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-author-form',
   templateUrl: './author-form.component.html',
   styleUrls: ['./author-form.component.css']
 })
-export class AuthorFormComponent {
-
+export class AuthorFormComponent implements OnInit {
 
   @Input() authorId: string | number = '';
   @Input() action: 'create' | 'edit' | 'delete' = 'create';
@@ -19,19 +19,15 @@ export class AuthorFormComponent {
   authorForm!: FormGroup;
   author!: Author;
 
-  isDeleteForm: boolean = false
+  isDeleteForm: boolean = false;
 
-  errorMessages = {
-    name: [
-      { type: 'required', message: 'Campo requerido.' },
-      { type: 'maxlength', message: 'Por favor ingresá un máximo de 80 caracteres.' }
-    ],}
-
+  errorMessages: any = {};
 
   constructor(
     private formBuilder: FormBuilder,
     public activeModal: NgbActiveModal,
     private authorService: AuthorDashboardService,
+    private translate: TranslateService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +38,8 @@ export class AuthorFormComponent {
     if (this.authorId) {
       this.getAuthorById();
     }
+
+    this.setErrorMessages();
   }
 
   getAuthorById() {
@@ -53,7 +51,7 @@ export class AuthorFormComponent {
   }
 
   onSaveHandle(event: Event) {
-    event.preventDefault;
+    event.preventDefault();
     this.authorForm.markAllAsTouched();
 
     if (this.action === 'create') {
@@ -66,10 +64,9 @@ export class AuthorFormComponent {
   }
 
   saveNewAuthor() {
-
     this.newAuthor = {
       name: this.authorForm.value.name as string,
-    }
+    };
 
     this.authorService.saveAuthor(this.newAuthor)
       .subscribe((result: Author) => {
@@ -82,7 +79,6 @@ export class AuthorFormComponent {
   }
 
   saveUpdateAuthor() {
-
     this.author.name = this.authorForm.value.name as string;
 
     this.authorService.updateAuthor(this.author)
@@ -100,7 +96,6 @@ export class AuthorFormComponent {
       .subscribe(() => {
         this.activeModal.close(true);
       });
-
   }
 
   onClose() {
@@ -115,5 +110,14 @@ export class AuthorFormComponent {
 
   get name() {
     return this.authorForm.get('name');
+  }
+
+  setErrorMessages() {
+    this.errorMessages = {
+      name: [
+        { type: 'required', message: this.translate.instant('mensajes_de_errores.campo_requerido') },
+        { type: 'maxlength', message: this.translate.instant('mensajes_de_errores.error_80_caracteres') }
+      ],
+    };
   }
 }

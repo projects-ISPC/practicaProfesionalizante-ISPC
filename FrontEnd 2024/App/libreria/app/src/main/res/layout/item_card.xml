@@ -17,7 +17,7 @@
             android:id="@+id/fondoBlanco1"
             android:layout_width="320dp"
             android:layout_height="109dp"
-            android:contentDescription="Fondo"
+            android:contentDescription="@string/fondo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.52"
@@ -39,22 +39,24 @@
 
         <ImageView
             android:id="@+id/agregar1"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:contentDescription="Agregar libro"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:contentDescription="@string/agregar_libro"
+            android:onClick="agregarUnidad"
             app:layout_constraintEnd_toStartOf="@+id/cardTotalCuantity"
             app:layout_constraintTop_toBottomOf="@+id/eliminar1"
             app:srcCompat="@drawable/icono_suma" />
 
         <ImageView
             android:id="@+id/quitar1"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:contentDescription="Restar unidad"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:contentDescription="@string/restar_unidad"
+            android:onClick="quitarUnidad"
             app:layout_constraintEnd_toEndOf="@+id/fondoBlanco1"
             app:layout_constraintTop_toBottomOf="@+id/eliminar1"
             app:srcCompat="@drawable/icono_menos" />
@@ -63,11 +65,11 @@
             android:id="@+id/cardTotalCuantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             android:fontFamily="@font/rubik"
-            android:text="1"
-            android:textSize="11sp"
+            android:text="@string/_1"
+            android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/quitar1"
             app:layout_constraintTop_toBottomOf="@+id/eliminar1" />
 
@@ -83,11 +85,12 @@
 
         <ImageView
             android:id="@+id/eliminar1"
-            android:layout_width="14dp"
-            android:layout_height="14dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:contentDescription="Eliminar del carrito"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:contentDescription="@string/eliminar_del_carrito"
+            android:onClick="eliminarProducto"
             app:layout_constraintEnd_toEndOf="@+id/fondoBlanco1"
             app:layout_constraintTop_toTopOf="@+id/fondoBlanco1"
             app:srcCompat="@drawable/icono_papelera" />
@@ -109,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:contentDescription="Imagen del libro"
+            android:contentDescription="@string/imagen_del_libro"
             app:layout_constraintBottom_toBottomOf="@+id/fondoBlanco1"
             app:layout_constraintStart_toStartOf="@+id/fondoBlanco1"
             app:layout_constraintTop_toTopOf="@+id/fondoBlanco1" />

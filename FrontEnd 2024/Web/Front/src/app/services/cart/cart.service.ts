@@ -14,23 +14,22 @@ export class CartService {
   private totalCostUpdated = new BehaviorSubject<number>(0);
 
   addBook(book: Book | SelectedBookDto) {
-    let selectedBook: SelectedBookDto = {
-      id_book: book.id_book,
-      isbn: book.isbn,
-      title: book.title,
-      author: book.author,
-      bookcover: book.bookcover,
-      price: book.price,
-      selectedAmount: 0,
-    };
-
-    selectedBook =
-      this.cart.find((item) => item.isbn === book.isbn) || selectedBook;
-
-    if (selectedBook.selectedAmount > 0) {
-      selectedBook.selectedAmount += 1;
+    let existingBookIndex = this.cart.findIndex((item) => item.isbn === book.isbn);
+    
+    if (existingBookIndex !== -1) {
+      // Si el libro ya está en el carrito, actualiza su cantidad
+      this.cart[existingBookIndex].selectedAmount += 1;
     } else {
-      selectedBook.selectedAmount += 1;
+      // Si el libro no está en el carrito, crea un nuevo SelectedBookDto y agrégalo
+      const selectedBook: SelectedBookDto = {
+        id_book: book.id_book,
+        isbn: book.isbn,
+        title: book.title,
+        author: book.author,
+        bookcover: book.bookcover,
+        price: book.price,
+        selectedAmount: 1, // Inicializa con 1
+      };
       this.cart.push(selectedBook);
     }
 

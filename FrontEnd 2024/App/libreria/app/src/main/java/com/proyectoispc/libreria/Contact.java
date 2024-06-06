@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class Contact extends AppCompatActivity {
+public class Contact extends BaseActivity {
 
     Button enviarMensajeButton;
 

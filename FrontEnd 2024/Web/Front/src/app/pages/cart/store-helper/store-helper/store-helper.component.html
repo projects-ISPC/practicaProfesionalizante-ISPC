@@ -1,15 +1,14 @@
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title text-center">Nuestras Tiendas</h5>
+      <h5 class="modal-title text-center">{{'CARRITO.nuestras_tiendas' | translate}}</h5>
       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-      <ul>
-        <li *ngFor="let store of stores">
-          {{ store.street_number }} - {{ store.province }} - {{ store.locality }} - {{ store.telephone }}
-        </li>
-      </ul>
+      <p>Humberto Primo 467. 2 Piso. Córdoba. Argentina.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
     </div>
   </div>
 </div>
