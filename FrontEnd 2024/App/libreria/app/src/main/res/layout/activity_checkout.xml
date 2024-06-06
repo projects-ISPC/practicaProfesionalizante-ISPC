@@ -14,7 +14,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_background_checkout"
         android:ems="10"
-        android:hint="DNI"
+        android:hint="@string/dni"
         android:inputType="text"
         android:textColor="@color/black"
         android:textColorHint="?attr/gray_text"
@@ -23,7 +23,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextText2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <ImageButton
         android:id="@+id/backButton"
@@ -73,15 +74,13 @@
 
         <ImageView
             android:id="@+id/imageCompraEnvio"
-            android:layout_width="40dp"
-            android:layout_height="38dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="2"
-            android:background="@drawable/circular_background_paymentsteps"
             android:contentDescription="@string/imagen_cami_n"
-            android:padding="7dp"
             app:srcCompat="@drawable/compra_envio"
-            app:tint="@color/black"
+            app:tint="@color/paymentAproved"
             tools:ignore="ImageContrastCheck" />
         <!-- app:tint="@color/colorViolet" -->
 
@@ -218,7 +217,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextText4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText3"
@@ -236,7 +236,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/radioGroupEnvio"
         app:layout_constraintEnd_toStartOf="@+id/editTextText4"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText4"
@@ -255,12 +256,13 @@
         app:layout_constraintBottom_toTopOf="@+id/radioGroupEnvio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.266"
-        app:layout_constraintStart_toEndOf="@+id/editTextText3" />
+        app:layout_constraintStart_toEndOf="@+id/editTextText3"
+        android:autofillHints="" />
 
     <RadioGroup
         android:id="@+id/radioGroupEnvio"
         android:layout_width="340dp"
-        android:layout_height="96dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextText5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -307,7 +309,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toEndOf="@+id/editTextText6"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText6"
@@ -326,7 +329,8 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/botonVolver"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText8"
@@ -345,7 +349,8 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/editTextText7"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText5"
@@ -366,7 +371,8 @@
         app:layout_constraintEnd_toStartOf="@+id/editTextText8"
         app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
-        tools:visibility="visible" />
+        tools:visibility="visible"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -384,7 +390,8 @@
         app:layout_constraintBottom_toTopOf="@+id/editTextText9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/botonPagar"

@@ -8,11 +8,11 @@
 
     <TextView
         android:id="@+id/textView18"
-        android:layout_width="102dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/atkinsonhyperlegibleregular"
-        android:text="Mi Cuenta"
+        android:text="@string/mi_cuenta"
         android:textColor="@color/color1"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -168,7 +168,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
-        android:contentDescription="Icono de modificar información"
+        android:contentDescription="@string/icono_de_modificar_nombre"
         android:onClick="expandirInputsName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.717"
@@ -207,7 +207,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginTop="28dp"
-        android:contentDescription="Icono de modificar información"
+        android:contentDescription="@string/icono_de_modificar_informaci_n"
         android:onClick="expandirInputEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/email"
@@ -250,7 +250,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Orden #1234"
+                android:text="@string/orden_1234"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -258,14 +258,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="En Proceso"
+                android:text="@string/en_proceso"
                 android:textColor="#2E7D32" />
 
             <TextView
                 android:id="@+id/cuerpo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lista de los productos comprados y sus precios (en Prceso de construcción)"
+                android:text="@string/lista_de_los_productos_comprados_y_sus_precios_en_prceso_de_construcci_n"
                 android:textSize="18sp"
                 android:visibility="gone" />
         </LinearLayout>
@@ -278,7 +278,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:background="@color/white"
-        android:contentDescription="Icono de eliminar"
+        android:contentDescription="@string/icono_de_eliminar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton9"
         app:srcCompat="@drawable/tachito" />
@@ -288,7 +288,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Cerrar sesión"
+        android:text="@string/cerrar_sesi_n"
         android:backgroundTint="@color/color4"
         android:textColor="@color/color5"
         app:layout_constraintBottom_toTopOf="@+id/buttonAdmin"
@@ -303,7 +303,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
-        android:text="Ir a panel admin"
+        android:text="@string/ir_a_panel_admin"
         android:backgroundTint="@color/color4"
         android:textColor="@color/color5"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
