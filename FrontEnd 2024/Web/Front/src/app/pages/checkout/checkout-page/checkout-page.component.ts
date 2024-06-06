@@ -25,6 +25,7 @@ import { Subscription } from 'rxjs';
 import { SelectedBookDto } from 'src/app/models/book/book-model';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Profile } from 'src/app/models/user/user-model';
+import { MatStepper } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-checkout-page',
@@ -32,6 +33,8 @@ import { Profile } from 'src/app/models/user/user-model';
   styleUrls: ['./checkout-page.component.css'],
 })
 export class CheckoutPageComponent implements OnInit, OnDestroy {
+
+  stepper!: MatStepper;
 
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
@@ -130,7 +133,7 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
     private paymentService: PaymentService,
     private cartService: CartService,
     private authService: AuthService,
-    breakpointObserver: BreakpointObserver
+    breakpointObserver: BreakpointObserver,
   ) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
@@ -440,6 +443,22 @@ export class CheckoutPageComponent implements OnInit, OnDestroy {
 
   get cvv() {
     return this.secondFormGroup.get('cvv');
+  }
+
+  validateAndProceed(): void {
+    if (this.firstFormGroup.valid || !this.firstFormGroup) {
+      this.stepper.next(); // Avanza al siguiente paso
+    } else {
+      this.firstFormGroup.markAllAsTouched(); // Esto mostrará los mensajes de error
+    }
+  }
+
+  validate2AndProceed(): void {
+    if (this.secondFormGroup.valid || !this.secondFormGroup) {
+      this.stepper.next(); // Avanza al siguiente paso
+    } else {
+      this.secondFormGroup.markAllAsTouched(); // Esto mostrará los mensajes de error
+    }
   }
 
 }

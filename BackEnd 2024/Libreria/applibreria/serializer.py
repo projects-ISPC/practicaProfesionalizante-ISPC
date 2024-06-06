@@ -1,7 +1,5 @@
 from rest_framework import serializers
-from .models import Contact, User, Credential
-from .models import Contact
-from .models import Book, Sale
+from .models import *
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,3 +30,13 @@ class SaleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sale
         fields = ['id_sal', 'sale_date', 'delivery_type', 'payment_type', 'total_quantity', 'total_cost']
+
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = ['id_pay', 'namecard', 'numbercard', 'exp_date', 'id_user']
+
+class ProductsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Products
+        fields = '__all__'

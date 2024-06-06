@@ -88,7 +88,7 @@
             <mat-radio-group aria-label="Select an option">
               <div class="mb-3">
                 <mat-radio-button (click)="selectDeliveryType(deliveryTypes.CORREO_ARGENTINO)">
-                  Correo argentino
+                  Correo Argentino
                 </mat-radio-button>
 
               </div>
@@ -161,7 +161,7 @@
               </div>
 
               <div class="col-6">
-                <button mat-button matStepperNext class="col-9 py-2 text-sm-center fs-sm-2 font-bold secondary-button ">
+                <button mat-button [disabled]="!firstFormGroup.valid" (click)="validateAndProceed()" matStepperNext class="col-9 py-2 text-sm-center fs-sm-2 font-bold secondary-button" title="Completa los campos del formulario para avanzar">
                   Ir a pagar
                 </button>
               </div>
@@ -291,7 +291,7 @@
                 </div>
 
                 <div class="col-6">
-                  <button type="submit" matStepperNext
+                  <button type="submit"[disabled]="!secondFormGroup.valid" (click)="validate2AndProceed()" matStepperNext title="Completa los campos del formulario para avanzar"
                     class="col-9 py-2 text-sm-center fs-sm-2 font-bold secondary-button">
                     Confirmar compra
                   </button>
@@ -320,7 +320,7 @@
         </div>
 
         <div class="col-12 text-center">
-          <span class="font-light fs-sm-2 fc-primary">Número de orden:
+          <span class="font-light fs-sm-2 fc-primary">Número de orden: 312
             <span class="font-bold fs-sm-2 fc-primary">
               {{orderNumber}}</span>
           </span>

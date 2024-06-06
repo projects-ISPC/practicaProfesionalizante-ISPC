@@ -1,12 +1,7 @@
 from django.urls import path, include
-from .views import AddContactView
-from .views import CatalogueView
-from .views import AddRegisterView
-from .views import LoginView
-from .views import LogoutView
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import BookDetailView
+from .views import *
 
 urlpatterns = [
     path('add-contact/', AddContactView.as_view(), name='add_contact'),
@@ -15,4 +10,7 @@ urlpatterns = [
     path('book-detail/<int:pk>/', BookDetailView.as_view(), name='book-detail'),    
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('payment/', AddPaymentView.as_view(), name='payment'),
+    path('sale/', AddSaleView.as_view(), name='sale'),
+    path('products/', AddProductsView.as_view(), name='products')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

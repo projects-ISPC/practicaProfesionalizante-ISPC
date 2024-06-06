@@ -74,4 +74,8 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
   switchLanguage(language: string) {
     this.translate.use(language);
   }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
+  }
 }
