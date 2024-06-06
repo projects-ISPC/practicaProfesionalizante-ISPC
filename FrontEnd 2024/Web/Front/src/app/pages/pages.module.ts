@@ -8,8 +8,11 @@ import { CartModule } from './cart/cart.module';
 import { AccountModule } from './account/account.module';
 import { AboutUsModule } from '../modules/about-us/about-us.module';
 import { ContactModule } from '../modules/contact/contact.module';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @NgModule({
+
   imports: [
     CommonModule,
     HomeModule,
@@ -19,7 +22,8 @@ import { ContactModule } from '../modules/contact/contact.module';
     CheckoutModule,
     PagesRoutingModule,
     AboutUsModule,
-    ContactModule
+    ContactModule,
+    TranslateModule,
   ],
   exports: [
     HomeModule,
@@ -28,7 +32,8 @@ import { ContactModule } from '../modules/contact/contact.module';
     AccountModule,
     CheckoutModule,
     AboutUsModule,
-    ContactModule
+    ContactModule,
+    TranslateModule
   ]
 })
 export class PagesModule { }

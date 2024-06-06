@@ -15,23 +15,23 @@
       </a>
       <a href="https://www.facebook.com/" type="link" title="Twitter" target="_blank" rel="noopener noreferrer" class="col-3">
         <i>
-          <img src="./assets/icons/fb-logo.png" alt="Facebok logo" class="img-fluid">
+          <img src="./assets/icons/fb-logo.png" alt="Facebook logo" class="img-fluid">
         </i>
       </a>
     </div>
   </div>
   <div class="map col-12 col-md-5 col-lg-2 mb-5 mb-lg-0">
     <ul class="fs-sm-2">
-      <li><a (click)="onClickHome()">Home</a></li>
-      <li><a (click)="onClickCatalogue()">Catálogo</a></li>
-      <li><a (click)="onClickNavigateToContact()">Contáctenos</a></li>
-      <li><a (click)="onClickAboutUs()">Sobre nosotros</a></li>
-      <li><a (click)="onClickMyAccount()">Mi cuenta</a></li>
-      <li><a (click)="onClickCartDetail()">Carrito de compras</a></li>
+      <li><a (click)="onClickHome()">{{ 'FOOTER.home' | translate }}</a></li>
+      <li><a (click)="onClickCatalogue()">{{ 'FOOTER.catálogo' | translate }}</a></li>
+      <li><a (click)="onClickNavigateToContact()">{{ 'FOOTER.contáctenos' | translate }}</a></li>
+      <li><a (click)="onClickAboutUs()">{{ 'FOOTER.sobre_nosotros' | translate }}</a></li>
+      <li><a (click)="onClickMyAccount()">{{ 'FOOTER.mi_cuenta' | translate }}</a></li>
+      <li><a (click)="onClickCartDetail()">{{ 'FOOTER.carrito_de_compras' | translate }}</a></li>
     </ul>
   </div>
   <div class="payment mt-3 col-12 col-md-5 col-lg-3 mb-5 mb-lg-0">
-    <p class="font-bold fs-md">Método de pago</p>
+    <p class="font-bold fs-md">{{ 'FOOTER.titulo_metodo_de_pago' | translate }}</p>
     <div class="row d-flex justify-content-start">
       <i class="col-2">
         <img src="./assets/icons/visa-logo.png" alt="Visa logo" class="img-fluid">
@@ -45,9 +45,9 @@
     </div>
   </div>
   <div class="contact mt-3 col-12 col-md-5 col-lg-3 mb-5 mb-lg-0">
-    <p class="font-bold fs-md">Contacto</p>
+    <p class="font-bold fs-md">{{ 'FOOTER.titulo_Contacto' | translate }}</p>
     <ul class="fs-sm-2">
-      <li class=""><img src="./assets/icons/mail-icon.png" alt="email icon" id="prueba"/> contacto@biblioteca.com</li> 
+      <li class=""><img src="./assets/icons/mail-icon.png" alt="email icon" id="prueba"/> contacto@biblioteca.com</li>
       <li class=""><img src="./assets/icons/phone-call-icon.png" alt="phone icon" /> 1126789634</li>
       <li class=""><img src="./assets/icons/map-pin-icon.png" alt="phone icon" /> Humberto Primo 467. 2 Piso. Córdoba. Argentina.</li>
     </ul>

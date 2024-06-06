@@ -1,0 +1,277 @@
+{
+  "BUSCADOR": {
+    "placeholder_text_barra_de_buscador": "Suchen"
+  },
+
+  "NAV": {
+    "inicio": "Startseite",
+    "catalogo": "Katalog",
+    "contactános": "Kontaktiere uns",
+    "sobre_nosotros": "Über uns",
+    "button_crear_cuenta": "Konto erstellen",
+    "button_iniciar_sesion": "Anmelden",
+    "button_alemán": "Deutsch",
+    "button_español": "Spanisch",
+    "button_ingles": "Englisch"
+  },
+
+
+  "REGISTRO": {
+    "main_title": "Werde Teil unserer Gemeinschaft",
+    "placeholder_text_nombre": "Name",
+    "placeholder_text_apellido": "Nachname",
+    "placeholder_text_email": "E-Mail",
+    "placeholder_text_contrasena": "Passwort",
+    "Ya tenes una cuenta?": "Hast du schon ein Konto?",
+    "crear_cuenta_ingresa": "Einloggen",
+    "button": "Konto erstellen",
+    "mensaje_error": "Pflichtfeld",
+    "confirmation_message": "Ihr Konto wurde erfolgreich erstellt. Vielen Dank, dass Sie unserer Community beigetreten sind!",
+    "default_error": "Es ist ein Fehler aufgetreten. Versuchen Sie es erneut",
+    "duplicidad_email": "Ein Benutzer mit dieser E-Mail-Adresse existiert bereits."
+  },
+
+  "LOGIN": {
+    "placeholder_text_email": "E-Mail",
+    "placeholder_text_contrasena": "Passwort",
+    "main_title": "Willkommen. Wir freuen uns, dass du hier bist",
+    "No tenés cuenta?": "Hast du kein Konto?",
+    "Registrate": "Registrieren",
+    "button_despues_de_llenar_los_campos": "Bestätigen",
+    "mensaje_error": "Pflichtfeld"
+  },
+
+  "HEADER": {
+    "titulo_principal": "Franklin Buchhandlung",
+    "descripcion_principal": "Finde das Buch, das du suchst. Romane, Geschichten, Kinderbücher, Geschichte, Wirtschaft, Gartenarbeit und vieles mehr.",
+    "button_ver_catalogo": "Katalog ansehen",
+    "ejemplares": "Exemplare",
+    "autores": "Autoren",
+    "editoriales": "Verlage"
+  },
+
+  "HOME_PAGE": {
+    "RECOMENDADOS": "EMPFOHLEN",
+    "descripcion_RECOMENDADOS": "Finde alle Bücher, die du lesen musst",
+    "NOVEDADES": "NEUHEITEN",
+    "descripcion_NOVEDADES": "Finde hier die neuen Veröffentlichungen",
+    "mas_vendidos": "BESTSELLER",
+    "descripcion_mas_vendidos": "Finde hier die Bestseller des Monats",
+    "button_ver_todos": "Alle ansehen"
+  },
+
+  "FOOTER": {
+    "home": "Startseite",
+    "catálogo": "Katalog",
+    "contáctenos": "Kontaktiere uns",
+    "sobre_nosotros": "Über uns",
+    "mi_cuenta": "Mein Konto",
+    "carrito_de_compras": "Einkaufswagen",
+    "titulo_metodo_de_pago": "Zahlungsmethode",
+    "titulo_Contacto": "Kontakt"
+  },
+
+
+  "SOBRE_NOSOTROS": {
+    "titulo_principal": "Über uns",
+    "pequena_descripcion_de_sobre_nosotros": "In der Buchhandlung Franklin haben wir eine digitale Plattform...",
+    "titulo_principal_Explora_y_Encuentra": "Erkunde und finde",
+    "pequena_descripcion_de_Explora_y_Encuentra": "Unsere Plattform ermöglicht es Ihnen, unseren Katalog...",
+    "titulo_principal_Información_Detallada": "Detaillierte Informationen",
+    "pequena_descripcion_de_Información_Detallada": "Neben der Durchsuchung unseres Katalogs können Sie auf detaillierte...",
+    "titulo_principal_Compra_con_Confianza": "Kaufen Sie mit Vertrauen",
+    "pequena_descripcion_de_Compra_con_Confianza": "Sobald Sie das Buch gefunden haben, das Sie so sehr wünschen...",
+    "titulo_principal_Gestiona_tu_Erperiencia": "Verwalten Sie Ihre Erfahrung",
+    "pequena_descripcion_de_Gestiona_tu_Erperiencia": "In der Buchladenung Franklin geben wir Ihnen die Kontrolle...",
+    "titulo_principal_Únete_a_la_Comunidad_de_Lectores": "Treten Sie der Lesergemeinschaft bei",
+    "pequena_descripcion_de_Únete_a_la_Comunidad_de_Lectores": "Treten Sie unserer Gemeinschaft leidenschaftlicher Leser bei...",
+    "text_sobre_nosotros_descargar_nuestra_app": "Laden Sie unsere mobile App herunter...",
+    "text_sobre_nosotros_empieza_tu_viaje_literar_hoy_mismo": "Beginnen Sie noch heute Ihre literarische Reise!"
+  },
+
+
+
+  "CONTACTO": {
+    "titulo_principal": "Kontaktiere uns",
+    "pequena_descripcion_titulo_principal": "Sie finden uns in unseren sozialen Netzwerken",
+    "titulo_email": "E-Mail",
+    "titulo_teléfono": "Telefon",
+    "titulo_ubicación": "Standort",
+    "titulo_form": "Zögern Sie nicht, uns zu schreiben",
+    "pequena_descripcion_de_titulo_form": "Hinterlassen Sie uns Ihren Kommentar oder Vorschlag, wir werden so schnell wie möglich antworten.",
+    "placeholder_nombre_apellido": "Name und Nachname",
+    "placeholder_correo_electronico": "E-Mail",
+    "placeholder_comentarios": "Kommentare",
+    "button_form": "Kommentar senden"
+  },
+
+  "CATALOGO": {
+    "todos": "Alle",
+    "arte": "Kunst",
+    "ciencia_ficcion": "Science-Fiction",
+    "gastronomia": "Gastronomie",
+    "romantico": "Romantisch",
+    "suspenso": "Spannung",
+    "novela": "Roman"
+  },
+
+  "LIBROS": {
+    "stock_de_productos": "Produktbestand",
+    "buscador": "Suche nach ISBN, Titel, Autor",
+    "button_agregar_stock": "Bestand hinzufügen",
+    "libro": "Buch",
+    "autor": "Autor",
+    "precio": "Preis",
+    "stock": "Bestand",
+    "acciones": "Aktionen"
+  },
+
+  "LIBROS_FORM": {
+    "isbn": "ISBN",
+    "titulo": "Titel",
+    "cantidad_de_páginas": "Menge der Seiten",
+    "imagen_de_portada": "Titelbild",
+    "stock": "Stock",
+    "precio": "Preis",
+    "ano_de_lanzamiento": "Einführungsjahr",
+    "seleccione_un_autor": "Wähle ein autor",
+    "seleccione_una_editorial": "Wähle Sie einen Verlag aus",
+    "editorial": "Verlag",
+    "seleccione_una_genero": "Wählen Sie ein Genre aus",
+    "genero": "Genre",
+    "tag": "Tag",
+    "sinopsis": "Zusammenfassung",
+    "desear_eleminar_un_libro": "Möchten Sie das Buch löschen?",
+    "cancelar": "Abbrechen",
+    "confirmar": "Speichern"
+    },
+
+  "AUTORES": {
+    "titulo_principal": "Regristrierte Autoren",
+    "buscador": "Suche nach Namen",
+    "button": "Füge ein Autor hinzu",
+    "nombre": "Name",
+    "acciones": "Aktionen",
+    "desear_eleminar_libro": "Willst du wirklich diesen Autor löschen?",
+    "cancelar": "Abbrechen",
+    "confirmar": "Speichern",
+    "agregar_autor": "Autor hinzufügen"
+  },
+
+  "EDITORIALES": {
+    "titulo_principal": "Registrierte Verlage",
+    "placeholder": "Suche nach Namen",
+    "nombre": "Name",
+    "acciones": "Aktionen",
+    "button": "Verlag hinzufügen"
+  },
+
+  "EDITORIALES_FORM":{
+    "nombre": "Name",
+    "cancelar": "Abbrechen",
+    "desear_eleminar": "Willst du wirklch diesen Verlag löschen?",
+    "confirmar": "Speichern",
+    "titulo_principal": "Verlag hinzufügen",
+    "campo_requerido": "Pflichtfeld",
+    "guardar": "Speichern"
+  },
+
+  "VENTAS": {
+    "titulo_principal": "Getätigte Verkäufe",
+    "placeholder": "Suche nach Bestellnummer"
+  },
+
+  "SUCURSALES": {
+    "titulo_principal": "Zweigstellen",
+    "button": "Zweigstelle hinzufügen",
+    "direccion": "Adresse",
+    "provincia": "Bundesland",
+    "localidad": "Ort",
+    "telefono": "Telefon",
+    "acciones": "Aktionen",
+    "agregar_libro": "Buch hinzufügen",
+    "cancelar": "Abbrechen",
+    "confirmar": "Speichern"
+  },
+
+  "CLIENTES": {
+    "titulo_principal": "Registrierte Benutzer",
+    "placeholder": "Suche nach Name",
+    "nombre": "Name",
+    "correo_electronico": "E-Mail",
+    "telefono": "Telefon"
+  },
+
+  "ADMIN": {
+    "titulo_principal": "Mein Konto",
+    "titulo_datos": "Daten",
+    "titulo_datos_personales": "Persönliche Daten",
+    "titulo_direccion": "Adresse",
+    "titulo_pedidos_realizados": "Bestellungen aufgegeben",
+    "titulo_no_usario_logeado": "Es ist kein angemeldeter Benutzer vorhanden"
+  },
+
+  "ADMIN_FORM_EDITAR_DATOS_PERSONALES": {
+    "titulo_principal": "Persönliche Daten",
+    "titulo_principal_form": "Persönliche Daten bearbeiten",
+    "nombre_apellido": "Name und Nachname",
+    "dni": "Ausweis",
+    "codigo_de_area": "Vorwahl",
+    "numero": "Nummer",
+    "cancelar": "Abbrechen",
+    "guardar_cambios": "Änderungen speichern"
+  },
+
+  "ADMIN_FORM_EDITAR_DATOS_DIRECCION": {
+    "titulo_principal": "Adresse",
+    "calle_numero": "Straße und Nummer",
+    "codigo_postal": "Postleitzahl",
+    "localidad": "Ort",
+    "provincia": "Bundesland",
+    "cancelar": "Abbrechen",
+    "guardar_cambios": "Änderungen speichern",
+    "editar_direcciones": "Adresse bearbeiten"
+  },
+
+  "ADMIN_PEDIDOS_ITEM": {
+    "orden": "Bestellung:",
+    "producto": "Produkt",
+    "precio": "Preis",
+    "cantidad": "Menge",
+    "total": "Total"
+  },
+
+  "NAV_AUTORIZADOS": {
+    "libros": "Bücher",
+    "autores": "Autoren",
+    "editoriales": "Verlage",
+    "ventas": "Verkäufe",
+    "sucursales": "Zweigstellen",
+    "clientes": "Kunden",
+    "hola_admin": "Hallo Admin",
+    "cerrar_sesion": "|Abmelden",
+    "saludo": "Hola"
+  },
+
+  "CARRITO": {
+    "titulo_principal": "Mein Warenkorb",
+    "cantidad_de_items": "Artikel",
+    "titulo_form": "Geben Sie Ihre Postleitzahl ein",
+    "text_placeholder": "Postleitzahl",
+    "button": "Versand berechnen",
+    "retiro": "Kostenlose Abholung in unserem Geschäft",
+    "button_sucursales": "Filialen anzeigen",
+    "total": "Gesamt:",
+    "seguir_comprando": "Weiter einkaufen",
+    "iniciar_compra": "Kauf starten",
+    "nuestras_tiendas": "Unsere Geschäfte"
+},
+
+"mensajes_de_errores": {
+    "error_80_caracteres": "Por favor ingresá un máximo de 80 caracteres.",
+    "error_ingreso_email_valido": "Ingresa un email válido.",
+    "error_mas_errores": "Debe contener al menos una letra mayúscula o minúscula, al menos un dígito y tener una longitud mínima de 8 caracteres",
+    "error_credenciales": "Ha ingresado credenciales incorrectas. Inténtelo nuevamente.",
+    "campo_requerido": "Pflichtfeld"
+  }
+}

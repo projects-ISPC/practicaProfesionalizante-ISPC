@@ -5,13 +5,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.proyectoispc.libreria.db.DbBook;
+import com.proyectoispc.libreria.models.Book;
 
-public class Catalogue extends AppCompatActivity {
+public class Catalogue extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +29,7 @@ public class Catalogue extends AppCompatActivity {
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
+        LinearLayout content_catalogue = findViewById(R.id.content_catalogue);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.catalogue);
@@ -78,6 +88,24 @@ public class Catalogue extends AppCompatActivity {
                 return false;
             }
         });
+        DbBook dbBook = new DbBook(this);
+        List<Book> bookList = dbBook.getListBooks();
+        LayoutInflater inflater = LayoutInflater.from(this);
+
+        for (Book book : bookList) {
+            View itemView = inflater.inflate(R.layout.item_book, content_catalogue, false);
+            TextView bookTitle = itemView.findViewById(R.id.bookTitle);
+            TextView bookAuthor = itemView.findViewById(R.id.bookAuthor);
+            ImageView bookImage = itemView.findViewById(R.id.bookImage);
+
+            bookTitle.setText(book.getName());
+            bookAuthor.setText(book.getAuthor());
+            int idDeRecurso = getResources().getIdentifier(book.getCover(), "drawable", getPackageName());
+            bookImage.setImageResource(idDeRecurso);
+
+            content_catalogue.addView(itemView);
+        }
+
 
     }
 

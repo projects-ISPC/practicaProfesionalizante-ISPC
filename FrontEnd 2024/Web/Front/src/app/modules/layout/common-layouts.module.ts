@@ -9,8 +9,9 @@ import { SearchComponent } from './search/search.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginModule } from '../login/login.module';
 import { ButtonCartComponent } from './button-cart/button-cart.component';
-// import { CommonComponentsModule } from '../common-components/common-components.module';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import { HomeModule } from 'src/app/pages/home/home.module';
 
 @NgModule({
   declarations: [
@@ -24,14 +25,15 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     LoginModule,
     MatBadgeModule,
-    // CommonComponentsModule,
     FormsModule,
+    TranslateModule,
   ],
   exports: [
     FooterComponent,
     HeaderMenuComponent,
     NavbarComponent,
     SearchComponent,
+    ButtonCartComponent,
   ],
 })
 export class CommonLayoutsModule {}
