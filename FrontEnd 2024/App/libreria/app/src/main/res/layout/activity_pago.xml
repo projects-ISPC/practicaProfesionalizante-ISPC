@@ -56,7 +56,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="2"
-            android:contentDescription="Imagen camión"
+            android:contentDescription="@string/imagen_cami_n"
             app:srcCompat="@drawable/compra_envio"
             app:tint="@color/colorGray3" />
         <!-- app:tint="@color/colorViolet" -->
@@ -67,7 +67,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -77,7 +77,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -87,7 +87,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -97,7 +97,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -107,7 +107,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="2"
-            android:contentDescription="Imagen de tarjeta"
+            android:contentDescription="@string/imagen_de_tarjeta"
             app:srcCompat="@drawable/compra_pago"
             app:tint="@color/paymentAproved" />
 
@@ -117,7 +117,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -127,7 +127,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -137,7 +137,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -147,7 +147,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -157,7 +157,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="2"
-            android:contentDescription="Compra realizada"
+            android:contentDescription="@string/compra_realizada"
             app:srcCompat="@drawable/compra_realizada"
             app:tint="@color/colorGray3" />
 
@@ -192,8 +192,8 @@
 
         <LinearLayout
             android:id="@+id/logosTarjetas"
-            android:layout_width="122dp"
-            android:layout_height="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="12dp"
             android:orientation="horizontal"
@@ -205,7 +205,7 @@
                 android:layout_width="35dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
-                android:contentDescription="Logo Visa"
+                android:contentDescription="@string/logo_visa"
                 android:src="@drawable/logo_visa" />
             <!--app:tint="@color/colorGray"-->
 
@@ -214,7 +214,7 @@
                 android:layout_width="30dp"
                 android:layout_height="29dp"
                 android:layout_marginEnd="10dp"
-                android:contentDescription="Logo Mastercard"
+                android:contentDescription="@string/logo_mastercard"
                 android:src="@drawable/logo_mastercard" />
             <!--app:tint="@color/colorGray"-->
 
@@ -222,7 +222,7 @@
                 android:id="@+id/logoAmex"
                 android:layout_width="42dp"
                 android:layout_height="match_parent"
-                android:contentDescription="Logo American Express"
+                android:contentDescription="@string/logo_american_express"
                 android:src="@drawable/logo_amex" />
 
             <!--app:tint="@color/colorGray"-->
@@ -242,7 +242,8 @@
             android:inputType="text"
             android:textSize="13sp"
             android:visibility="gone"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/editTextNumeroTarjeta"
@@ -258,7 +259,8 @@
             android:inputType="number"
             android:textSize="13sp"
             android:visibility="gone"
-            tools:visibility="visible" />
+            tools:visibility="visible"
+            android:autofillHints="" />
 
         <LinearLayout
             android:id="@+id/cvvAndExpDate"
@@ -282,7 +284,8 @@
                 android:inputType="number"
                 android:textSize="13sp"
                 android:visibility="gone"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/editTextFechaExpiracion"
@@ -295,7 +298,8 @@
                 android:inputType="date"
                 android:textSize="13sp"
                 android:visibility="gone"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                android:autofillHints="" />
         </LinearLayout>
 
         <RadioButton
@@ -308,8 +312,10 @@
 
         <LinearLayout
             android:id="@+id/linearLayout1"
-            android:layout_width="269dp"
+            android:layout_width="wrap_content"
             android:layout_height="122dp"
+            android:maxWidth="320dp"
+            android:minWidth="300dp"
             android:layout_marginStart="15dp"
             android:layout_marginBottom="76dp"
             android:orientation="vertical"
@@ -322,8 +328,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:inputType="text"
-                android:text="- Humberto Primo 680"
+                android:text="@string/humberto_primo_680"
                 android:textSize="15sp"
                 android:textColor="?attr/gray_text"
                 tools:layout_editor_absoluteX="35dp"
@@ -335,8 +340,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:inputType="text"
-                android:text="- Complejo Capitalinas, Edificio Suquía"
+                android:text="@string/complejo_capitalinas_edificio_suqu_a"
                 android:textSize="15sp"
                 android:textColor="?attr/gray_text"
                 tools:layout_editor_absoluteX="35dp"
@@ -348,8 +352,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:inputType="text"
-                android:text="- Piso 2, Oficina 22"
+                android:text="@string/piso_2_oficina_22"
                 android:textSize="15sp"
                 android:textColor="?attr/gray_text"
                 tools:layout_editor_absoluteX="35dp"
@@ -361,8 +364,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:inputType="text"
-                android:text="- Córdoba, Capital, Argentina"
+                android:text="@string/c_rdoba_capital_argentina"
                 android:textSize="15sp"
                 android:textColor="?attr/gray_text"
                 tools:layout_editor_absoluteX="35dp"
@@ -400,8 +402,10 @@
 
     <Button
         android:id="@+id/botonConfirmar"
-        android:layout_width="190dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="190dp"
+        android:maxWidth="320dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="@color/color4"
         android:onClick="confirmar_compra"

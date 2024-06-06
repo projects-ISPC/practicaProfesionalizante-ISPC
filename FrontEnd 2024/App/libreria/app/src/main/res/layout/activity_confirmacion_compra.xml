@@ -15,7 +15,6 @@
         android:layout_marginTop="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
-        app:tint="?attr/gray_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -28,7 +27,6 @@
         android:layout_marginEnd="20dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
-        app:tint="?attr/gray_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
@@ -66,6 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
 
         <ImageView
             android:id="@+id/imageCompraEnvio"
@@ -201,7 +200,7 @@
         android:layout_marginBottom="12dp"
         android:fontFamily="@font/rubik_bold"
         android:text="El pago fue realizado con éxito"
-        android:textColor="@color/color1"
+        android:textColor="@color/dark_text"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/numeroOrdenTexto"
@@ -218,7 +217,6 @@
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/rubik"
         android:text="Número de orden:"
-        android:textColor="?attr/gray_text"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/graciasCompra"
         app:layout_constraintEnd_toStartOf="@+id/numeroOrden"
@@ -234,7 +232,6 @@
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/rubik_bold"
         android:text="3123"
-        android:textColor="?attr/gray_text"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/graciasCompra"
         app:layout_constraintEnd_toEndOf="parent"
@@ -250,7 +247,6 @@
         android:fontFamily="@font/rubik"
         android:text="Muchas gracias por tu compra"
         android:textSize="12sp"
-        android:textColor="?attr/gray_text"
         app:layout_constraintBottom_toTopOf="@+id/botonCatalogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -263,12 +259,12 @@
         android:layout_height="59dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/color4"
+        android:backgroundTint="#538DCC"
         android:fontFamily="@font/rubik"
         android:onClick="launchCatalogo"
         android:text="VOLVER AL CATÁLOGO"
         android:textAllCaps="false"
-        android:textColor="@color/color5"
+        android:textColor="#212121"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
