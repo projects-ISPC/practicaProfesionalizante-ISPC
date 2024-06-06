@@ -2,17 +2,17 @@ package com.proyectoispc.libreria;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.view.View;
+import android.widget.Switch;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.proyectoispc.libreria.adapter.ProductAdapter;
@@ -27,7 +27,7 @@ public class Home extends AppCompatActivity {
 
     DbBook dbBook;
     ImageButton backbutton, shoppingCartButton;
-
+    Switch themeSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,77 +38,85 @@ public class Home extends AppCompatActivity {
 
         backbutton = findViewById(R.id.backButton);
         shoppingCartButton = findViewById(R.id.shoppingCartButton);
+        themeSwitch = findViewById(R.id.themeSwitch);
+
+        // Set the switch based on the current theme
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
+
+        themeSwitch.setChecked(isDarkModeOn);
+
+        themeSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editor.putBoolean("isDarkModeOn", true);
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editor.putBoolean("isDarkModeOn", false);
+            }
+            editor.apply();
+        });
 
         RecyclerView recyclerView = findViewById(R.id.recomendedBooks);
         List<Book> recomendedBooks = getRecomendedBooks();
-        ProductAdapter adapter = new ProductAdapter(this ,recomendedBooks);
+        ProductAdapter adapter = new ProductAdapter(this, recomendedBooks);
         recyclerView.setAdapter(adapter);
 
         // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         // Perform item selected listener
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            int id = item.getItemId();
 
-                if(id == R.id.home){
-                    return true;
-                }
-
-                if(id == R.id.catalogue){
-                    startActivity(new Intent(getApplicationContext(),Catalogue.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                }
-
-                if(id == R.id.contact){
-                    startActivity(new Intent(getApplicationContext(),Contact.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                }
-
-                if(id == R.id.profile){
-                    startActivity(new Intent(getApplicationContext(), Profile.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                }
-
-                if(id == R.id.about){
-                    startActivity(new Intent(getApplicationContext(), AboutUs.class));
-                    overridePendingTransition(0,0);
-                    return true;
-                }
-
-                return false;
+            if (id == R.id.home) {
+                return true;
             }
+
+            if (id == R.id.catalogue) {
+                startActivity(new Intent(getApplicationContext(), Catalogue.class));
+                overridePendingTransition(0, 0);
+                return true;
+            }
+
+            if (id == R.id.contact) {
+                startActivity(new Intent(getApplicationContext(), Contact.class));
+                overridePendingTransition(0, 0);
+                return true;
+            }
+
+            if (id == R.id.profile) {
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+                overridePendingTransition(0, 0);
+                return true;
+            }
+
+            if (id == R.id.about) {
+                startActivity(new Intent(getApplicationContext(), AboutUs.class));
+                overridePendingTransition(0, 0);
+                return true;
+            }
+
+            return false;
         });
 
-        backbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-        shoppingCartButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Carrito.class));
-                overridePendingTransition(0,0);
-            }
+        backbutton.setOnClickListener(view -> onBackPressed());
+        shoppingCartButton.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), Carrito.class));
+            overridePendingTransition(0, 0);
         });
     }
 
-    public void onClickBook(){
+    public void onClickBook() {
         startActivity(new Intent(getApplicationContext(), BookDetail.class));
-        overridePendingTransition(0,0);
+        overridePendingTransition(0, 0);
     }
 
-    public List<Book >getRecomendedBooks(){
+    public List<Book> getRecomendedBooks() {
         List<Book> recomendedBooks = new ArrayList<>();
 
         Cursor booksData = dbBook.getBooks();
@@ -132,5 +140,4 @@ public class Home extends AppCompatActivity {
 
         return recomendedBooks;
     }
-
 }

@@ -52,10 +52,6 @@ public class ShoppingCartService {
             }
         }
     }
-    // Vaciar el Carrito
-    public void clearCart() {
-        selectedBooks.clear();
-    }
     // Actualizar Cantidad de un Libro
     public void updateBookQuantity(Book book, int quantity) {
         for (SelectedBook element : selectedBooks) {
