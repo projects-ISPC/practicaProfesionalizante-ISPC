@@ -1,5 +1,6 @@
 package com.proyectoispc.libreria.db;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -69,6 +70,21 @@ public class DbBook extends DbHelper {
         String selection = "_id=?";
         String[] selectionArgs = {String.valueOf(bookId)};
         return db.query("t_book", columns, selection, selectionArgs, null, null, null);
+    }
+
+    public long insertBook(String name, String author, String description, String cover, double price, String tag) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("author", author);
+        values.put("description", description);
+        values.put("cover", cover);
+        values.put("price", price);
+        values.put("tag", tag);
+
+        long result = db.insert("t_book", null, values);
+        db.close();
+        return result; // El ID del nuevo registro insertado, o -1 si ocurrió un error.
     }
 
 
