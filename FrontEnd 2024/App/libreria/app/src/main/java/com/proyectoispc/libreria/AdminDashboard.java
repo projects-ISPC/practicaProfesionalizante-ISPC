@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AdminDashboard extends BaseActivity {
     ImageButton backButton;
-    Button addBookButton;
+    Button addBookButton, deleteBookButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,10 +18,18 @@ public class AdminDashboard extends BaseActivity {
 
         backButton = findViewById(R.id.imageButton6);
         addBookButton = findViewById(R.id.addBookButton);
+        deleteBookButton = findViewById(R.id.deleteBookButton);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+            }
+        });
+
+        deleteBookButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToDeleteBook();
             }
         });
 
@@ -35,6 +43,11 @@ public class AdminDashboard extends BaseActivity {
 
     public void goToAddBook() {
         startActivity(new Intent(getApplicationContext(), AddBookActivity.class));
+        overridePendingTransition(0,0);
+    };
+
+    public void goToDeleteBook() {
+        startActivity(new Intent(getApplicationContext(), DeleteBookActivity.class));
         overridePendingTransition(0,0);
     };
 }
