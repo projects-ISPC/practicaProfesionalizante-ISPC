@@ -50,7 +50,7 @@
             android:layout_height="45dp"
             android:inputType="text"
             android:paddingBottom="13dp"
-            android:textSize="30px"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="606dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -86,7 +86,7 @@
             android:layout_height="45dp"
             android:inputType="textEmailAddress"
             android:paddingBottom="13dp"
-            android:textSize="30px"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="0dp" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -109,7 +109,7 @@
             android:layout_height="45dp"
             android:inputType="textPassword"
             android:paddingBottom="13dp"
-            android:textSize="30px"
+            android:textSize="16sp"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="606dp" />
     </com.google.android.material.textfield.TextInputLayout>
