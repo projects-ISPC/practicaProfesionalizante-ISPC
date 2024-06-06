@@ -12,8 +12,9 @@
         android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/volver_atras"
+        app:tint="?attr/gray_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="?attr/actionModeCloseDrawable" />
@@ -24,11 +25,14 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:background="@color/white"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/ir_al_carrito"
+        app:tint="?attr/gray_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
+
+
 
     <ImageView
         android:id="@+id/imageViewCover"
@@ -47,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="Heartstopper"
-        android:textColor="#041E41"
+        android:textColor="?attr/titulo_celeste"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="$6.700,00"
-        android:textColor="#041E41"
+        android:textColor="?attr/titulo_celeste"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Sinopsis: Charlie y Nick van al mismo colegio; aunque nunca se habían cruzado hasta el día en que los hacen sentarse juntos en su grupo de estudio. Muy pronto se vuelven amigos y más pronto aún Charlie "
-        android:textColor="#5D5E5F"
+        android:textColor="?attr/gray_text"
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Te pueden interesar"
+        android:textColor="?attr/titulo_celeste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
