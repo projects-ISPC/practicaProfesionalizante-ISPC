@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListBookDashboardAdmin">
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:contentDescription="@string/volver_atras"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
+
+    <RelativeLayout
+        android:id="@+id/cardBook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton6">
+
+        <RelativeLayout
+            android:id="@+id/portadaLibro"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/color2">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/listTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/text1"
+            android:textColor="#626364"
+            android:fontFamily="@font/rubik_medium"
+            android:textSize="20dp"
+            android:layout_toStartOf="@+id/editBtn"
+            android:layout_toEndOf="@+id/portadaLibro"/>
+
+        <TextView
+            android:id="@+id/listAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text2"
+            android:textColor="#626364"
+            android:textSize="17dp"
+            android:layout_toEndOf="@+id/portadaLibro"
+            android:layout_below="@+id/listTitle"/>
+
+        <ImageButton
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:src="@drawable/editpencil"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cardBook1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cardBook"
+        android:layout_marginTop="15dp">
+
+        <RelativeLayout
+            android:id="@+id/portadaLibro1"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/color2">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/listTitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toStartOf="@+id/editBtn1"
+            android:layout_toEndOf="@+id/portadaLibro1"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text1"
+            android:textColor="#626364"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/listAuthor1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listTitle1"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/portadaLibro1"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text2"
+            android:textColor="#626364"
+            android:textSize="17dp" />
+
+        <ImageButton
+            android:id="@+id/editBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/editpencil" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cardBook2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cardBook1"
+        android:layout_marginTop="15dp">
+
+        <RelativeLayout
+            android:id="@+id/portadaLibro2"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/color2">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/listTitle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toStartOf="@+id/editBtn2"
+            android:layout_toEndOf="@+id/portadaLibro2"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text1"
+            android:textColor="#626364"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/listAuthor2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listTitle2"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/portadaLibro2"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text2"
+            android:textColor="#626364"
+            android:textSize="17dp" />
+
+        <ImageButton
+            android:id="@+id/editBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/editpencil" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/cardBook3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/cardBook2"
+        android:layout_marginTop="15dp">
+
+        <RelativeLayout
+            android:id="@+id/portadaLibro3"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/color2">
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/listTitle3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_toStartOf="@+id/editBtn3"
+            android:layout_toEndOf="@+id/portadaLibro3"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text1"
+            android:textColor="#626364"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/listAuthor3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/listTitle3"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/portadaLibro3"
+            android:fontFamily="@font/rubik_medium"
+            android:text="@string/text2"
+            android:textColor="#626364"
+            android:textSize="17dp" />
+
+        <ImageButton
+            android:id="@+id/editBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/editpencil" />
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
