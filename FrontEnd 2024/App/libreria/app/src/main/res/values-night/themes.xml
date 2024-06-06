@@ -2,12 +2,12 @@
     <!-- Base application theme. -->
     <style name="Theme.Libreria" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/color1</item>
+        <item name="colorPrimary">@color/color4</item>
         <item name="colorPrimaryVariant">@color/color6</item>
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/color4</item>
+        <item name="colorSecondary">@color/color1</item>
         <item name="colorSecondaryVariant">@color/color2</item>
         <item name="colorOnSecondary">@color/color1</item>
         <!-- Status bar color. -->
