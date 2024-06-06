@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.proyectoispc.libreria.db.DbBook;
 
-public class AddBookActivity extends AppCompatActivity {
+import com.google.android.material.textfield.TextInputEditText;
+import com.proyectoispc.libreria.db.DbBook;
+
+public class AddBookActivity extends BaseActivity {
 
     ImageButton backButton;
     Button addBookButton;

@@ -4,7 +4,7 @@ import { Book } from 'src/app/models/book/book-model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookDashboardService } from '../../services/book/book-dashboard.service';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-book-dashboard-page',
@@ -17,7 +17,8 @@ export class BookDashboardPageComponent implements OnInit {
 
   constructor(
     private bookService: BookDashboardService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private translate: TranslateService
   ) { }
 
   ngOnInit() {
@@ -78,6 +79,9 @@ export class BookDashboardPageComponent implements OnInit {
     const modalRef = this.modalService.open(BookFormComponent, { size: 'lg', centered: true });
     modalRef.componentInstance.action = 'view';
     modalRef.componentInstance.bookId = id;
+  }
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 }
 

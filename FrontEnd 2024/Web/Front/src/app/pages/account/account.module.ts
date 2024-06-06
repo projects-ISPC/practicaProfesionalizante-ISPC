@@ -7,6 +7,8 @@ import { AccountDetailsComponent } from './account-details/account-details.compo
 import { PedidosItemComponent } from './pedidos-item/pedidos-item.component';
 import { AddressFormComponent } from './address-form/address-form.component';
 import { PersonalDataFormComponent } from './personal-data-form/personal-data-form.component';
+import { TranslateModule } from '@ngx-translate/core';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { PersonalDataFormComponent } from './personal-data-form/personal-data-fo
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbAccordionModule
+    NgbAccordionModule,
+    TranslateModule
   ]
 })
 export class AccountModule { }

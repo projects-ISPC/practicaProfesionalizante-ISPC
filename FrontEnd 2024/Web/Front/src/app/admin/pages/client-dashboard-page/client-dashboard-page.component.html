@@ -3,12 +3,12 @@
     <div class="row mt-5 pt-5 align-items-center gy-5">
 
       <div class="col-12 col-lg-6">
-        <span class="fc-primary font-bold fs-md-2">Usuarios registrados</span>
+        <span class="fc-primary font-bold fs-md-2">{{'CLIENTES.titulo_principal' | translate}}</span>
       </div>
 
       <div class="col-12 col-lg-6">
         <div class="input-group">
-          <input type="text" class="form-control rounded-1 px-4 py-3" placeholder="Buscá por nombre">
+          <input type="text" class="form-control rounded-1 px-4 py-3" [placeholder]="'CLIENTES.placeholder' | translate">
           <button type="button" class="btn btn-outline-secondary"> <img src="./assets/icons/extra/lupa.png" alt="">
             <i class="bi bi-search"></i>
           </button>
@@ -21,9 +21,9 @@
 
     <thead>
       <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Correo Electrónico</th>
-        <th scope="col">Teléfono</th>
+        <th scope="col">{{'CLIENTES.nombre' | translate}}</th>
+        <th scope="col">{{'CLIENTES.correo_electronico' | translate}}</th>
+        <th scope="col">{{'CLIENTES.telefono' | translate}}</th>
       </tr>
     </thead>
 

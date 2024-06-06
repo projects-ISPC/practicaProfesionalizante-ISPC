@@ -101,7 +101,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Arte"
-            android:textColor="@color/black"
+            android:textColor="@color/color1"
             android:textSize="10sp" />
 
         <Button
@@ -113,7 +113,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Ciencia"
-            android:textColor="@color/black"
+            android:textColor="@color/color1"
             android:textSize="10sp" />
 
         <Button
@@ -124,8 +124,8 @@
             android:layout_weight="0.17"
             android:background="@android:color/transparent"
             android:padding="4dp"
-            android:text="Fantacia"
-            android:textColor="@color/black"
+            android:text="Fantasia"
+            android:textColor="@color/color1"
             android:textSize="10sp" />
 
         <Button
@@ -137,7 +137,7 @@
             android:background="@android:color/transparent"
             android:padding="4dp"
             android:text="Economia"
-            android:textColor="@color/black"
+            android:textColor="@color/color1"
             android:textSize="10sp" />
     </LinearLayout>
     <ScrollView

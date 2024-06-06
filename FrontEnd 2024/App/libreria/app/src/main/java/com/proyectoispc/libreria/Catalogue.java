@@ -20,7 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.proyectoispc.libreria.db.DbBook;
 import com.proyectoispc.libreria.models.Book;
 
-public class Catalogue extends AppCompatActivity {
+public class Catalogue extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

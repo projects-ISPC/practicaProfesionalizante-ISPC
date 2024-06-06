@@ -14,7 +14,7 @@
         android:fontFamily="@font/atkinsonhyperlegibleregular"
         android:text="@string/micuenta"
 
-        android:textColor="@color/black"
+        android:textColor="@color/color1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/atkinsonhyperlegibleregular"
         android:text="Luciano Fernandez"
-        android:textColor="@color/black"
+        android:textColor="@color/color1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

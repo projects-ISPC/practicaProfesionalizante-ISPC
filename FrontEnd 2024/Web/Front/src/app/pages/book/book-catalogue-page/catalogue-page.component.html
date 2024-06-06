@@ -2,31 +2,31 @@
   <ul class="nav nav-fill justify-content-center catalog-menu">
     <li class="nav-item">
       <a class="nav-link" aria-current="page" id="all-genres" [class.active]="isActive(0)"
-        (click)="getAllBooks()">Todos</a>
+        (click)="getAllBooks()">{{ 'CATALOGO.todos' | translate }}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="art-genre" [class.active]="isActive(genre.ARTE)"
-        (click)="onBookGenre(genre.ARTE)">Arte</a>
+        (click)="onBookGenre(genre.ARTE)">{{ 'CATALOGO.arte' | translate }}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="scyfy-genre" [class.active]="isActive(genre.CIENCIA_FICCION)"
-        (click)="onBookGenre(genre.CIENCIA_FICCION)">Ciencia Ficción</a>
+        (click)="onBookGenre(genre.CIENCIA_FICCION)">{{ 'CATALOGO.ciencia_ficcion' | translate }}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="gastronomy-genre" [class.active]="isActive(genre.GASTRONOMIA)"
-        (click)="onBookGenre(genre.GASTRONOMIA)">Gastronomia</a>
+        (click)="onBookGenre(genre.GASTRONOMIA)">{{ 'CATALOGO.gastronomia' | translate }}</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" id="childrens-genre" [class.active]="isActive(genre.ROMANTICO)"
-        (click)="onBookGenre(genre.ROMANTICO)">Romantico</a>
+        (click)="onBookGenre(genre.ROMANTICO)">{{ 'CATALOGO.romantico' | translate }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="youth -genre" [class.active]="isActive(genre.SUSPENSO)"
-        (click)="onBookGenre(genre.SUSPENSO)">Suspenso</a>
+      <a class="nav-link" id="youth-genre" [class.active]="isActive(genre.SUSPENSO)"
+        (click)="onBookGenre(genre.SUSPENSO)">{{ 'CATALOGO.suspenso' | translate }}</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="bussines -genre" [class.active]="isActive(genre.NOVELA)"
-        (click)="onBookGenre(genre.NOVELA)">Novela</a>
+      <a class="nav-link" id="bussines-genre" [class.active]="isActive(genre.NOVELA)"
+        (click)="onBookGenre(genre.NOVELA)">{{ 'CATALOGO.novela' | translate }}</a>
     </li>
   </ul>
   <hr>

@@ -25,7 +25,7 @@ import com.proyectoispc.libreria.service.ShoppingCartService;
 
 import java.util.List;
 
-public class Carrito extends AppCompatActivity {
+public class Carrito extends BaseActivity {
 
     private ShoppingCartService shoppingCartService;
     double totalAmount;

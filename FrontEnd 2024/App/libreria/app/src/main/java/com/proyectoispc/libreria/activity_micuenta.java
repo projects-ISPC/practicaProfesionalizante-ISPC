@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class activity_micuenta extends AppCompatActivity {
+public class activity_micuenta extends BaseActivity {
     ImageButton backbutton;
 
     ImageButton carrito;
