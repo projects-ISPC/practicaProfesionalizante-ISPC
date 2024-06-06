@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Estemos en contacto"
+        android:text="@string/estemos_en_contacto"
         android:textColor="@color/color1"
         android:textFontWeight="500"
         android:textSize="20sp"
@@ -27,7 +27,7 @@
         android:id="@+id/textInputLayout3"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="343dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
@@ -44,6 +44,7 @@
             android:layout_width="335dp"
             android:layout_height="48dp"
             android:inputType="text"
+            android:textColorHint="#757575"
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -54,7 +55,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/rubik_light"
-        android:text="Humberto Primo 680. Córdoba, Argentina."
+        android:text="@string/humberto_primo_680_c_rdoba_argentina"
         android:textColor="@color/color1"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +70,7 @@
         android:layout_width="39dp"
         android:layout_height="34dp"
         android:layout_marginTop="12dp"
-        android:contentDescription="Icono de ubicación"
+        android:contentDescription="@string/icono_de_mapa"
         android:src="@drawable/ic_launcher_marker_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/ubicationContact"
@@ -105,7 +106,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="337dp"
+        android:layout_width="320dp"
         android:layout_height="49dp"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/color4"
@@ -125,7 +126,7 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="340dp"
+        android:layout_width="341dp"
         android:layout_height="115dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
@@ -143,6 +144,7 @@
             android:layout_width="335dp"
             android:layout_height="100dp"
             android:inputType="text"
+            android:textColorHint="#757575"
             android:textSize="17sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -153,7 +155,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="424dp"
         android:fontFamily="@font/rubik_medium"
-        android:text="Encontranos en"
+        android:text="@string/encontranos_en"
         android:textColor="@color/color1"
         android:textFontWeight="500"
         android:textSize="18sp"
@@ -163,12 +165,14 @@
 
     <TextView
         android:id="@+id/descriptionContact"
-        android:layout_width="333dp"
-        android:layout_height="41dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"
-        android:text="Envianos un mensaje y te contestaremos a la brevedad."
+        android:maxWidth="350dp"
+        android:minWidth="64dp"
+        android:text="@string/envianos_un_mensaje_y_te_contestaremos_a_la_brevedad"
         android:textColor="@color/grey_text"
         android:textSize="17sp"
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"

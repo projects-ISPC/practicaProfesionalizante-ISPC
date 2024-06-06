@@ -83,7 +83,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -93,7 +93,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -103,7 +103,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -113,7 +113,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -123,7 +123,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_weight="2"
-            android:contentDescription="Imagen de tarjeta"
+            android:contentDescription="@string/imagen_de_tarjeta"
             app:srcCompat="@drawable/compra_pago"
             app:tint="@color/colorGray3" />
         <!-- app:tint="@color/colorViolet" -->
@@ -134,7 +134,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -144,7 +144,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -154,7 +154,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -164,7 +164,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
-            android:contentDescription="Imagen punto"
+            android:contentDescription="@string/imagen_punto"
             app:srcCompat="@drawable/compra_point"
             app:tint="@color/colorGray3" />
 
@@ -174,7 +174,7 @@
             android:layout_height="35dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="2"
-            android:contentDescription="Compra realizada"
+            android:contentDescription="@string/compra_realizada"
             app:srcCompat="@drawable/compra_realizada"
             app:tint="@color/paymentAproved" />
     </LinearLayout>
@@ -185,7 +185,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="44dp"
-        android:contentDescription="Imagen de confirmación de compra"
+        android:contentDescription="@string/imagen_de_confirmaci_n_de_compra"
         app:layout_constraintBottom_toTopOf="@+id/pagoExito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -199,7 +199,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="12dp"
         android:fontFamily="@font/rubik_bold"
-        android:text="El pago fue realizado con éxito"
+        android:text="@string/el_pago_fue_realizado_con_xito"
         android:textColor="@color/color1"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -216,7 +216,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/rubik"
-        android:text="Número de orden:"
+        android:text="@string/n_mero_de_orden"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/graciasCompra"
         app:layout_constraintEnd_toStartOf="@+id/numeroOrden"
@@ -231,7 +231,7 @@
         android:layout_marginEnd="147dp"
         android:layout_marginBottom="5dp"
         android:fontFamily="@font/rubik_bold"
-        android:text="3123"
+        android:text="@string/_3123"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/graciasCompra"
         app:layout_constraintEnd_toEndOf="parent"
@@ -245,7 +245,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:fontFamily="@font/rubik"
-        android:text="Muchas gracias por tu compra"
+        android:text="@string/muchas_gracias_por_tu_compra"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/botonCatalogo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -262,7 +262,7 @@
         android:backgroundTint="@color/color4"
         android:fontFamily="@font/rubik"
         android:onClick="launchCatalogo"
-        android:text="VOLVER AL CATÁLOGO"
+        android:text="@string/volver_al_cat_logo"
         android:textAllCaps="false"
         android:textColor="@color/color5"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"

@@ -34,8 +34,10 @@
 
     <Button
         android:id="@+id/addBookButton"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:maxWidth="200dp"
         android:layout_marginTop="44dp"
         android:background="@drawable/redondeado_button"
         android:fontFamily="@font/rubik_medium"
@@ -68,8 +70,10 @@
 
     <Button
         android:id="@+id/deleteBookButton"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:maxWidth="200dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/redondeado_button"
         android:fontFamily="@font/rubik_medium"
@@ -87,6 +91,7 @@
         android:layout_width="271dp"
         android:layout_height="282dp"
         android:layout_marginBottom="16dp"
+        android:contentDescription="@string/imagen_de_persona"
         android:src="@drawable/admin_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
