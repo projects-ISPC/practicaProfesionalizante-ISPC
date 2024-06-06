@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:text="Nos alegra que estés acá!"
-        android:textColor="?attr/titulo_celeste"
+        android:text="@string/te_damos_la_bienvenida_nos_alegra_tenerte_por_ac"
+        android:textColor="?attr/colorOnSecondary"
         android:textFontWeight="100"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButton" />
@@ -65,7 +65,7 @@
         android:background="@drawable/edittext_background_checkout"
         android:drawableStart="@drawable/vector_search"
         android:drawablePadding="12dp"
-        android:hint="Buscá por género, autor, título"
+        android:hint="@string/busc_por_g_nero_autor_t_tulo"
         android:textColor="@color/black"
         android:textColorHint="?attr/gray_text"
         android:minHeight="48dp"
@@ -80,8 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
-        android:text="CATEGORÍAS"
-        android:textColor="?attr/titulo_celeste"
+        android:text="@string/title_dashboard"
+        android:textColor="?attr/colorOnSecondary"
         android:textFontWeight="500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
@@ -182,7 +182,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="15dp"
         android:text="Recomendados"
-        android:textColor="?attr/titulo_celeste"
+        android:textColor="?attr/colorOnSecondary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvArteLabel" />
 

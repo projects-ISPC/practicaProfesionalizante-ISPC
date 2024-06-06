@@ -186,7 +186,7 @@
             android:layout_height="48dp"
             android:layout_marginTop="0dp"
             android:text="@string/virtual_pago"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="?attr/colorOnSecondary"
             android:textSize="13sp"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -306,7 +306,7 @@
             android:id="@+id/checkBoxPagoLocal"
             android:layout_width="110dp"
             android:layout_height="48dp"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="?attr/colorOnSecondary"
             android:text="@string/virtual_local"
             android:textSize="13sp" />
 
@@ -392,10 +392,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#538DCC"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         android:onClick="regresar"
         android:text="@string/btn_volver"
-        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/RadioGroupPago" />
@@ -407,10 +407,10 @@
         android:minWidth="190dp"
         android:maxWidth="320dp"
         android:layout_marginTop="12dp"
-        android:backgroundTint="#538DCC"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         android:onClick="confirmar_compra"
         android:text="@string/btn_confirmacion"
-        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"

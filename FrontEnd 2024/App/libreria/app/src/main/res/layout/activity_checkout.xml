@@ -192,7 +192,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_envioDatos_checkout"
-        android:textColor="?attr/titulo_celeste"
+        android:textColor="?attr/colorOnSecondary"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -275,7 +275,7 @@
             android:layout_height="48dp"
             android:minHeight="48dp"
             android:text="@string/titulo_retiroLocal_checkout"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="?attr/colorOnSecondary"
             android:textStyle="bold" />
 
         <RadioButton
@@ -285,7 +285,7 @@
             android:layout_marginTop="8dp"
             android:minHeight="48dp"
             android:text="@string/titulo_envíoDomicilio_checkout"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="?attr/colorOnSecondary"
             android:textStyle="bold" />
 
     </RadioGroup>
@@ -398,10 +398,10 @@
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="#538DCC"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         android:onClick="irapagar"
         android:text="@string/button_irPagar_chackout"
-        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -414,10 +414,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="#538DCC"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="@color/white"
         android:onClick="volverAtras"
         android:text="@string/button_volver_chackout"
-        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintStart_toStartOf="parent" />
