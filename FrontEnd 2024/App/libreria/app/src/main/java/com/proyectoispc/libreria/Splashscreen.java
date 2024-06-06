@@ -7,7 +7,7 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Splashscreen extends AppCompatActivity {
+public class Splashscreen extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

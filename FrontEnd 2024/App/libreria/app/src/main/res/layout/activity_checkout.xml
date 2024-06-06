@@ -51,8 +51,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
 
-
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="411dp"
@@ -195,7 +193,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/titulo_envioDatos_checkout"
-        android:textColor="@color/dark_text"
+        android:textColor="@color/color1"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editTextText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -275,7 +273,7 @@
             android:layout_height="48dp"
             android:minHeight="48dp"
             android:text="@string/titulo_retiroLocal_checkout"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="@color/color1"
             android:textStyle="bold" />
 
         <RadioButton
@@ -285,7 +283,7 @@
             android:layout_marginTop="8dp"
             android:minHeight="48dp"
             android:text="@string/titulo_envíoDomicilio_checkout"
-            android:textColor="?attr/titulo_celeste"
+            android:textColor="@color/color1"
             android:textStyle="bold" />
 
     </RadioGroup>
@@ -393,10 +391,10 @@
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/blue_soft"
+        android:backgroundTint="@color/color4"
         android:onClick="irapagar"
         android:text="@string/button_irPagar_chackout"
-        android:textColor="#212121"
+        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
@@ -409,13 +407,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginBottom="12dp"
-        android:backgroundTint="@color/blue_soft"
+        android:backgroundTint="@color/color4"
         android:onClick="volverAtras"
         android:text="@string/button_volver_chackout"
-        android:textColor="#212121"
+        android:textColor="@color/color5"
         android:textSize="13sp"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

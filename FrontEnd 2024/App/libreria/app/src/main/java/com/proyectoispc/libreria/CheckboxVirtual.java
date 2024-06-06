@@ -24,7 +24,7 @@ import com.proyectoispc.libreria.service.ShoppingCartService;
 import java.util.Date;
 
 
-public class CheckboxVirtual extends AppCompatActivity {
+public class CheckboxVirtual extends BaseActivity {
 
     SharedPreferences sharedPreferences;
     int userId;

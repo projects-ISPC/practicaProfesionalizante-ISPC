@@ -13,6 +13,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/atkinsonhyperlegibleregular"
         android:text="Mi Cuenta"
+        android:textColor="@color/color1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +33,6 @@
         app:layout_constraintHorizontal_bias="0.171"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
 
     <LinearLayout
         android:id="@+id/inputNames"
@@ -67,7 +67,6 @@
             tools:ignore="NotSibling">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:id="@+id/firstInput"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
@@ -138,7 +137,6 @@
             tools:ignore="NotSibling">
 
             <com.google.android.material.textfield.TextInputEditText
-
                 android:id="@+id/thirdInput"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
@@ -204,7 +202,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/shoppingcarticon" />
 
-
     <ImageButton
         android:id="@+id/imageButton11"
         android:layout_width="48dp"
@@ -264,7 +261,6 @@
                 android:text="En Proceso"
                 android:textColor="#2E7D32" />
 
-
             <TextView
                 android:id="@+id/cuerpo1"
                 android:layout_width="wrap_content"
@@ -293,6 +289,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Cerrar sesión"
+        android:backgroundTint="@color/color4"
+        android:textColor="@color/color5"
         app:layout_constraintBottom_toTopOf="@+id/buttonAdmin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.135"
@@ -306,12 +304,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:text="Ir a panel admin"
+        android:backgroundTint="@color/color4"
+        android:textColor="@color/color5"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogOut"
         app:layout_constraintVertical_bias="0.421" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

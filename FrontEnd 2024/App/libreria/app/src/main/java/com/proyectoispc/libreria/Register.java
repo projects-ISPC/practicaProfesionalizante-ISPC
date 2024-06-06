@@ -16,7 +16,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.proyectoispc.libreria.db.DbHelper;
 import com.proyectoispc.libreria.db.DbUser;
 
-public class Register extends AppCompatActivity {
+public class Register extends BaseActivity {
 
     Button btnCreate, btnLogin;
 
