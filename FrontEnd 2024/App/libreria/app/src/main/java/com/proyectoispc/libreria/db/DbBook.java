@@ -63,13 +63,12 @@ public class DbBook extends DbHelper {
         cursor.close();
         return bookList;
     }
-  
-    public Cursor getTheBookById(int bookId) {
+
+    public Cursor getBookById(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns = {"_id", "title", "author", "price"}; // Suponiendo que estas son las columnas de tu tabla t_book
-        String selection = "_id=?";
-        String[] selectionArgs = {String.valueOf(bookId)};
-        return db.query("t_book", columns, selection, selectionArgs, null, null, null);
+        String selection = "id=?";
+        String[] selectionArgs = { String.valueOf(id) };
+        return db.query("t_book", null, selection, selectionArgs, null, null, null);
     }
 
     public long insertBook(String name, String author, String description, String cover, double price, String tag) {
@@ -87,5 +86,23 @@ public class DbBook extends DbHelper {
         return result; // El ID del nuevo registro insertado, o -1 si ocurrió un error.
     }
 
+    public int deleteBook(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereClause = "id=?";
+        String[] whereArgs = new String[] { String.valueOf(id) };
+        int result = db.delete("t_book", whereClause, whereArgs);
+        db.close();
+        return result;
+    }
+
+    public boolean isBookInDatabase(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selection = "id=?";
+        String[] selectionArgs = { String.valueOf(id) };
+        Cursor cursor = db.query("t_book", null, selection, selectionArgs, null, null, null);
+        boolean exists = (cursor != null && cursor.moveToFirst());
+        if (cursor != null) cursor.close();
+        return exists;
+    }
 
 }
