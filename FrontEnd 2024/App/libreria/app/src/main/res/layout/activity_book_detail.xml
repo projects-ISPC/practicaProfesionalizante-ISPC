@@ -55,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewCover"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/textViewPrice"
@@ -126,16 +126,23 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="324dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sugestedBooks"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/textView8"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:spanCount="3" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sugestedBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
