@@ -39,6 +39,8 @@ En Librería Franklin, ponemos el control en tus manos. En tu perfil personal, t
 ***
 
 <h3>💻 Enlaces Importantes 💻</h3>
+<a href='https://drive.google.com/file/d/1tM8uwJ-yC0SRzU86gJkjQe7uYaTii8fd/view?usp=drive_link'>APK de la app móvil</a>
+<br>
 <a href='https://docs.google.com/document/d/1LtDdFU92bnC9JfbDalYzzKQfU7brhtlf/edit?usp=sharing&ouid=100014269401658648669&rtpof=true&sd=true'>Documentación IEEE-830</a>
 <br>
 <a href='https://github.com/orgs/projects-ISPC/projects/1/views/1'>Tablero Kanban del proyecto </a>
