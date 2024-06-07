@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.textfield.TextInputLayout;
 import com.proyectoispc.libreria.db.DbUser;
 
-public class Login extends AppCompatActivity {
+public class Login extends BaseActivity {
 
     static final String USER_PREF_NAME = "user_pref";
     static final String KEY_NAME = "name";

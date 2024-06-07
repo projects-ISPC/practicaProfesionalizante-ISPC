@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/editbookImage"
+        android:layout_width="40dp"
+        android:layout_height="60dp"
+        android:layout_margin="0dp"
+        android:contentDescription="Portada del Libro"
+        android:padding="0dp" />
+
+    <TextView
+        android:id="@+id/editBookId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:padding="@dimen/activity_horizontal_margin"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/editBookTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:padding="0dp"/>
+
+        <TextView
+            android:id="@+id/editBookAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:layout_margin="0dp"
+            android:padding="0dp"/>
+    </LinearLayout>
+
+</LinearLayout>

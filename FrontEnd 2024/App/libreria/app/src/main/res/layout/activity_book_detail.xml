@@ -46,23 +46,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Heartstopper"
-        android:textColor="#041E41"
+        android:fontFamily="@font/rubik_medium"
+        android:text="@string/heartstopper"
+        android:textColor="@color/color1"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewCover"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.046" />
 
     <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="$6.700,00"
-        android:textColor="#041E41"
+        android:text="@string/_6_700_00"
+        android:textColor="@color/color1"
+        android:fontFamily="@font/rubik_medium"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,8 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="Alice Oseman"
-        android:textColor="#C43B3B"
+        android:text="@string/alice_oseman"
+        android:textColor="@color/color3"
         app:layout_constraintBottom_toTopOf="@+id/textViewPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -82,11 +84,13 @@
 
     <TextView
         android:id="@+id/textViewDescription"
-        android:layout_width="350dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="300dp"
+        android:maxWidth="350dp"
         android:layout_marginTop="10dp"
-        android:text="Sinopsis: Charlie y Nick van al mismo colegio; aunque nunca se habían cruzado hasta el día en que los hacen sentarse juntos en su grupo de estudio. Muy pronto se vuelven amigos y más pronto aún Charlie "
-        android:textColor="#5D5E5F"
+        android:text="@string/sinopsis_charlie_y_nick_van_al_mismo_colegio_aunque_nunca_se_hab_an_cruzado_hasta_el_d_a_en_que_los_hacen_sentarse_juntos_en_su_grupo_de_estudio_muy_pronto_se_vuelven_amigos_y_m_s_pronto_a_n_charlie"
+        android:textColor="@color/grey_text"
         android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,11 +101,11 @@
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
-        android:backgroundTint="#538DCC"
-        android:contentDescription="Botón para agregar al carrito"
-        android:text="Agregar al carrito"
+        android:backgroundTint="@color/color4"
+        android:contentDescription="@string/bot_n_para_agregar_al_carrito"
+        android:text="@string/agregar_al_carrito"
         android:textAllCaps="false"
-        android:textColor="#212121"
+        android:textColor="@color/color5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
@@ -111,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Te pueden interesar"
+        android:text="@string/te_pueden_interesar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,16 +128,23 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="324dp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sugestedBooks"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@id/textView8"
+        app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:spanCount="3" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sugestedBooks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3" />
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"

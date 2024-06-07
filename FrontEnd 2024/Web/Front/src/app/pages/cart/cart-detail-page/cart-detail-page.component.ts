@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { SelectedBookDto } from 'src/app/models/book/book-model';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { NavigationService } from 'src/app/services/navigation/navigation.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart-detail-page',
@@ -19,7 +20,8 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
 
   constructor(
     private navigationService: NavigationService,
-    private cartService: CartService
+    private cartService: CartService,
+    private translate: TranslateService,
   ) { }
 
   ngOnInit(): void {
@@ -67,5 +69,13 @@ export class CartDetailPageComponent implements OnInit, OnDestroy {
       return;
     }
     this.navigationService.navigateToCheckout();
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
+
+  onClickCatalogue() {
+    this.navigationService.navigateToCatalogue();
   }
 }

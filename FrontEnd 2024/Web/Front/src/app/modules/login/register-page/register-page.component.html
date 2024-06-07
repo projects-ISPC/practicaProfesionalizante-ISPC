@@ -11,7 +11,7 @@
             />
           </div>
         </div>
-      </div>
+      </div> <!-- Cierre del primer div de col-lg-4 -->
 
       <div class="col-12 col-lg-8 py-4 mt-5">
         <div class="text-end mb-4 pb-4">
@@ -26,13 +26,18 @@
         <div class="row justify-content-center pb-4">
           <div class="col-12 col-lg-11 col-xl-9">
             <h4 class="font-medium fs-md-1 fc-primary">
-              Formá parte de nuestra comunidad
+              {{ 'REGISTRO.main_title' | translate }}
             </h4>
           </div>
         </div>
 
         <div *ngIf="showConfirmationMessage" class="alert alert-success" role="alert">
-          Tu cuenta ha sido creada con éxito. ¡Gracias por sumarte a nuestra comunidad!
+          {{ 'REGISTRO.confirmation_message' | translate }}
+        </div>
+
+        <!-- Agregar bloque para mensajes de error generales -->
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+          {{ errorMessage }}
         </div>
 
         <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="row justify-content-center">
@@ -44,12 +49,12 @@
                   formControlName="name"
                   type="text"
                   class="form-control fw-300 py-3 formInput"
-                  placeholder="Nombre"
+                  placeholder="{{ 'REGISTRO.placeholder_text_nombre' | translate }}"
                 />
                 <div *ngIf="name?.errors && name?.touched">
                   <ng-container *ngFor="let error of errorMessages.name">
                     <div class="text-danger" *ngIf="name?.hasError(error.type)">
-                      {{ error.message }}
+                      {{ 'REGISTRO.mensaje_error' | translate }}
                     </div>
                   </ng-container>
                 </div>
@@ -61,12 +66,12 @@
                   formControlName="lastname"
                   type="text"
                   class="form-control fw-300 py-3 formInput"
-                  placeholder="Apellido"
+                  placeholder="{{ 'REGISTRO.placeholder_text_apellido' | translate }}"
                 />
                 <div *ngIf="lastname?.errors && lastname?.touched">
                   <ng-container *ngFor="let error of errorMessages.lastname">
                     <div class="text-danger" *ngIf="lastname?.hasError(error.type)">
-                      {{ error.message }}
+                      {{ 'REGISTRO.mensaje_error' | translate }}
                     </div>
                   </ng-container>
                 </div>
@@ -78,13 +83,12 @@
                 formControlName="email"
                 type="email"
                 class="form-control fw-300 py-3 formInput"
-                placeholder="Correo electrónico"
-                (input)="onEmailInput()"
+                placeholder="{{ 'REGISTRO.placeholder_text_email' | translate }}"
               />
               <div *ngIf="email?.errors && email?.touched">
                 <ng-container *ngFor="let error of errorMessages.email">
                   <div class="text-danger" *ngIf="email?.hasError(error.type)">
-                    {{ error.message }}
+                    {{ 'REGISTRO.mensaje_error' | translate }}
                   </div>
                 </ng-container>
               </div>
@@ -96,13 +100,13 @@
                 formControlName="psw"
                 type="password"
                 class="form-control fw-300 py-3 formInput"
-                placeholder="Contraseña"
+                placeholder="{{ 'REGISTRO.placeholder_text_contrasena' | translate }}"
                 required
               />
               <div *ngIf="psw?.errors && psw?.touched">
                 <ng-container *ngFor="let error of errorMessages.psw">
                   <div class="text-danger" *ngIf="psw?.hasError(error.type)">
-                    {{ error.message }}
+                    {{ 'REGISTRO.mensaje_error' | translate }}
                   </div>
                 </ng-container>
               </div>
@@ -110,13 +114,12 @@
 
             <div class="col-12 py-3 fc-primary fs-sm-1 pb-3 text-end">
               <span class="font-light">
-                Ya tenés una cuenta?
+                {{ 'REGISTRO.Ya tenes una cuenta?' | translate }}
                 <a
                   type="button"
                   class="font-bold text-reset text-decoration-none"
                   (click)="onClickEnterLogin()"
-                  >Ingresá</a
-                >
+                >{{ 'REGISTRO.crear_cuenta_ingresa' | translate }}</a>
               </span>
             </div>
 
@@ -125,7 +128,7 @@
                 type="submit"
                 class="py-2 login-button font-extra-bold fs-md"
               >
-                Crear Cuenta
+                {{ 'REGISTRO.button' | translate }}
               </button>
             </div>
           </div>

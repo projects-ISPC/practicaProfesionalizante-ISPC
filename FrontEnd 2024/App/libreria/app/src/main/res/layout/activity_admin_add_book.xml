@@ -48,7 +48,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/titleInputLayout"
-                android:layout_width="0dp"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:hintTextColor="@color/colorGray2"
@@ -72,7 +72,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/authorInputLayout"
-                android:layout_width="0dp"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:hintTextColor="@color/colorGray2"
@@ -97,7 +97,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/priceInputLayout"
-                android:layout_width="0dp"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:hintTextColor="@color/colorGray2"
@@ -121,7 +121,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/synopsisInputLayout"
-                android:layout_width="0dp"
+                android:layout_width="380dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:hintTextColor="@color/colorGray2"
@@ -146,14 +146,14 @@
 
             <Button
                 android:id="@+id/addBook"
-                android:layout_width="160dp"
-                android:layout_height="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/redondeado_button"
                 android:fontFamily="@font/rubik_medium"
                 android:text="@string/btn_addBook"
                 android:textColor="@color/white"
-                android:textSize="13sp"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.063"
@@ -164,7 +164,7 @@
             <Button
                 android:id="@+id/selectImageButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/redondeado_button"
                 android:fontFamily="@font/rubik_medium"

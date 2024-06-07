@@ -1,0 +1,275 @@
+{
+  "BUSCADOR": {
+    "placeholder_text_barra_de_buscador": "Search"
+  },
+
+  "NAV": {
+    "inicio": "Home",
+    "catalogo": "Catalog",
+    "contactános": "Contact us",
+    "sobre_nosotros": "About us",
+    "button_crear_cuenta": "Create Account",
+    "button_iniciar_sesion": "Sign In",
+    "button_alemán": "German",
+    "button_español": "Spanish",
+    "button_ingles": "English"
+  },
+
+  "REGISTRO": {
+    "main_title": "Join our community",
+    "placeholder_text_nombre": "First Name",
+    "placeholder_text_apellido": "Last Name",
+    "placeholder_text_email": "Email",
+    "placeholder_text_contrasena": "Password",
+    "Ya tenes una cuenta?": "Already have an account?",
+    "crear_cuenta_ingresa": "Sign In",
+    "button": "Create Account",
+    "mensaje_error": "Required field",
+    "confirmation_message": "Your account has been successfully created. Thank you for joining our community!",
+    "default_error": "An error has occurred, please try again",
+    "duplicidad_email": "A user with this email already exists."
+  },
+
+  "LOGIN": {
+    "placeholder_text_email": "Email",
+    "placeholder_text_contrasena": "Password",
+    "main_title": "Welcome. We're glad to have you here",
+    "No tenés cuenta?": "Don't have an account?",
+    "Registrate": "Sign Up",
+    "button_despues_de_llenar_los_campos": "Confirm",
+    "mensaje_error": "Required field"
+  },
+
+  "HEADER": {
+    "titulo_principal": "Franklin Bookstore",
+    "descripcion_principal": "Find the book you're looking for. Novels, stories, children's, history, economics, gardening, and much more.",
+    "button_ver_catalogo": "View Catalog",
+    "ejemplares": "copies",
+    "autores": "authors",
+    "editoriales": "publishers"
+  },
+
+  "HOME_PAGE": {
+    "RECOMENDADOS": "RECOMMENDED",
+    "descripcion_RECOMENDADOS": "Find all those must-read books",
+    "NOVEDADES": "NEW RELEASES",
+    "descripcion_NOVEDADES": "Find the latest releases here",
+    "mas_vendidos": "BESTSELLERS",
+    "descripcion_mas_vendidos": "Find the top sellers of the month here",
+    "button_ver_todos": "View All"
+  },
+
+  "FOOTER": {
+    "home": "Home",
+    "catálogo": "Catalog",
+    "contáctenos": "Contact us",
+    "sobre_nosotros": "About us",
+    "mi_cuenta": "My Account",
+    "carrito_de_compras": "Shopping Cart",
+    "titulo_metodo_de_pago": "Payment Method",
+    "titulo_Contacto": "Contact"
+  },
+
+  "SOBRE_NOSOTROS": {
+    "titulo_principal": "About us",
+    "pequena_descripcion_de_sobre_nosotros": "At Franklin Bookstore, we have created a digital platform...",
+    "titulo_principal_Explora_y_Encuentra": "Explore and Discover",
+    "pequena_descripcion_de_Explora_y_Encuentra": "Our platform allows you to easily explore...",
+    "titulo_principal_Información_Detallada": "Detailed Information",
+    "pequena_descripcion_de_Información_Detallada": "In addition to browsing our catalog...",
+    "titulo_principal_Compra_con_Confianza": "Shop with Confidence",
+    "pequena_descripcion_de_Compra_con_Confianza": "Once you've found that book...",
+    "titulo_principal_Gestiona_tu_Experiencia": "Manage Your Experience",
+    "pequena_descripcion_de_Gestiona_tu_Experiencia": "At Franklin Bookstore, we put the control in your hands...",
+    "titulo_principal_Únete_a_la_Comunidad_de_Lectores": "Join the Readers' Community",
+    "pequena_descripcion_de_Únete_a_la_Comunidad_de_Lectores": "Join our community of passionate readers...",
+    "text_sobre_nosotros_descargar_nuestra_app": "Download our mobile app...",
+    "text_sobre_nosotros_empieza_tu_viaje_literar_hoy_mismo": "Start your literary journey today!"
+  },
+
+  "CONTACTO": {
+    "titulo_principal": "Contact us",
+    "pequena_descripcion_titulo_principal": "You can find us on our social networks",
+    "titulo_email": "Email",
+    "titulo_teléfono": "Phone",
+    "titulo_ubicación": "Location",
+    "titulo_form": "Feel free to write to us",
+    "pequena_descripcion_de_titulo_form": "Leave us your comment or suggestion, we will respond as soon as possible.",
+    "placeholder_nombre_apellido": "Name and Surname",
+    "placeholder_correo_electronico": "Email",
+    "placeholder_comentarios": "Comments",
+    "button_form": "Send Comment"
+  },
+
+  "CATALOGO": {
+    "todos": "All",
+    "arte": "Art",
+    "ciencia_ficcion": "Science Fiction",
+    "gastronomia": "Gastronomy",
+    "romantico": "Romantic",
+    "suspenso": "Thriller",
+    "novela": "Novel"
+  },
+
+  "LIBROS": {
+    "stock_de_productos": "Product Stock",
+    "buscador": "Search by ISBN, title, author",
+    "button_agregar_stock": "Add Stock",
+    "libro": "Book",
+    "autor": "Author",
+    "precio": "Price",
+    "stock": "Stock",
+    "acciones": "Actions"
+  },
+
+  "LIBROS_FORM": {
+    "isbn": "ISBN",
+    "titulo": "Title",
+    "cantidad_de_páginas": "Number of Pages",
+    "imagen_de_portada": "Cover Image",
+    "stock": "Stock",
+    "precio": "Price",
+    "ano_de_lanzamiento": "Release Year",
+    "seleccione_un_autor": "Select an Author",
+    "seleccione_una_editorial": "Select a Publisher",
+    "editorial": "Publisher",
+    "seleccione_una_genero": "Select a Genre",
+    "genero": "Genre",
+    "tag": "Tag",
+    "sinopsis": "Synopsis",
+    "desear_eleminar_un_libro": "Do you want to delete the book?",
+    "cancelar": "Cancel",
+    "confirmar": "Save"
+  },
+
+  "AUTORES": {
+    "titulo_principal": "Registered Authors",
+    "buscador": "Search by name",
+    "button": "Add Author",
+    "nombre": "Name",
+    "acciones": "Actions",
+    "desear_eleminar_libro": "Do you want to delete the author?",
+    "cancelar": "Cancel",
+    "confirmar": "Confirm",
+    "agregar_autor": "Add Author"
+  },
+
+  "EDITORIALES": {
+    "titulo_principal": "Registered Publishers",
+    "placeholder": "Search by name",
+    "button": "Add Publisher",
+    "nombre": "Name",
+    "acciones": "Actions"
+  },
+
+  "EDITORIALES_FORM": {
+    "nombre": "Name",
+    "cancelar": "Cancel",
+    "desear_eleminar": "Do you want to delete the publisher?",
+    "confirmar": "Confirm",
+    "titulo_principal": "Add Publisher",
+    "campo_requerido": "Required field",
+    "guardar": "Save"
+  },
+
+  "VENTAS": {
+    "titulo_principal": "Sales Made",
+    "placeholder": "Search by order number"
+  },
+
+  "SUCURSALES": {
+    "titulo_principal": "Branches",
+    "button": "Add Branch",
+    "direccion": "Address",
+    "provincia": "Province",
+    "localidad": "City",
+    "telefono": "Phone",
+    "acciones": "Actions",
+    "agregar_libro": "Add Book",
+    "cancelar": "Cancel",
+    "confirmar": "Confirm"
+  },
+
+  "CLIENTES": {
+    "titulo_principal": "Registered Users",
+    "placeholder": "Search by name",
+    "nombre": "Name",
+    "correo_electronico": "Email",
+    "telefono": "Phone"
+  },
+
+  "ADMIN": {
+    "titulo_principal": "My Account",
+    "titulo_datos": "Data",
+    "titulo_datos_personales": "Personal Data",
+    "titulo_direccion": "Address",
+    "titulo_pedidos_realizados": "Orders Placed",
+    "titulo_no_usario_logeado": "No user logged in"
+  },
+
+  "ADMIN_FORM_EDITAR_DATOS_PERSONALES": {
+    "titulo_principal": "Personal Data",
+    "titulo_principal_form": "Edit Personal Data",
+    "nombre_apellido": "Name and Surname",
+    "dni": "Identity Document",
+    "codigo_de_area": "Area Code",
+    "numero": "Number",
+    "cancelar": "Cancel",
+    "guardar_cambios": "Save Changes"
+  },
+
+  "ADMIN_FORM_EDITAR_DATOS_DIRECCION": {
+    "titulo_principal": "Address",
+    "calle_numero": "Street and Number",
+    "codigo_postal": "Postal Code",
+    "localidad": "City",
+    "provincia": "Province",
+    "cancelar": "Cancel",
+    "guardar_cambios": "Save Changes",
+    "editar_direcciones": "Edit Address"
+  },
+
+  "ADMIN_PEDIDOS_ITEM": {
+    "orden": "Order:",
+    "producto": "Product",
+    "precio": "Price",
+    "cantidad": "Quantity",
+    "total": "Total"
+  },
+
+  "NAV_AUTORIZADOS": {
+    "libros": "Books",
+    "autores": "Authors",
+    "editoriales": "Publishers",
+    "ventas": "Sales",
+    "sucursales": "Branches",
+    "clientes": "Customers",
+    "hola_admin": "Hello Admin",
+    "cerrar_sesion": "| Log Out",
+    "saludo": "Hello"
+  },
+
+  "CARRITO": {
+    "titulo_principal": "My Cart",
+    "cantidad_de_items": "items",
+    "titulo_form": "Enter your postal code",
+    "text_placeholder": "Postal Code",
+    "button": "Calculate Shipping",
+    "retiro": "Pick up for free at our store",
+    "button_sucursales": "View Branches",
+    "total": "Total:",
+    "seguir_comprando": "Continue Shopping",
+    "iniciar_compra": "Start Purchase",
+    "nuestras_tiendas": "Our Stores"
+  },
+
+  "mensajes_de_errores": {
+    "error_80_caracteres": "Please enter a maximum of 80 characters.",
+    "error_ingreso_email_valido": "Enter a valid email.",
+    "error_mas_errores": "Must contain at least one uppercase or lowercase letter, at least one digit, and be at least 8 characters long",
+    "error_credenciales": "You have entered incorrect credentials. Please try again.",
+    "campo_requerido": "Required field",
+    "min_10_digitos": "Minimum 10 digits",
+    "max_13_digitos": "Maximum 13 digits."
+  }
+}

@@ -16,15 +16,24 @@ import com.proyectoispc.libreria.models.Book;
 import com.proyectoispc.libreria.models.SelectedBook;
 
 import java.util.List;
+public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.ViewHolder>
+ {
 
-public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.ViewHolder> {
-    private List<SelectedBook> products;
-    private Activity activity;
+     public interface OnQuantityChangeListener {
+         void onQuantityChanged();
+     }
+     private List<SelectedBook> products;
+     private Activity activity;
+     private OnQuantityChangeListener onQuantityChangeListener;
 
     public ProductCardAdapter(Activity activity, List<SelectedBook> products) {
         this.activity = activity;
         this.products = products;
     }
+
+     public void setOnQuantityChangeListener(OnQuantityChangeListener listener) {
+         this.onQuantityChangeListener = listener;
+     }
 
     @NonNull
     @Override
@@ -45,13 +54,71 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
         double price = product.getBook().getPrice();
 
         holder.cardImageProduct.setImageResource(img);
-
         holder.cardBookName.setText(name);
         holder.cardBookAuthor.setText(author);
-        holder.cardTotalCuantity.setText("" + cuantity);
+        holder.cardTotalCuantity.setText(String.valueOf(cuantity));
         holder.cardBookPrice.setText("$ " + price);
 
+        //
+        // Agregar funcionalidad a los ImageView
+        holder.agregarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Obtener la posición del producto
+                int position = holder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    SelectedBook selectedBook = products.get(position);
+
+                    // Agregar una unidad al producto en el carrito
+                    selectedBook.incrementQuantity();
+
+                    // Actualizar la interfaz de usuario para reflejar el cambio en la cantidad
+                    holder.cardTotalCuantity.setText(String.valueOf(selectedBook.getCuantity()));
+
+                    // Actualizar el total del carrito
+                    //double newTotal = selectedBook.getBook().getPrice() * selectedBook.getCuantity();
+                    // Aquí puedes actualizar el total en la interfaz de usuario si es necesario
+
+                    if (onQuantityChangeListener != null) {
+                        onQuantityChangeListener.onQuantityChanged();
+                    }
+                }
+            }
+        });
+        holder.quitarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    SelectedBook selectedBook = products.get(position);
+                    int currentQuantity = selectedBook.getCuantity();
+                    if (currentQuantity > 1) {
+                        selectedBook.setCuantity(currentQuantity - 1);
+                        holder.cardTotalCuantity.setText(String.valueOf(selectedBook.getCuantity()));
+                        // Aquí puedes realizar cualquier otra operación necesaria, como actualizar el total del carrito.
+                        if (onQuantityChangeListener != null) {
+                            onQuantityChangeListener.onQuantityChanged();
+                        }
+                    }
+                }
+            }
+        });
+        holder.eliminarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = holder.getAdapterPosition();
+                if (position != RecyclerView.NO_POSITION) {
+                    products.remove(position);
+                    notifyItemRemoved(position);
+                    // Aquí puedes realizar cualquier otra operación necesaria, como actualizar el total del carrito.
+                    if (onQuantityChangeListener != null) {
+                        onQuantityChangeListener.onQuantityChanged();
+                    }
+                }
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -64,6 +131,9 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
         public TextView cardBookPrice;
         public TextView cardTotalCuantity;
         public ImageView cardImageProduct;
+        public ImageView agregarButton;
+        public ImageView quitarButton;
+        public ImageView eliminarButton;
 
         public ViewHolder(View view) {
             super(view);
@@ -72,6 +142,9 @@ public class ProductCardAdapter extends RecyclerView.Adapter<ProductCardAdapter.
             cardBookPrice = view.findViewById(R.id.cardBookPrice);
             cardImageProduct = view.findViewById(R.id.cardImageProduct);
             cardTotalCuantity = view.findViewById(R.id.cardTotalCuantity);
+            agregarButton = view.findViewById(R.id.agregar1);
+            quitarButton = view.findViewById(R.id.quitar1);
+            eliminarButton = view.findViewById(R.id.eliminar1);
         }
     }
 }

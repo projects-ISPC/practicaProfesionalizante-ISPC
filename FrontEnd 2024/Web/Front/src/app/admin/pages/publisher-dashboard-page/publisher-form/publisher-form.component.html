@@ -3,14 +3,13 @@
 
     <div class="row">
       <div class="text-end pt-4 pe-3">
-        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()">
-        </button>
+        <button type="button" class="btn-close" aria-label="Close" (click)="onClose()"></button>
       </div>
 
       <div class="row justify-content-start">
         <div class="col-12 mb-2">
           <h4 class="font-medium fs-md-1 fc-primary">
-            {{action === 'create' ? 'Agregar Editorial':'Editar Editorial'}}
+            {{action === 'create' ? ('EDITORIALES_FORM.titulo_principal' | translate) : ('EDITORIALES_FORM.editar_editorial' | translate)}}
           </h4>
         </div>
       </div>
@@ -21,7 +20,7 @@
         <div class="col-sm-12">
           <div class="form-floating">
             <input type="text" class="form-control formInput" id="name" placeholder="name" formControlName="name" />
-            <label for="name">Nombre</label>
+            <label for="name">{{'EDITORIALES_FORM.nombre' | translate}}</label>
             <div *ngIf="name?.errors && name?.touched">
               <ng-container *ngFor="let error of errorMessages.name">
                 <div class="text-danger" *ngIf="name?.hasError(error.type)">
@@ -36,12 +35,12 @@
       <div class="modal-footer">
         <div>
           <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
-            Cancelar
+            {{'EDITORIALES_FORM.cancelar' | translate}}
           </button>
         </div>
         <div>
           <button type="submit" class="btn btn-danger">
-            {{action === 'create' ? 'Guardar':'Guardar cambios'}}
+            {{action === 'create' ? ('EDITORIALES_FORM.guardar' | translate) : ('EDITORIALES_FORM.guardar_cambios' | translate)}}
           </button>
         </div>
       </div>
@@ -53,10 +52,9 @@
   <div class="container">
 
     <div class="row py-5">
-
       <div class="row justify-content-center">
         <div class="col-12 mb-1 text-center">
-          <h4 class="font-medium fs-md-1 fc-primary">¿Desea eliminar la editorial? </h4>
+          <h4 class="font-medium fs-md-1 fc-primary">{{'EDITORIALES_FORM.desear_eleminar' | translate}}</h4>
         </div>
       </div>
     </div>
@@ -64,12 +62,12 @@
     <div class="modal-footer">
       <div>
         <button type="button" class="btn btn-cancel me-5" data-bs-dismiss="modal" (click)="onClose()">
-          Cancelar
+          {{'EDITORIALES_FORM.cancelar' | translate}}
         </button>
       </div>
       <div>
         <button type="submit" class="btn btn-danger" (click)="onConfirmDelete()">
-          Confirmar
+          {{'EDITORIALES_FORM.confirmar' | translate}}
         </button>
       </div>
     </div>

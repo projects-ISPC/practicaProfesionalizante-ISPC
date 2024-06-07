@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { SendContact } from 'src/app/models/contact/contact-model';
 import { ContactserviceService } from 'src/app/services/contact/contactservice.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-form',
@@ -15,7 +16,7 @@ export class ContactFormComponent {
   contactForm!: FormGroup;
   validForm: boolean;
 
-  constructor(private formBuilder: FormBuilder, private contactService: ContactserviceService) {
+  constructor(private formBuilder: FormBuilder, private contactService: ContactserviceService, private translate: TranslateService) {
     this.description = 'Dejanos tu comentario o sugerencia, responderemos a la brevedad.';
     this.validForm = false;
   }
@@ -52,7 +53,7 @@ export class ContactFormComponent {
   validateInputName(event: KeyboardEvent) {
     const pattern = /^[a-zA-ZñÑáéíóúÁÉÍÓÚ' ]+$/;
     const inputChar = String.fromCharCode(event.charCode);
-  
+
     if (!pattern.test(inputChar)) {
       event.preventDefault();
     }
@@ -62,5 +63,9 @@ export class ContactFormComponent {
     this.contactForm.valueChanges.subscribe(val => {
       this.validForm = this.contactForm.status === 'VALID' ? true : false;
     });
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 };
