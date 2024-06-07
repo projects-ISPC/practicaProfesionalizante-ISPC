@@ -1,7 +1,9 @@
 package com.proyectoispc.libreria.adapter;
 
+
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +20,12 @@ import com.proyectoispc.libreria.models.Book;
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
-    private List<Book> books;
+    private List<Book> products;
     private Activity activity;
 
-    public ProductAdapter(Activity activity, List<Book> books) {
+    public ProductAdapter(Activity activity, List<Book> products) {
         this.activity = activity;
-        this.books = books;
+        this.products = products;
     }
 
     @NonNull
@@ -35,21 +37,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Book book = books.get(position);
 
-        String img = book.getCover();
+        Book product = products.get(position);
+
+        String img = product.getCover();
         int resourceId = holder.itemView.getResources().getIdentifier(img, "drawable", holder.itemView.getContext().getPackageName());
 
         holder.imageViewProduct.setImageResource(resourceId);
 
-        holder.nameTextView.setText(book.getName());
-        holder.authorTextView.setText(book.getAuthor());
-        holder.priceTextView.setText("$" + String.valueOf(book.getPrice()));
+        // Asigna los datos a la vista (por ejemplo, a TextViews)
+        holder.nameTextView.setText(product.getName());
+        holder.authorTextView.setText(product.getAuthor());
+        holder.priceTextView.setText("$" + String.valueOf(product.getPrice()));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Book selectedBook = books.get(holder.getAdapterPosition());
+                Book selectedBook = products.get(holder.getAdapterPosition());
 
                 Intent intent = new Intent(activity, BookDetail.class);
                 intent.putExtra("id", selectedBook.getId());
@@ -58,19 +62,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 intent.putExtra("description", selectedBook.getDescription());
                 intent.putExtra("cover", resourceId);
                 intent.putExtra("price", selectedBook.getPrice());
-                activity.startActivity(intent);
+                activity.startActivity(intent);;
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return books.size();
-    }
-
-    public void updateList(List<Book> newBooks) {
-        books = newBooks;
-        notifyDataSetChanged();
+        return products.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

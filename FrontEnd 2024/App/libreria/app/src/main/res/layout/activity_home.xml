@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
-b
+
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="50dp"

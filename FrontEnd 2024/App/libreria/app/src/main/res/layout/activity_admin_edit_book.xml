@@ -82,8 +82,57 @@
         android:textColorHint="@color/colorGray"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/editTitle"
+        tools:layout_editor_absoluteX="0dp" /><!--Editar autor-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/editAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background_checkout"
+        android:fontFamily="@font/rubik_medium"
+        android:hint="@string/text2"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="#626364"
+        android:textColorHint="@color/colorGray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle"
         tools:layout_editor_absoluteX="0dp" />
 
+    <!--Editar autor-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/bookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/editAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/edittext_background_checkout"
+        android:fontFamily="@font/rubik_medium"
+        android:hint="@string/text2"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="#626364"
+        android:textColorHint="@color/colorGray"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle"
+        tools:layout_editor_absoluteX="0dp" />
 
     <!--Editar precio-->
     <com.google.android.material.textfield.TextInputLayout

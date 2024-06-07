@@ -2,34 +2,32 @@ package com.proyectoispc.libreria;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.proyectoispc.libreria.adapter.ProductAdapter;
 import com.proyectoispc.libreria.db.DbBook;
 import com.proyectoispc.libreria.models.Book;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import android.text.Editable;
-import android.text.TextWatcher;
+import java.util.stream.Collectors;
 
 public class Home extends BaseActivity {
 
     DbBook dbBook;
     ImageButton backbutton, shoppingCartButton;
-    ProductAdapter adapter;
-    List<Book> allBooks;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,31 +40,12 @@ public class Home extends BaseActivity {
         shoppingCartButton = findViewById(R.id.shoppingCartButton);
 
         RecyclerView recyclerView = findViewById(R.id.recomendedBooks);
-        allBooks = getAllBooks(); // Obtiene todos los libros una vez
-        adapter = new ProductAdapter(this, new ArrayList<>()); // Inicializa con una lista vacía
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 3)); // Asegúrate de configurar el LayoutManager
+        List<Book> recomendedBooks = getRecomendedBooks();
+        ProductAdapter adapter = new ProductAdapter(this ,recomendedBooks);
         recyclerView.setAdapter(adapter);
 
-        TextInputEditText searchEditText = findViewById(R.id.textInputEditText);
-        searchEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                // No action needed before text changed
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                filterBooks(charSequence.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                // No action needed after text changed
-            }
-        });
-
         // Initialize and assign variable
-        BottomNavigationView bottomNavigationView = findViewById(R.id.nav_view);
+        BottomNavigationView bottomNavigationView=findViewById(R.id.nav_view);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -77,31 +56,31 @@ public class Home extends BaseActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
 
-                if (id == R.id.home) {
+                if(id == R.id.home){
                     return true;
                 }
 
-                if (id == R.id.catalogue) {
-                    startActivity(new Intent(getApplicationContext(), Catalogue.class));
-                    overridePendingTransition(0, 0);
+                if(id == R.id.catalogue){
+                    startActivity(new Intent(getApplicationContext(),Catalogue.class));
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
-                if (id == R.id.contact) {
-                    startActivity(new Intent(getApplicationContext(), Contact.class));
-                    overridePendingTransition(0, 0);
+                if(id == R.id.contact){
+                    startActivity(new Intent(getApplicationContext(),Contact.class));
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
-                if (id == R.id.profile) {
+                if(id == R.id.profile){
                     startActivity(new Intent(getApplicationContext(), Profile.class));
-                    overridePendingTransition(0, 0);
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
-                if (id == R.id.about) {
+                if(id == R.id.about){
                     startActivity(new Intent(getApplicationContext(), AboutUs.class));
-                    overridePendingTransition(0, 0);
+                    overridePendingTransition(0,0);
                     return true;
                 }
 
@@ -119,18 +98,18 @@ public class Home extends BaseActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), Carrito.class));
-                overridePendingTransition(0, 0);
+                overridePendingTransition(0,0);
             }
         });
     }
 
-    public void onClickBook() {
+    public void onClickBook(){
         startActivity(new Intent(getApplicationContext(), BookDetail.class));
-        overridePendingTransition(0, 0);
+        overridePendingTransition(0,0);
     }
 
-    public List<Book> getAllBooks() {
-        List<Book> books = new ArrayList<>();
+    public List<Book >getRecomendedBooks(){
+        List<Book> recomendedBooks = new ArrayList<>();
 
         Cursor booksData = dbBook.getBooks();
 
@@ -144,19 +123,14 @@ public class Home extends BaseActivity {
             String tag = booksData.getString(6);
 
             Book book = new Book(id, name, author, description, cover, price, tag);
-            books.add(book);
+            recomendedBooks.add(book);
         }
 
-        return books;
+        recomendedBooks = recomendedBooks.stream()
+                .filter(book -> "recomended".equals(book.getTag()))
+                .collect(Collectors.toList());
+
+        return recomendedBooks;
     }
 
-    private void filterBooks(String query) {
-        List<Book> filteredBooks = new ArrayList<>();
-        for (Book book : allBooks) {
-            if (book.getName().toLowerCase().startsWith(query.toLowerCase())) {
-                filteredBooks.add(book);
-            }
-        }
-        adapter.updateList(filteredBooks);
-    }
 }

@@ -157,6 +157,9 @@
 
     <!-- Strings para activity_admin_edit_book -->
     <string name="titulo_editBook">Editar Libro</string>
+    <string name=""></string>
+    <string name=""></string>
+    <string name=""></string>
 
 
 </resources>
