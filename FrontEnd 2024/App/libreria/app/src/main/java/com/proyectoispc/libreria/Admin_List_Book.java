@@ -2,6 +2,7 @@ package com.proyectoispc.libreria;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,15 @@ public class Admin_List_Book extends AppCompatActivity {
             int idDeRecurso = getResources().getIdentifier(book.getCover(), "drawable", getPackageName());
             bookImage.setImageResource(idDeRecurso);
             bookId.setText(String.valueOf(book.getId()));
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Admin_List_Book.this, Admin_Edit_Book.class);
+                    intent.putExtra("BOOK_ID", book.getId());
+                    startActivity(intent);
+                }
+            });
 
             content_edit_book.addView(itemView);
         }

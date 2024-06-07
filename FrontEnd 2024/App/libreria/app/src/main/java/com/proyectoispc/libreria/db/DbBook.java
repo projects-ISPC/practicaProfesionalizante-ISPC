@@ -105,4 +105,32 @@ public class DbBook extends DbHelper {
         return exists;
     }
 
+    public Book getBookForId(int bookId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Book book = null;
+        Cursor cursor = db.rawQuery("SELECT id, name, author, description, cover, price, tag FROM t_book WHERE id = ?", new String[]{String.valueOf(bookId)});
+
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndexOrThrow("id");
+            int nameIndex = cursor.getColumnIndexOrThrow("name");
+            int authorIndex = cursor.getColumnIndexOrThrow("author");
+            int descriptionIndex = cursor.getColumnIndexOrThrow("description");
+            int coverIndex = cursor.getColumnIndexOrThrow("cover");
+            int priceIndex = cursor.getColumnIndexOrThrow("price");
+            int tagIndex = cursor.getColumnIndexOrThrow("tag");
+
+            book = new Book(
+                    cursor.getInt(idIndex),
+                    cursor.getString(nameIndex),
+                    cursor.getString(authorIndex),
+                    cursor.getString(descriptionIndex),
+                    cursor.getString(coverIndex),
+                    cursor.getDouble(priceIndex),
+                    cursor.getString(tagIndex)
+            );
+        }
+        cursor.close();
+        return book;
+    }
+
 }
