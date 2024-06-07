@@ -80,7 +80,7 @@
     <string name="texto_final">Visita nuestra página web hoy mismo y déjate llevar por el maravilloso mundo de la lectura con Librería Franklin. ¡Empieza tu viaje literario hoy mismo!</string>
     <string name="title_about">Sobre Nosotros</string>
 
-    <!-- Strings para activity_admin_dashboard -->
+    <!-- Strings para activity_admin_checkout -->
     <string name="titulo_panelAdmin">Panel Admin</string>
     <string name="btn_addBook">Agregar Libro</string>
     <string name="btn_delBook">Eliminar Libro</string>
@@ -154,12 +154,6 @@
     <string name="eliminar_del_carrito">Eliminar del carrito</string>
     <string name="fondo">Fondo</string>
     <string name="restar_unidad">Restar unidad</string>
-
-    <!-- Strings para activity_admin_edit_book -->
-    <string name="titulo_editBook">Editar Libro</string>
-    <string name=""></string>
-    <string name=""></string>
-    <string name=""></string>
 
 
 </resources>
