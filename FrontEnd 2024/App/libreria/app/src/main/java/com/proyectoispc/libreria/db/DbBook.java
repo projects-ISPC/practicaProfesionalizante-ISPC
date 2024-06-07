@@ -133,4 +133,19 @@ public class DbBook extends DbHelper {
         return book;
     }
 
+    public int updateBook(int id, String name, String author, String description, double price) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("author", author);
+        values.put("description", description);
+        values.put("price", price);
+
+        // Se actualiza el registro en la base de datos
+        int rowsAffected = db.update("t_book", values, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return rowsAffected; // El número de filas afectadas
+    }
+
+
 }
