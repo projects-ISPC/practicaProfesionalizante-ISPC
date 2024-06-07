@@ -103,6 +103,20 @@ public class Catalogue extends BaseActivity {
             int idDeRecurso = getResources().getIdentifier(book.getCover(), "drawable", getPackageName());
             bookImage.setImageResource(idDeRecurso);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Catalogue.this, BookDetail.class);
+                    intent.putExtra("id", book.getId());
+                    intent.putExtra("name", book.getName());
+                    intent.putExtra("author", book.getAuthor());
+                    intent.putExtra("price", book.getPrice());
+                    intent.putExtra("description", book.getDescription());
+                    intent.putExtra("cover", idDeRecurso);
+                    startActivity(intent);
+                }
+            });
+
             content_catalogue.addView(itemView);
         }
 

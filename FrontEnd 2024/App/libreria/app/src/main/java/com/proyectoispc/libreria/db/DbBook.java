@@ -105,4 +105,47 @@ public class DbBook extends DbHelper {
         return exists;
     }
 
+    public Book getBookForId(int bookId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Book book = null;
+        Cursor cursor = db.rawQuery("SELECT id, name, author, description, cover, price, tag FROM t_book WHERE id = ?", new String[]{String.valueOf(bookId)});
+
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndexOrThrow("id");
+            int nameIndex = cursor.getColumnIndexOrThrow("name");
+            int authorIndex = cursor.getColumnIndexOrThrow("author");
+            int descriptionIndex = cursor.getColumnIndexOrThrow("description");
+            int coverIndex = cursor.getColumnIndexOrThrow("cover");
+            int priceIndex = cursor.getColumnIndexOrThrow("price");
+            int tagIndex = cursor.getColumnIndexOrThrow("tag");
+
+            book = new Book(
+                    cursor.getInt(idIndex),
+                    cursor.getString(nameIndex),
+                    cursor.getString(authorIndex),
+                    cursor.getString(descriptionIndex),
+                    cursor.getString(coverIndex),
+                    cursor.getDouble(priceIndex),
+                    cursor.getString(tagIndex)
+            );
+        }
+        cursor.close();
+        return book;
+    }
+
+    public int updateBook(int id, String name, String author, String description, double price) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("author", author);
+        values.put("description", description);
+        values.put("price", price);
+
+        // Se actualiza el registro en la base de datos
+        int rowsAffected = db.update("t_book", values, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return rowsAffected; // El número de filas afectadas
+    }
+
+
 }
