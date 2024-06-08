@@ -59,6 +59,9 @@ En Librería Franklin, ponemos el control en tus manos. En tu perfil personal, t
 <br>
 
 ***
+<a href="https://drive.google.com/file/d/1iLOBuJrELsS2KNmEA1IhwATkZi5d6BGb/view?usp=drive_link">ELEVATOR PITCH</a>
+
+***
 <h3>📱 Tecnologías Utilizadas 📱</h3>
 <p> 
 <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> 
