@@ -71,7 +71,7 @@ export class RegisterPageComponent implements OnInit {
       const { name, lastname, email, psw } = this.registerForm.value;
       const userBackendUrl = 'http://127.0.0.1:8000/api/register/';
 
-      this.http.post(userBackendUrl, { name, lastname, email, psw, id_rol: 2 })
+      this.http.post(userBackendUrl, { name, lastname, email, psw, id_rol: 1 })
         .pipe(
           catchError(error => {
             console.log('Error al registrar usuario', error);
